@@ -1,0 +1,299 @@
+{
+  "rulesVersion": 1,
+  "analysisDefaults": {
+    "defaultRange": "14",
+    "historyLimit": 50
+  },
+  "minimumEvidence": {
+    "completedSessions": 3,
+    "completedQuizzes": 3,
+    "plannerTaskRecords": 5,
+    "activityDays": 3
+  },
+  "thresholds": {
+    "longSessionMinutes": 90,
+    "veryLongSessionMinutes": 120,
+    "lateNightStartHour": 22,
+    "longStreakDays": 6,
+    "performanceDropPercent": 12,
+    "sharpDailyIncreasePercent": 65,
+    "multipleLongDays": 3,
+    "highDailyMinutes": 180,
+    "reviewLookbackDays": 14
+  },
+  "statusThresholds": {
+    "someSignals": 2,
+    "increasedSignals": 4
+  },
+  "quizPerformance": {
+    "recentQuizCount": 3,
+    "minimumUsualQuizCount": 3,
+    "maximumUsualQuizCount": 10,
+    "improvingThreshold": 4,
+    "smallDropThreshold": -4,
+    "noticeableDropThreshold": -8,
+    "timingIncreaseMinutes": 5,
+    "minutesPerQuestionIncrease": 0.35,
+    "unansweredIncrease": 1,
+    "unansweredRateIncrease": 8
+  },
+  "responseTime": {
+    "minimumValidSeconds": 1,
+    "maximumStandardQuestionSeconds": 600,
+    "recentQuestionCount": 10,
+    "minimumUsualQuestionCount": 10,
+    "maximumUsualQuestionCount": 50,
+    "smallIncreasePercent": 20,
+    "noticeableIncreasePercent": 40,
+    "fasterThresholdPercent": -15,
+    "slowerShareThreshold": 60
+  },
+  "skippedStudyTasks": {
+    "minimumTaskCount": 5,
+    "normalMaximumPercent": 20,
+    "watchMaximumPercent": 39,
+    "possibleOverloadMinimumPercent": 40,
+    "minimumSkippedOrOverdueForSignal": 2
+  },
+  "lateNightStudying": {
+    "morningStartHour": 5,
+    "afternoonStartHour": 12,
+    "eveningStartHour": 17,
+    "lateNightStartHour": 22,
+    "reviewWindowDays": 7,
+    "mildSessionCount": 3,
+    "moderateSessionCount": 5,
+    "minimumDistinctDays": 2,
+    "consecutiveLateNightDaysForModerate": 3
+  },
+  "sessionLength": {
+    "longMinimumMinutes": 60,
+    "veryLongMinimumMinutes": 120,
+    "highWarningMinimumMinutes": 180,
+    "breakReminderMinutes": 60,
+    "breakReminderRepeatMinutes": 60,
+    "recommendedBreakMinimumMinutes": 15,
+    "recommendedBreakMaximumMinutes": 20,
+    "minimumBreakMinutesForReset": 5,
+    "repeatedLongSessionCount": 3,
+    "repeatedVeryLongSessionCount": 2,
+    "reviewWindowDays": 7,
+    "remindMeLaterMinutes": 15
+  },
+  "breakPatterns": {
+    "minimumMeaningfulBreakMinutes": 5,
+    "continuousStudyReminderMinutes": 90,
+    "secondReminderMinutes": 120,
+    "highReminderMinutes": 180,
+    "minimumSessionsForPattern": 3,
+    "minimumNoBreakSessionsForPattern": 2,
+    "reviewWindowDays": 7,
+    "shortAverageBreakMaximumMinutes": 4,
+    "regularBreakMinimumRatePercent": 60
+  },
+  "activeStudyTimer": {
+    "version": "1.0.0",
+    "displayUpdateMilliseconds": 1000,
+    "minimumValidSessionSeconds": 1,
+    "reminderThresholds": [
+      {
+        "key": "optional-break-45",
+        "minutes": 45,
+        "priority": "optional",
+        "title": "Optional Short Break",
+        "message": "You have studied for 45 minutes. You may find a short break helpful."
+      },
+      {
+        "key": "recommended-break-60",
+        "minutes": 60,
+        "priority": "recommended",
+        "title": "Break Recommended",
+        "message": "You have studied for 60 minutes. Consider taking a short break."
+      },
+      {
+        "key": "strong-break-90",
+        "minutes": 90,
+        "priority": "strong",
+        "title": "Long Continuous Study Period",
+        "message": "You have been studying continuously for 90 minutes. A short break may help you refocus."
+      },
+      {
+        "key": "high-priority-break-120",
+        "minutes": 120,
+        "priority": "high",
+        "title": "High-Priority Break Reminder",
+        "message": "You have studied for 2 hours without a meaningful recorded break. Consider taking a 15-20 minute break."
+      }
+    ],
+    "delayedReminderMinutes": 15,
+    "meaningfulBreakMinimumMinutes": 5,
+    "maximumTimerUpdateGapMinutes": 1440
+  },
+  "studyLoadLevel": {
+    "version": "1.0.0",
+    "indicatorPoints": {
+      "scoreDecline": 2,
+      "slowerResponseTime": 1,
+      "skippedTasks": 2,
+      "lateNightStudying": 1,
+      "veryLongSessions": 2,
+      "fewBreaks": 1,
+      "sevenDayStudyStreak": 1
+    },
+    "thresholds": {
+      "balancedMaximum": 2,
+      "mildOverloadMaximum": 4,
+      "highWorkloadMaximum": 7,
+      "strongOverloadMinimum": 8
+    },
+    "minimumActiveIndicatorCategoriesForStrong": 3,
+    "minimumModerateIndicatorsForStrong": 2,
+    "maximumDuplicateEvidenceReduction": 2
+  },
+  "multiplePatternRequirement": {
+    "version": "1.0.0",
+    "minimumCategoriesForMildWarning": 2,
+    "minimumCategoriesForHighWarning": 3,
+    "minimumCategoriesForStrongWarning": 3,
+    "minimumModerateIndicatorsForHighWarning": 1,
+    "minimumModerateIndicatorsForStrongWarning": 2,
+    "minimumIndependentEvidenceGroupsForWarning": 2,
+    "singleIndicatorMaximumLevel": "Balanced",
+    "twoCategoryMaximumLevel": "Mild Overload",
+    "requireCurrentEvidence": true,
+    "requireSufficientEvidence": true,
+    "preventDuplicateEvidenceFromMeetingMinimum": true
+  },
+  "recommendations": {
+    "version": "1.0.0",
+    "maximumRecommendations": 3,
+    "minimumRecommendationLength": 1,
+    "maximumRecommendationLength": 2,
+    "prioritizeModerateIndicators": true,
+    "avoidDuplicateCategories": true,
+    "allowPositiveReinforcement": true,
+    "showPositiveOnlyWhenBalanced": true,
+    "library": [
+      {
+        "id": "recommendation-long-session-break",
+        "category": "study-session-length",
+        "priority": 2,
+        "title": "Take a Short Break",
+        "message": "Take a 15-20 minute break before continuing.",
+        "reason": "Several recent study sessions lasted more than two hours.",
+        "sourceIndicatorKeys": ["session-length-repeated-very-long", "session-length-high-uninterrupted"],
+        "sourcePointKeys": ["veryLongSessions"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-long-session-split",
+        "category": "study-session-length",
+        "priority": 2,
+        "title": "Split Long Sessions",
+        "message": "Try splitting one long study session into two shorter sessions.",
+        "reason": "Repeated long study sessions were found in your recorded study history.",
+        "sourceIndicatorKeys": ["session-length-repeated-long"],
+        "sourcePointKeys": ["veryLongSessions"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-break-before-90",
+        "category": "recorded-break-pattern",
+        "priority": 2,
+        "title": "Plan Breaks Earlier",
+        "message": "Take a 15-20 minute break before reaching 90 minutes during longer study sessions.",
+        "reason": "Long sessions and limited recorded breaks appeared in the same review.",
+        "sourceIndicatorKeys": ["break-pattern-repeated-no-breaks", "break-pattern-limited", "noBreaks"],
+        "sourcePointKeys": ["fewBreaks"],
+        "mergeWithCategories": ["study-session-length"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-late-night-earlier",
+        "category": "late-night-study",
+        "priority": 2,
+        "title": "Move One Session Earlier",
+        "message": "Try moving tomorrow's study session earlier to protect your sleep schedule.",
+        "reason": "Repeated late-night study sessions were recorded in the review window.",
+        "sourceIndicatorKeys": ["late-night-repeated", "late-night-frequent"],
+        "sourcePointKeys": ["lateNightStudying"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-quiz-review",
+        "category": "quiz-performance",
+        "priority": 2,
+        "title": "Review One Topic",
+        "message": "Your recent quiz scores are lower than usual. Consider reviewing one topic at a time instead of adding more material.",
+        "reason": "Recent quiz results were lower than your earlier recorded quiz average.",
+        "sourceIndicatorKeys": ["quiz-performance-noticeable-drop", "quiz-performance-small-drop", "performanceDrop"],
+        "sourcePointKeys": ["scoreDecline"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-response-time",
+        "category": "quiz-response-time",
+        "priority": 1,
+        "title": "Use a Shorter Quiz",
+        "message": "Try a shorter practice quiz on one familiar topic.",
+        "reason": "Recent quiz response times were slower than your earlier recorded pattern.",
+        "sourceIndicatorKeys": ["response-time-slightly-slower", "response-time-noticeably-slower"],
+        "sourcePointKeys": ["slowerResponseTime"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-skipped-tasks",
+        "category": "study-task-completion",
+        "priority": 2,
+        "title": "Adjust Today's Task List",
+        "message": "Your study plan may contain too many tasks. Move one lower-priority task to another day.",
+        "reason": "Several due-date study tasks were skipped or became overdue.",
+        "sourceIndicatorKeys": ["task-completion-watch", "task-completion-possible-overload"],
+        "sourcePointKeys": ["skippedTasks"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-study-streak",
+        "category": "study-streak",
+        "priority": 1,
+        "title": "Schedule a Lighter Review Day",
+        "message": "You have studied for eight days in a row. Consider scheduling a lighter review day.",
+        "reason": "A study streak of at least seven days was recorded.",
+        "sourceIndicatorKeys": ["study-streak-seven-or-more", "longStreak"],
+        "sourcePointKeys": ["sevenDayStudyStreak"],
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-balanced-routine",
+        "category": "balanced-routine",
+        "priority": 1,
+        "title": "Keep Your Current Routine",
+        "message": "Your recent study habits appear balanced. Keep using the strategies that work well for you.",
+        "reason": "No supported overload pattern was found in the current recorded study data.",
+        "positiveOnly": true,
+        "supported": true,
+        "prototypeOnly": true
+      },
+      {
+        "id": "recommendation-balanced-breaks",
+        "category": "balanced-breaks",
+        "priority": 1,
+        "title": "Continue Recording Breaks",
+        "message": "Continue taking regular breaks during longer study sessions.",
+        "reason": "Your recent records show regular break patterns during longer sessions.",
+        "positiveOnly": true,
+        "requiresPositivePattern": "regular recorded break",
+        "supported": true,
+        "prototypeOnly": true
+      }
+    ]
+  }
+}
