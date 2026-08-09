@@ -1,0 +1,133 @@
+{
+  "behaviorWeights": {
+    "diagram_viewed": {
+      "visual": 3
+    },
+    "file_or_diagram_viewed": {
+      "visual": 2
+    },
+    "explanation_viewed": {
+      "visual": 1,
+      "reading": 1
+    },
+    "notes_opened": {
+      "reading": 2
+    },
+    "notes_reread": {
+      "reading": 3
+    },
+    "flashcards_used": {
+      "practice": 3
+    },
+    "quiz_completed": {
+      "practice": 3
+    },
+    "quiz_question_answered": {
+      "practice": 1
+    },
+    "mistake_corrected": {
+      "practice": 2
+    },
+    "audio_played": {
+      "audio": 3
+    }
+  },
+  "minimumEvidence": 3,
+  "minimumConfidence": 40,
+  "topicMinimumQuestions": 3,
+  "sessionMinimumCount": 5,
+  "maxBehaviorEvents": 250,
+  "topicPerformance": {
+    "minimumQuestions": 3,
+    "planningMinimumQuestions": 5,
+    "strongThreshold": 80,
+    "developingThreshold": 60,
+    "trendDelta": 10,
+    "recentQuestionLimit": 10
+  },
+  "mastery": {
+    "minimumQuizzes": 3,
+    "minimumQuestions": 5,
+    "accuracyThreshold": 80,
+    "requiredRecentSuccessfulQuizzes": 2,
+    "needsSupportQuizzes": 5,
+    "needsSupportAccuracy": 60,
+    "reviewNeededRecentAccuracy": 70
+  },
+  "learningSpeedCategories": {
+    "fastProgressMaxQuizzes": 3,
+    "steadyProgressMaxQuizzes": 7,
+    "extraPracticeMinQuizzes": 8
+  },
+  "memory": {
+    "freshThreshold": 80,
+    "stableThreshold": 75,
+    "reviewThreshold": 65,
+    "minimumReviewsForPrediction": 3,
+    "reviewIntervalsDays": [1, 3, 7, 14, 30],
+    "advanceThreshold": 90,
+    "maintainThreshold": 75,
+    "resetThreshold": 60
+  },
+  "methodTracking": {
+    "methods": [
+      "Reading Notes",
+      "Flashcards",
+      "Practice Questions",
+      "Video or Visual Explanation",
+      "Audio Explanation",
+      "Diagram or Mind Map",
+      "Teaching or Explaining Aloud",
+      "Mixed Method"
+    ],
+    "recentSessionHours": 72,
+    "minimumTopicQuestions": 3,
+    "confidence": {
+      "lowMin": 3,
+      "mediumMin": 6,
+      "highMin": 10
+    },
+    "recentAssessmentLimit": 5,
+    "trendDelta": 8,
+    "personalizationRatios": {
+      "bestMethod": 0.5,
+      "secondMethod": 0.3,
+      "otherMethods": 0.2
+    }
+  },
+  "examReadiness": {
+    "weights": {
+      "topicPerformance": 0.45,
+      "recentPerformance": 0.2,
+      "planCompletion": 0.15,
+      "memoryStatus": 0.1,
+      "practiceVolume": 0.1
+    },
+    "statusThresholds": {
+      "highlyPrepared": 90,
+      "onTrack": 75,
+      "moreReviewNeeded": 60
+    },
+    "predictionMinimums": {
+      "quizzes": 3,
+      "questions": 15,
+      "topicCoverage": 0.5
+    },
+    "practiceVolumeTarget": 20,
+    "scoreRangeMargin": 3
+  },
+  "profileUpdates": {
+    "recentDays": 14,
+    "mediumDays": 30,
+    "recentWeight": 1,
+    "mediumWeight": 0.6,
+    "olderWeight": 0.3,
+    "rollingSessionLimit": 20,
+    "minimumRecentSessions": 5,
+    "minimumDifference": 3,
+    "minimumNewEvents": 5,
+    "cooldownDays": 7,
+    "strongEvidenceDifference": 8,
+    "historyLimit": 120
+  }
+}

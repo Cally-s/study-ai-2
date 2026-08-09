@@ -1,0 +1,52 @@
+{
+  "version": "1.0.0",
+  "statuses": [
+    {
+      "id": "online",
+      "label": "Online",
+      "allowsCourse": false
+    },
+    {
+      "id": "studying",
+      "label": "Studying",
+      "allowsCourse": true
+    },
+    {
+      "id": "busy",
+      "label": "Busy",
+      "allowsCourse": false
+    },
+    {
+      "id": "offline",
+      "label": "Offline",
+      "allowsCourse": false
+    }
+  ],
+  "automaticOfflineMinutes": 30,
+  "activityUpdateThrottleSeconds": 60,
+  "demoRecords": [
+    {
+      "userId": "demo-user-alex",
+      "status": "studying",
+      "studyCourse": "Biology",
+      "customMessage": "",
+      "lastActiveAt": "2026-07-22T13:00:00.000Z",
+      "updatedAt": "2026-07-22T13:00:00.000Z",
+      "manuallySelected": true,
+      "source": "demo",
+      "prototypeOnly": true
+    },
+    {
+      "userId": "demo-user-maya",
+      "status": "online",
+      "studyCourse": "",
+      "customMessage": "",
+      "lastActiveAt": "2026-07-22T13:00:00.000Z",
+      "updatedAt": "2026-07-22T13:00:00.000Z",
+      "manuallySelected": true,
+      "source": "demo",
+      "prototypeOnly": true
+    }
+  ],
+  "prototypeOnly": true
+}

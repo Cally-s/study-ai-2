@@ -1,0 +1,19 @@
+{
+  "belowTarget": [
+    "Your current prediction is below your target, but improving your highest-impact chapter may make the biggest difference.",
+    "Additional recorded practice may improve future predictions."
+  ],
+  "nearTarget": [
+    "Your prediction is close to your target. Focused review may strengthen your preparation."
+  ],
+  "aboveTarget": [
+    "Your current prediction is above your target. Continue reviewing to maintain your progress."
+  ],
+  "lowConfidence": [
+    "More recorded activities will help improve prediction confidence.",
+    "This estimate is based on limited recorded information."
+  ],
+  "unavailable": [
+    "More recorded information is needed before this prediction can be calculated."
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "minimumTotalEntries": 5,
+  "minimumScoredEntries": 3,
+  "minimumDifferentDates": 3,
+  "minimumChaptersWithData": 2,
+  "minimumTotalStudyMinutes": 60,
+  "minimumCompletedTasks": 1,
+  "minimumChapterScoredEntries": 2,
+  "minimumDaysBeforePrediction": 0
+}
