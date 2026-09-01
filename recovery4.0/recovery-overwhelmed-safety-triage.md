@@ -1,0 +1,3 @@
+# Overwhelmed Safety Triage
+
+Ordinary academic overwhelm continues simplified help. Significant but ambiguous distress triggers one direct immediate-danger clarification while support remains visible. Credible self-harm/suicide, harm-to-others, abuse/violence or medical emergency language pauses academics and shows immediate verified human resources. Deterministic rules and contextual classification support—not replace—reviewed policy/human review. No diagnosis, interrogation, promises, performance-based score or silent contact. A safe clarification returns without punishment; new direct language reopens triage.
