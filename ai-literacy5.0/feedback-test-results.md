@@ -1,0 +1,3 @@
+# Feedback Test Results
+
+Focused tests passed **354/354 assertions** and cover readiness/provenance, controls, areas/issues/bases, rubric requirements, grammar/counterargument contracts, unsupported claims, student decisions, independent revisions, version/voice preservation, Steps 14–17 links, privacy, accessibility markers, offline/security, ownership, idempotency, and no score/rewrite/auto-apply/award rules. JavaScript syntax passed. Full regression passed **107 test files** with zero failures. Production persistence, live generation, browser E2E, speech/localization, offline sync, and manual assistive-technology checks remain unavailable.
