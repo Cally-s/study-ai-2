@@ -1,0 +1,9 @@
+# Response Card Confidence
+
+> **Step 45 integration:** The Assumptions section displays only material working conditions, separates facts/policy/interpretations/preferences/missing evidence, and uses the exact correction controls. Corrections and context create versions and dependency previews; only an intentional Recalculate the answer action can request a new immutable card after policy, source, confidence, checkpoint, and tool re-resolution. Assumptions cannot grant permission, create evidence, expose hidden reasoning, infer sensitive traits, or leak a prohibited answer.
+
+> **Step 44 integration:** New substantive cards use only High, Medium, Low, Insufficient Evidence, or Not Applicable, resolved by trusted claim-level evidence logic. Every Confidence and Reason section retains the exact non-guarantee disclaimer. Direct reasoning may support High; missing evidence is never False; differing support uses claim-level labels, not Mixed; numerical confidence, student scoring, model-selected labels, and final-answer or chain-of-thought leakage are prohibited.
+
+> **Step 43 integration:** Source applicability is resolved claim by claim. Current, historical, scientific, statistical, policy, research, quotation, authority, and document claims use trusted evidence when required; direct reasoning and supplied material avoid decorative citations. Exact support, currentness, access, policy, limitations, confidence, verification, corrections, and Step 42 rendering remain validated, with exact no-source/unverified fallbacks and no invented metadata.
+
+Visible levels are High, Moderate, Low, Unable to assess, Mixed, and Not applicable. The concise reason must cite rules, calculations, tests, sources, context, disagreement, or limitations. Confidence describes support strength, not fluency or personality, and never uses a percentage, probability, grade prediction, or hidden model score. High confidence still includes a verification path.
