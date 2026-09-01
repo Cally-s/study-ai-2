@@ -1,0 +1,17 @@
+const fs=require('fs'),path=require('path'),assert=require('assert');
+const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index (2).html'),'utf8');
+const layout=fs.readFileSync(path.join(root,'style.css'),'utf8');
+const commands=fs.readFileSync(path.join(root,'ai-accessibility-commands.js'),'utf8');
+const tools=fs.readFileSync(path.join(root,'ai-coach-language-tools.js'),'utf8');
+const tests=[];
+const test=(name,fn)=>tests.push([name,fn]);
+test('conversation has a focused labelled region',()=>{assert(html.includes('aria-labelledby="coachConversationTitle"'));assert(html.includes('id="chatMessages"'));assert(html.includes('id="coachForm"'))});
+test('language controls have one separate destination',()=>{assert(html.includes('id="coachLanguageActions"'));assert(html.includes('Language and Presentation'));assert(tools.includes("container.matches?.('#coachView .message.ai')"))});
+test('study and export actions have a separate region',()=>{assert(html.includes('id="coachStudyTools"'));for(const label of ['Create Audio Summary','Download for Offline Use','Print Review Plan'])assert(html.includes(label))});
+test('response toolbar contains response-only commands',()=>{assert(commands.includes('RESPONSE_COMMANDS'));assert(commands.includes('STUDY_COMMANDS'));assert(commands.includes('ai-response-action-list'));assert(commands.includes("responseButtons(['MAKE_SIMPLER','ADD_MORE_DETAIL','SHOW_STEP_BY_STEP','GIVE_ANOTHER_EXAMPLE'])"));assert(commands.includes("document.querySelectorAll('#coachStudyTools [data-ai-access-command]')"))});
+test('Listen is not duplicated by the command toolbar',()=>{const match=commands.match(/const RESPONSE_COMMANDS=Object\.freeze\((\[[^;]+\])\)/);assert(match);assert(!match[1].includes('LISTEN'));assert(tools.includes('responseListen'))});
+test('stray avatar letter is removed',()=>{const coach=html.match(/<section class="app-view" id="coachView">[\s\S]*?<\/section>\s*<section class="app-view"/);assert(coach);assert(!coach[0].includes('bot-avatar'))});
+test('layout reflows without floating panels',()=>{assert(layout.includes('#coachView .coach-layout{grid-template-columns:'));assert(layout.includes('@media(max-width:1000px)'));assert(layout.includes('@media(max-width:640px)'));assert(!layout.includes('.coach-side-panel{position:fixed'))});
+test('shared enhancers are idempotent after controls move regions',()=>{assert(tools.includes('ai-coach-tool-marker'));assert(tools.includes('marker.hidden=true'));assert(commands.includes("el.dataset.responseToolsInjected==='true'"));assert(commands.includes('placeLatestResponseTools()'))});
+let passed=0;for(const [name,fn] of tests){try{fn();passed++;console.log(`PASS ${name}`)}catch(error){console.error(`FAIL ${name}\n${error.stack}`);process.exitCode=1}}console.log(`${passed}/${tests.length} tests passed`);
