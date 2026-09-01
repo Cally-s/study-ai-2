@@ -1,0 +1,3 @@
+# Recovery Screen-Reader Accessibility
+
+Each page requires a unique title, one H1, logical headings, main/navigation landmarks, labels/groups, error summary, lists/table headers, and explicit text statuses. Route changes focus or announce the new heading. Polite live regions announce saved/language/reading/contrast/network/transcript/translation/audio/revision/blocker/response changes once; assertive output is limited to blocking errors and policy-required safety. Bilingual reading order follows selected mode. Hidden private text and simultaneous status floods are prohibited. Manual screen-reader testing remains NOT RUN.

@@ -1,0 +1,3 @@
+# Recovery Reading Levels and Plain Language
+
+Beginner uses short sentences, one idea, background, and smaller steps. Simple uses familiar words, short paragraphs, direct instructions, and examples. Standard Academic uses normal school language. Advanced adds detail, tradeoffs, and planning logic. Explain More Simply may change wording, chunking, sequence, examples, and detail, but preserves tasks/courses, exact dates/times/timezones, statuses, priorities, formulas, scientific names, objectives, teacher decisions, integrity/safety rules, English terminology, correct answers, and curriculum expectations.
