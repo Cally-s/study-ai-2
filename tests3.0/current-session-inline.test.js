@@ -1,0 +1,26 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const root=path.join(__dirname,'..'),js=fs.readFileSync(path.join(root,'script.js'),'utf8'),css=fs.readFileSync(path.join(root,'style.css'),'utf8'),html=fs.readFileSync(path.join(root,'index (2).html'),'utf8');let n=0;
+const ok=(value,message)=>{assert.ok(value,message);n++};
+
+ok(js.includes("const header=$('#coachView .view-intro')"),'session control is scoped to the AI Coach header');
+ok(js.includes("header.insertAdjacentElement('afterend',shell)"),'details are inserted inline after the AI Coach header');
+ok(!js.includes('document.body.appendChild(shell)'),'session shell is not appended to the global document body');
+ok(js.includes('let currentSessionPanelOpen = false'),'details default to collapsed');
+ok(js.includes("toggle.setAttribute('aria-expanded','false')"),'toggle exposes its initial collapsed state');
+ok(js.includes("toggle.setAttribute('aria-controls','current-session-details')"),'toggle identifies the controlled panel');
+ok(js.includes('currentSessionPanelOpen=!currentSessionPanelOpen'),'button toggles details in both directions');
+ok(js.includes("toggle.setAttribute('aria-expanded',String(available&&currentSessionPanelOpen))"),'aria-expanded tracks panel state');
+ok(js.includes('details.hidden=!available||!currentSessionPanelOpen'),'details stay hidden until the student opens them');
+ok(js.includes("toggle.classList.toggle('hidden',!available)"),'control is absent without an active session');
+ok(js.includes('bindActiveStudyTimerActions(details)'),'session actions remain connected');
+ok(js.includes('directFinishActiveStudySession()'),'End Session behavior remains available');
+ok(html.includes('id="coachView"')&&html.includes('id="chatMessages"')&&html.includes('id="coachForm"'),'conversation and composer remain present');
+ok(!/\.active-study-timer\s*\{[^}]*position\s*:\s*fixed/i.test(css),'no fixed session widget remains');
+ok(!/\.current-session-section\s*\{[^}]*position\s*:\s*(fixed|absolute|sticky)/i.test(css),'inline panel does not overlay content');
+ok(css.includes('.current-session-section{position:static;width:100%'),'expanded details use normal full-width flow');
+ok(css.includes('@media(max-width:320px)'),'small mobile layouts are covered');
+ok(css.includes('@media(forced-colors:active)'),'forced-colours mode is covered');
+ok(css.includes('@media(prefers-reduced-motion:reduce)'),'reduced motion is covered');
+ok(css.includes('.current-session-toggle:focus-visible'),'focus remains visible in high contrast');
+console.log(`${n}/${n} assertions passed`);

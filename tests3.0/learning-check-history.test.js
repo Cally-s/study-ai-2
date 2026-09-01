@@ -1,0 +1,23 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const read=name=>fs.readFileSync(path.join(__dirname,'..',name),'utf8'),src=read('learning-check-history.js'),css=read('learning-check-history.css'),html=read('index (2).html');
+let passed=0;function test(name,fn){try{fn();passed++}catch(error){console.error(`FAIL: ${name}\n${error.stack}`);process.exitCode=1}}
+test('history assets load',()=>assert.ok(html.includes('learning-check-history.js')&&html.includes('learning-check-history.css')));
+test('overview headings exact',()=>assert.ok(src.includes('Recent Learning Checks')&&src.includes('Competency Progress')));
+test('history uses authorized data adapter attempts and results',()=>assert.ok(src.includes('StudySparkLearningCheckData')&&src.includes('source.attempts')&&src.includes('source.results')&&src.includes('byAttempt')));
+test('history fields present',()=>['Date','Score','Progress change','Status','Progress'].forEach(x=>assert.ok(src.includes(x),x)));
+test('continue review and retry actions',()=>assert.ok(src.includes("result?'Review Results':'Continue'")&&src.includes('data-learning-check-history-action')&&src.includes('data-learning-check-retry-attempt')));
+test('exact competency statuses',()=>['Not Checked','Developing','Nearly Mastered','Mastered','Needs Review'].forEach(x=>assert.ok(src.includes(x),x)));
+test('competency status has a visible label and hidden decorative icon',()=>assert.ok(src.includes('function statusIcon')&&src.includes('aria-hidden="true"')));
+test('progress change uses prior real results or an honest baseline',()=>assert.ok(src.includes('function progressChange')&&src.includes('Baseline recorded')&&!src.includes('fakeProgress')));
+test('no fake history or percentages',()=>assert.ok(src.includes('No Learning Checks yet')&&!src.includes('sampleHistory')&&!src.includes('improvementPercent')));
+test('required overview actions',()=>assert.ok(src.includes('View All Learning Checks')&&src.includes('View Full Competency Progress')));
+test('competencies derive only from submitted results',()=>assert.ok(src.includes('result.skillResults.understood')&&src.includes('result.skillResults.needsPractice')));
+test('responsive normal layout',()=>assert.ok(css.includes('@media(max-width:32rem)')&&!css.includes('position:fixed')));
+test('first-time message exact',()=>assert.ok(src.includes('You have not completed a Learning Check yet.')&&src.includes('Start with your current course topic or choose a quick five-question review.')));
+test('first-time actions exact',()=>['Start My First Check','Choose a Subject','Ask AI to Recommend a Topic'].forEach(x=>assert.ok(src.includes(x),x)));
+test('empty requires no drafts attempts or results',()=>assert.ok(src.includes("if(state.attempts.length||state.results.length)return''")&&src.includes('if(state.draft)')));
+test('loading failure is separate',()=>assert.ok(src.includes("state.loadState==='error'")&&src.includes('Learning Checks could not be loaded.')&&src.includes('data-learning-check-retry')));
+test('loading state does not render empty history sections',()=>assert.ok(src.includes("state.loadState!=='ready'")));
+test('legacy duplicate introduction is hidden only on the overview',()=>assert.ok(src.includes('learning-check-legacy-intro')&&css.includes('.learning-check-legacy-intro{display:none}')));
+if(!process.exitCode)console.log(`learning-check-history: ${passed}/${passed} assertions passed`);

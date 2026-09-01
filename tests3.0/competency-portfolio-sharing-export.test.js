@@ -1,0 +1,47 @@
+'use strict';
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const root=path.join(__dirname,'..');
+const source=fs.readFileSync(path.join(root,'competency-portfolio-runtime.js'),'utf8');
+const script=fs.readFileSync(path.join(root,'script.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'competency-portfolio-runtime.css'),'utf8');
+
+for(const label of ['Create Portfolio Report','Printable Portfolio','PDF Portfolio','Teacher Review Summary','Parent-Friendly Summary','Shareable View'])assert.ok(source.includes(label),`Missing report option: ${label}`);
+for(const detail of ['Student-selected introduction','Competencies','Evidence','Reflections','Verification status','Progress summary','Creation date'])assert.ok(source.includes(detail),`Missing report detail: ${detail}`);
+assert.match(script,/portfolioReportBuilder:'\/progress\/portfolio\/report'/,'Report Builder must use the canonical child route');
+assert.match(script,/portfolioReportBuilder:'competencyPortfolio'/,'Report Builder Back action must fall back to the Portfolio');
+assert.match(source,/Nothing happens automatically/,'Builder must explain that report actions are intentional');
+assert.match(source,/Private AI chats, personal information, and reviewer-only notes are not available here/,'Private sources must be excluded from normal report selection');
+assert.match(css,/@media\(max-width:42rem\).*portfolio-report-type-grid.*grid-template-columns:1fr/,'Report controls must reflow on narrow screens');
+
+global.AILiteracyCompetencyProgress=require('../ai-literacy-competency-progress.js');
+const api=require('../competency-portfolio-runtime.js');
+const student={userId:'report-student',tenantId:'report-school',role:'STUDENT'};
+const other={userId:'other-student',tenantId:'report-school',role:'STUDENT'};
+const draft=api.savePortfolioEvidenceDraft({evidenceType:'WRITTEN_REFLECTION',title:'My source reflection',competencyId:'human-agency',courseOrSubject:'English',description:'A student-created reflection.',reflectionMethod:'WRITTEN_REFLECTION',reflectionResponses:{'What did you learn?':'I learned to compare the evidence behind a claim.'},sharingPreference:'ONLY_ME'},student).draft;
+const evidenceId=`draft:${draft.id}`;
+const base={reportType:'PDF_PORTFOLIO',title:'My selected report',introduction:'These are the examples I selected.',selectedSectionIds:['UNDERSTAND'],selectedEvidenceIds:[evidenceId],includedFields:['INTRODUCTION','COMPETENCIES','EVIDENCE','REFLECTIONS','VERIFICATION_STATUS','PROGRESS_SUMMARY','CREATION_DATE']};
+assert.throws(()=>api.createPortfolioReportDraft({...base,idempotencyKey:'report-without-review'},student),error=>error.code==='DRAFT_PRIVACY_REVIEW_REQUIRED','Draft evidence must require an explicit privacy review');
+assert.throws(()=>api.createPortfolioReportDraft({...base,idempotencyKey:'report-private-chat',includeDraftEvidence:true,privacyReviewConfirmed:true,includePrivateAIChats:true},student),error=>error.code==='PRIVATE_REPORT_CONTENT_BLOCKED','Private AI chats must not enter the standard report workflow');
+const saved=api.createPortfolioReportDraft({...base,idempotencyKey:'report-save',includeDraftEvidence:true,privacyReviewConfirmed:true},student);
+assert.strictEqual(saved.private,true);
+assert.strictEqual(saved.shared,false);
+assert.strictEqual(saved.exported,false);
+assert.strictEqual(saved.reportDraft.evidenceSnapshots.length,1);
+assert.strictEqual(saved.reportDraft.evidenceSnapshots[0].privateAIChat,null);
+assert.strictEqual(saved.reportDraft.evidenceSnapshots[0].privateReviewerNotes,null);
+assert.strictEqual(saved.reportDraft.evidenceSnapshots[0].personalInformation,null);
+assert.throws(()=>api.finalizePortfolioReport({idempotencyKey:'report-final-too-soon',reportDraftId:saved.reportDraft.id,confirmCreate:true},student),error=>error.code==='REPORT_PREVIEW_CONFIRMATION_REQUIRED','Final creation must require an exact preview');
+const preview=api.previewPortfolioReport({reportDraftId:saved.reportDraft.id},student);
+assert.strictEqual(preview.exactSelection,true);
+assert.strictEqual(preview.shared,false);
+assert.strictEqual(preview.exported,false);
+assert.throws(()=>api.previewPortfolioReport({reportDraftId:saved.reportDraft.id},other),error=>error.code==='OWNERSHIP_REQUIRED','Another student must not open the report draft');
+const final=api.finalizePortfolioReport({idempotencyKey:'report-final',reportDraftId:saved.reportDraft.id,confirmCreate:true},student);
+assert.strictEqual(final.report.immutable,true);
+assert.strictEqual(final.report.status,'CREATED_PRIVATE');
+for(const key of ['shared','exported','published','sent','downloadStarted','printStarted','shareLinkCreated'])assert.strictEqual(final[key],false,`${key} must remain false after private report creation`);
+assert.deepStrictEqual(api.getPortfolioReportDrafts(other),[],'Report drafts must remain student-owned');
+
+console.log('competency portfolio sharing and export tests passed');
