@@ -1,0 +1,34 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const root=path.join(__dirname,'..'),js=fs.readFileSync(path.join(root,'competency-progress-experience.js'),'utf8'),css=fs.readFileSync(path.join(root,'competency-progress-experience.css'),'utf8'),script=fs.readFileSync(path.join(root,'script.js'),'utf8'),html=fs.readFileSync(path.join(root,'index (2).html'),'utf8');let passed=0;
+function test(name,fn){try{fn();passed++}catch(e){console.error(`FAIL: ${name}\n${e.stack}`);process.exitCode=1}}
+function has(x){return js.includes(x)}
+test('released registry',()=>assert.ok(script.includes("aiCompetencyProgress:{role:'student',title:'Competency Progress'")));
+test('view name',()=>assert.ok(script.includes("viewNames.aiCompetencyProgress=['LEARN','Competency Progress']")));
+test('canonical route',()=>assert.ok(script.includes("aiCompetencyProgress:'/learn/competency-progress'")));
+for(const route of ['/competency-progress','/learn/progress','/competencies'])test(`alias ${route}`,()=>assert.ok(script.includes(`'${route}':'aiCompetencyProgress'`)));
+test('independent mount',()=>assert.ok(has("d.getElementById('viewContainer')")&&has("view.id='aiCompetencyProgressView'")));
+test('exact header',()=>assert.ok(has('>Competency Progress</h1>')&&has('See what you understand, what you are currently practising, and what skill you should work on next.')));
+for(const action of ['Continue Learning','Take a Learning Check','View Competency Portfolio'])test(`header action ${action}`,()=>assert.ok(has(action)));
+for(const card of ['Competencies Demonstrated','Currently Practising','Needs Review','Teacher Verified'])test(`summary ${card}`,()=>assert.ok(has(card)));
+for(const area of ['UNDERSTAND','APPLY','CREATE'])test(`area ${area}`,()=>assert.ok(has(area)));
+for(const name of ['Human agency','AI ethics','AI foundations','Problem scoping','Human accountability','Safe and responsible AI use','Prompt and application skills','AI workflow design','Citizenship in the age of AI','Ethics by design','Creating AI tools','Iteration and feedback'])test(`competency ${name}`,()=>assert.ok(has(name)));
+for(const status of ['Not Started','Exploring','Practising','Demonstrated','Applied Independently','Teacher Verified','Needs Review'])test(`status ${status}`,()=>assert.ok(has(status)));
+for(const label of ['milestones completed','View Evidence','Recommended for You','Estimated time','Expected milestone','Save for later'])test(`learning content ${label}`,()=>assert.ok(has(label)));
+for(const view of ['Card View','Compact List','Progress Path','Accessible List View'])test(`view ${view}`,()=>assert.ok(has(view)));
+for(const filter of ['Search Competencies','Subject','Course','Teacher Verified','Needs Review','Recently Updated','Sort by Recommended','Sort by Most Progress','Sort by Least Progress','Sort Alphabetically'])test(`filter ${filter}`,()=>assert.ok(has(filter)));
+for(const evidence of ['Add to Competency Portfolio','Import Evidence','Submit for Teacher Review','authorized teacher'])test(`evidence boundary ${evidence}`,()=>assert.ok(has(evidence)));
+test('recent progress',()=>assert.ok(has('Recent Progress')&&has('does not use punitive streaks')));
+test('exact empty state',()=>assert.ok(has('Your competency journey is ready to begin.')&&has('Take My First Learning Check')&&has('Import Existing Work')));
+test('exact error state',()=>assert.ok(has('We could not load your Competency Progress. Your saved learning records have not been deleted.')&&has('Try Again')&&has('Return to Learn')&&has('Open Progress Tracker')));
+test('real model connection',()=>assert.ok(has('getAILiteracyCompetencyProgressMap(actor())')));
+test('meaningful evidence message',()=>assert.ok(has('Counts use accepted learning evidence, not page visits.')));
+test('asset loading',()=>assert.ok(html.includes('competency-progress-experience.js?v=competency-progress-complete-20260828')&&html.includes('competency-progress-experience.css?v=competency-progress-complete-20260828')));
+test('responsive',()=>assert.ok(css.includes('@media(max-width:600px)')&&css.includes('@media(max-width:320px)')));
+test('focus',()=>assert.ok(css.includes(':focus-visible')));
+test('reduced motion',()=>assert.ok(css.includes('prefers-reduced-motion')));
+test('forced colors',()=>assert.ok(css.includes('forced-colors')));
+test('rtl',()=>assert.ok(css.includes('[dir=rtl]')));
+test('low bandwidth',()=>assert.ok(css.includes('.low-bandwidth')));
+test('print',()=>assert.ok(css.includes('@media print')));
+if(!process.exitCode)console.log(`competency-progress-page: ${passed}/${passed} assertions passed`);
