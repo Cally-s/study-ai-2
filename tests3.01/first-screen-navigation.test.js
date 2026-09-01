@@ -1,0 +1,36 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const src=fs.readFileSync(path.join(__dirname,'..','first-screen-navigation.js'),'utf8');
+const css=fs.readFileSync(path.join(__dirname,'..','first-screen-navigation.css'),'utf8');
+const html=fs.readFileSync(path.join(__dirname,'..','index (2).html'),'utf8');
+let passed=0;
+function test(name,fn){try{fn();passed++}catch(error){console.error(`FAIL: ${name}\n${error.stack}`);process.exitCode=1}}
+test('runtime and stylesheet load',()=>assert.ok(html.includes('first-screen-navigation.js')&&html.includes('first-screen-navigation.css')));
+test('student major pages configured',()=>['dashboard','coach','aiLiteracy','planner','communityAIProject','progress','settings','instructions'].forEach(x=>assert.ok(src.includes(`${x}:`))));
+test('specialist student workspaces configured',()=>['promptWithPurpose','answerVerification','claimEvidenceMap','sourceComparison','aiUseReceipt','competencyPortfolio','accessibilityLanguage','privacyData'].forEach(x=>assert.ok(src.includes(`${x}:`))));
+test('Learning Check introduction exact',()=>assert.ok(src.includes("title:'Learning Check'")&&src.includes('Complete a short check to find out what you understand, what needs more practice, and what you should study next.')));
+test('Learning Check start delegates to existing control',()=>assert.ok(src.includes("deferredPrimary:'[data-diag-start]'")&&src.includes('data-first-screen-click')));
+test('Learning Check route invokes the assessment controller',()=>assert.ok(src.includes("view==='aiDiagnostic'&&root.AILiteracyDiagnostic?.showDiagnostic")));
+test('Community AI Project title keeps acronym intact',()=>{
+  assert.ok(src.includes("communityAIProject:{hub:true,title:'Community AI Project'"));
+  assert.ok(src.includes("primaryLabel:'Continue Project'"));
+  assert.ok(!/Community A(?:\s|\u00a0)+I Project/.test(src));
+});
+test('teacher and family entry pages configured',()=>['roleDashboards','resourceStudio','peerTutoring'].forEach(x=>assert.ok(src.includes(`${x}:`))));
+test('every app view enhanced',()=>assert.ok(src.includes("querySelectorAll('.app-view')")));
+test('dynamic views enhanced',()=>assert.ok(src.includes('MutationObserver')));
+test('primary action shortcut',()=>assert.ok(src.includes('first-screen-primary')&&src.includes('data-first-screen-target')));
+test('secondary route shortcuts',()=>assert.ok(src.includes('data-first-screen-view')));
+test('hash preview route fallback stays navigable',()=>assert.ok(src.includes('shouldUseHashViewRoutes')&&src.includes('root.location.href=href')));
+test('feature priorities are explicit',()=>['PRIMARY','SECONDARY','ADVANCED','INTERNAL'].forEach(x=>assert.ok(src.includes(x))));
+test('advanced feature pages disclosed',()=>assert.ok(src.includes('<summary>More pages</summary>')));
+test('advanced page sections collapse',()=>assert.ok(src.includes('discloseAdvanced')&&css.includes('.first-screen-advanced')));
+test('repeated page introductions reduced',()=>assert.ok(css.includes('.first-screen-original-intro>div:first-child{display:none}')));
+test('internal labels excluded',()=>assert.ok(src.includes('feature flag')&&src.includes('raw session')&&src.includes('connection diagnostic')));
+test('Community project pathway is not hidden as internal prototype text',()=>assert.ok(src.includes("heading.closest('.community-project-shell')")));
+test('mobile compact layout',()=>assert.ok(css.includes('@media(max-width:42rem)')));
+test('320 CSS pixel layout',()=>assert.ok(css.includes('@media(max-width:20rem)')));
+test('forced colour support',()=>assert.ok(css.includes('forced-colors')));
+test('reduced motion support',()=>assert.ok(css.includes('prefers-reduced-motion')));
+test('no fixed navigation',()=>assert.strictEqual(css.includes('position:fixed'),false));
+if(!process.exitCode)console.log(`first-screen-navigation: ${passed}/${passed} assertions passed`);
