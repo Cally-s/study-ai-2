@@ -1,0 +1,117 @@
+{
+  "activityTemplates": {
+    "knowledge-understanding": [
+      {
+        "type": "active-recall",
+        "label": "Review {topic} using active recall",
+        "minimumMinutes": 20,
+        "maximumMinutes": 45
+      },
+      {
+        "type": "flashcards",
+        "label": "Create and answer flashcards for {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      },
+      {
+        "type": "knowledge-quiz",
+        "label": "Complete a short knowledge quiz on {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      }
+    ],
+    "thinking": [
+      {
+        "type": "multi-step-practice",
+        "label": "Complete multi-step practice for {topic}",
+        "minimumMinutes": 25,
+        "maximumMinutes": 60
+      },
+      {
+        "type": "error-analysis",
+        "label": "Analyze reasoning mistakes in {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      },
+      {
+        "type": "compare-methods",
+        "label": "Compare solution methods for {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      }
+    ],
+    "communication": [
+      {
+        "type": "written-explanation",
+        "label": "Write complete explanations for {topic}",
+        "minimumMinutes": 20,
+        "maximumMinutes": 45
+      },
+      {
+        "type": "explain-aloud",
+        "label": "Explain {topic} aloud using correct vocabulary",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      },
+      {
+        "type": "feedback-review",
+        "label": "Review teacher feedback connected to {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      }
+    ],
+    "application": [
+      {
+        "type": "practice-questions",
+        "label": "Complete focused application questions for {topic}",
+        "minimumMinutes": 25,
+        "maximumMinutes": 60
+      },
+      {
+        "type": "review-mistakes",
+        "label": "Review incorrect answers from {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      },
+      {
+        "type": "timed-practice",
+        "label": "Complete one timed practice set for {topic}",
+        "minimumMinutes": 20,
+        "maximumMinutes": 45
+      }
+    ],
+    "general": [
+      {
+        "type": "brief-review",
+        "label": "Review key examples for {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      },
+      {
+        "type": "focused-practice",
+        "label": "Complete focused practice questions for {topic}",
+        "minimumMinutes": 20,
+        "maximumMinutes": 45
+      },
+      {
+        "type": "review-mistakes",
+        "label": "Correct mistakes from {topic}",
+        "minimumMinutes": 15,
+        "maximumMinutes": 30
+      }
+    ]
+  },
+  "defaultTaskOrder": [
+    "brief-review",
+    "focused-practice",
+    "review-mistakes",
+    "timed-check",
+    "final-recall"
+  ],
+  "minimumTaskMinutes": 15,
+  "maximumTaskMinutes": 60,
+  "minimumSessionMinutes": 15,
+  "maximumSessionMinutes": 120,
+  "passiveReviewMaximumShare": 0.25,
+  "rulesVersion": 1
+}

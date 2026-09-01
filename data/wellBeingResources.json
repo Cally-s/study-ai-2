@@ -1,0 +1,74 @@
+{
+  "resources": [
+    {
+      "id": "five-minute-reset",
+      "title": "Five-Minute Reset",
+      "category": "Breaks",
+      "summary": "Use a short pause to reset before the next study task.",
+      "steps": [
+        "Step away from the screen or notebook.",
+        "Take several slow breaths.",
+        "Drink water or stretch gently.",
+        "Choose one small task before returning."
+      ],
+      "contentType": "internal",
+      "prototypeOnly": true
+    },
+    {
+      "id": "reduce-task-list",
+      "title": "How to Reduce Today's Task List",
+      "category": "Planning",
+      "summary": "Review the plan and move, split, or lower the priority of one task.",
+      "steps": [
+        "List only the tasks scheduled for today.",
+        "Choose the most important task to keep.",
+        "Move one lower-priority task to tomorrow or another date.",
+        "Split one large task into two smaller steps."
+      ],
+      "contentType": "internal",
+      "prototypeOnly": true
+    },
+    {
+      "id": "lighter-review-day",
+      "title": "Planning a Lighter Review Day",
+      "category": "Planning",
+      "summary": "Create a lighter day that still keeps the study habit moving.",
+      "steps": [
+        "Choose one topic that needs maintenance review.",
+        "Use a shorter review block.",
+        "Correct a few mistakes instead of starting a large new set.",
+        "End with a brief summary."
+      ],
+      "contentType": "internal",
+      "prototypeOnly": true
+    },
+    {
+      "id": "trusted-adult-talk",
+      "title": "Preparing to Talk With a Trusted Adult",
+      "category": "Support",
+      "summary": "Prepare a simple message before asking someone for help.",
+      "steps": [
+        "Write what feels difficult right now.",
+        "Name one kind of help you want.",
+        "Ask for a short time to talk.",
+        "Share only the information you choose."
+      ],
+      "contentType": "internal",
+      "prototypeOnly": true
+    },
+    {
+      "id": "counsellor-questions",
+      "title": "Questions to Ask a School Counsellor",
+      "category": "Support",
+      "summary": "Use these prompts when planning a conversation with a school counsellor.",
+      "steps": [
+        "Ask how to review your workload.",
+        "Ask what school supports may be available.",
+        "Ask how to plan around upcoming deadlines.",
+        "Ask how to talk with a teacher if you need help."
+      ],
+      "contentType": "internal",
+      "prototypeOnly": true
+    }
+  ]
+}

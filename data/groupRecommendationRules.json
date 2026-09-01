@@ -1,0 +1,30 @@
+{
+  "defaultSessionMinutes": 60,
+  "minimumSessionMinutes": 30,
+  "maximumSessionMinutes": 120,
+  "topicExplanationMinutes": 10,
+  "groupReviewMinutes": 8,
+  "practiceQuestionMinutes": 15,
+  "mistakeReviewMinutes": 10,
+  "finalQuizMinutes": 5,
+  "openingMinutes": 3,
+  "closingMinutes": 4,
+  "practiceQuestionCounts": {
+    "30": 8,
+    "45": 12,
+    "60": 15,
+    "75": 20,
+    "90": 25,
+    "120": 30
+  },
+  "finalQuizQuestionCounts": {
+    "30": 3,
+    "45": 4,
+    "60": 5,
+    "75": 6,
+    "90": 8,
+    "120": 10
+  },
+  "maximumMemberLedTopics": 4,
+  "maximumDisplayedSteps": 10
+}
