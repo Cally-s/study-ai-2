@@ -1,0 +1,7 @@
+# Response Card Next Step
+
+> **Step 47 integration:** Version 4 learning cards place AI Use Note before the final Your Next Thinking Step section and end with one target-specific Thinking Question. Applicability, mode, ladder, policy, checkpoint, source, confidence, assumption, and verification state remain controlling. Generic/repeated/leading/sensitive/answer-leaking questions are blocked; active quiz/action/safety/policy exceptions avoid duplicate or unsafe questions; the runtime waits and supports answer, hint, explanation, simpler wording, choices, skip, pause, and human help without scoring, profiling, surveillance, or automatic checkpoint completion.
+
+> **Step 46 integration:** Version 3 cards use the exact What to Verify label and concrete prioritized items with a target, method/location, completion criterion, reason, result, action status, outcome, and provenance. Student-marked completion is separate from trusted confirmation. Evidence, inability, human review, reopening, corrections, assumptions, confidence, sources, checkpoints, and next steps preserve immutable history, policy restrictions, privacy, accessibility, and no-answer-leak/no-discipline safeguards.
+
+The card normally returns one manageable action to the student, aligned with mode, policy, ladder, checkpoint, and final-answer limits. Guiding Questions contains exactly one semantic question across the card and waits for the student. Human or teacher support is available when the next step cannot be completed safely or independently.

@@ -1,0 +1,14 @@
+# Response Card Corrections
+
+> **Step 48 structured-response contract:** This feature now feeds or consumes the strict server-owned AIResponseRecord. Model drafts and partial output are never displayed; trusted context, policy, sources, confidence, withholding, privacy, and version state are validated before the Version 4 card and accessible alternate renderers are created. Published records remain immutable and student actions create separate events or new versions.
+
+
+> **Step 46 integration:** Version 3 cards use the exact What to Verify label and concrete prioritized items with a target, method/location, completion criterion, reason, result, action status, outcome, and provenance. Student-marked completion is separate from trusted confirmation. Evidence, inability, human review, reopening, corrections, assumptions, confidence, sources, checkpoints, and next steps preserve immutable history, policy restrictions, privacy, accessibility, and no-answer-leak/no-discipline safeguards.
+
+> **Step 45 integration:** The Assumptions section displays only material working conditions, separates facts/policy/interpretations/preferences/missing evidence, and uses the exact correction controls. Corrections and context create versions and dependency previews; only an intentional Recalculate the answer action can request a new immutable card after policy, source, confidence, checkpoint, and tool re-resolution. Assumptions cannot grant permission, create evidence, expose hidden reasoning, infer sensitive traits, or leak a prohibited answer.
+
+> **Step 44 integration:** New substantive cards use only High, Medium, Low, Insufficient Evidence, or Not Applicable, resolved by trusted claim-level evidence logic. Every Confidence and Reason section retains the exact non-guarantee disclaimer. Direct reasoning may support High; missing evidence is never False; differing support uses claim-level labels, not Mixed; numerical confidence, student scoring, model-selected labels, and final-answer or chain-of-thought leakage are prohibited.
+
+> **Step 43 integration:** Source applicability is resolved claim by claim. Current, historical, scientific, statistical, policy, research, quotation, authority, and document claims use trusted evidence when required; direct reasoning and supplied material avoid decorative citations. Exact support, currentness, access, policy, limitations, confidence, verification, corrections, and Step 42 rendering remain validated, with exact no-source/unverified fallbacks and no invented metadata.
+
+Published originals remain immutable. Corrections create a new version linked to the original with a visible notice. Source updates and confidence changes explain what changed; policy changes never rewrite history. Students can inspect both versions within authorized privacy boundaries.
