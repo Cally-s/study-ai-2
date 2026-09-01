@@ -1,0 +1,8 @@
+# Academic Vocabulary Test Results
+
+Date: 2026-08-10. Dedicated suite: 101/101 PASS. Manual status: PENDING.
+
+Automated coverage includes load order, source/review inventories, Unicode/punctuation/hyphen/apostrophe normalization, multi-word retention, formula/URL/course-code/code/long-fragment classification, exact/alias/phrase/subject resolution, two Function senses and explicit disambiguation, unknown/authorization/assessment/hidden-answer failure, all required Hypothesis fields, approved Chinese translation, English preservation, pronunciation/relations/misconception/source/version fields, missing translation fallback, optional snapshot save, duplicate idempotency, private serializers, search/filter/remove, five formative activity types, unsupported/empty requests, explicit lookup/selection behavior, unchanged source, card semantics/Escape/focus, explicit save/TTS/no autoplay, no voice or consequential scoring, honest capabilities, narrow/forced-colour/target/safe-area/wrap/print CSS and synthetic fixtures.
+
+Tested languages: English and approved Simplified Chinese Hypothesis/Chemical energy entries. Tested ambiguous senses: Function in Mathematics and Computer Science. Not run: touch long press, browser selection interoperability, real screen readers, full keyboard journey, 200%/400% zoom, high-contrast themes, RTL card content, real TTS voice accuracy, microphone/STT pronunciation journey, transcript/browser integration, durable private storage, exports, interactive activity players, corrections, human review, browser E2E, accessibility scan/lint, formatter, typecheck, build, migrations or deployment.
+
