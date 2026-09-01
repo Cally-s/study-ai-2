@@ -1,0 +1,3 @@
+# Teach-Back Privacy
+
+Checks, drafts, attempts, feedback, and response artifacts are private by default and are not automatically visible to teachers, tutors, parents, administrators, or peers. Safety interrupts the check and is excluded from academic records; accessibility settings and raw audio are excluded. Events contain references rather than full responses/criteria/traces. No grades, permanent mastery/ability/originality/honesty/dependence labels, surveillance, speed/length/keystroke/grammar proxies, or misconduct analytics are created. Retention, deletion, sharing, and receipt inclusion remain student/policy controlled.

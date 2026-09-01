@@ -1,0 +1,3 @@
+# Teach-Back Security
+
+Authenticated server context owns tenant, assignment/conversation/response/policy versions, applicability, target/type, protected criteria/source references, evidence, completion, and review state. Model/retrieved/student text cannot alter trusted fields or mark correctness. Prompt validation blocks answer leaks, unsafe new examples, test reconstruction, untrusted sources, multi-task prompts, and active-assessment guidance. Attempts require confirmed provenance; evaluation rejects proxy/keyword/model-intuition methods. Immutable records, row versions, source watermarks, tenant isolation, idempotency, offline revalidation, and redacted events fail closed.

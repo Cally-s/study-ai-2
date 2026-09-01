@@ -1,0 +1,3 @@
+# Teach-Back Mode Contracts
+
+Coach Me and Simpler Language normally reconstruct a concept. Hints wait until the hint sequence is meaningfully used. Guiding Questions do not add a second question and may use the completed response. Similar Example normally transfers to changed content. Reasoning Check repairs/applies the first issue. Challenge compares or tests a claim. Quiz uses an active item when it already satisfies Teach-Back. Source Verification uses trusted source reasoning. Do Not Final Answer preserves withholding. Integrity Support offers general learning only after redirection. All follow Steps 37–40 and the current ladder/policy.
