@@ -1,0 +1,53 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const Coach=require('../prompt-writing-coach.js');
+const source=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+
+for(const heading of ['Recent Prompts','Saved Prompts','Favourite Prompts']) assert.match(source,new RegExp(`>${heading}<`),`overview includes ${heading}`);
+for(const field of ['Prompt title','Learning mode','Date','Last used']) assert.match(source,new RegExp(field,'i'),`recent prompts show ${field}`);
+for(const action of ['Use Again','Edit','Rename','Duplicate','Delete','Mark as favourite']) assert.match(source,new RegExp(action),`saved prompts support ${action}`);
+assert.match(source,/Save a prompt from the Guided Prompt Builder/,'Saved Prompts explains how to save');
+assert.match(source,/No recently used prompts yet\./,'real empty state replaces fake recent data');
+assert.match(source,/No saved prompts yet\./,'real empty state replaces fake saved data');
+assert.match(source,/Saving creates a new private version\./,'editing preserves version history');
+assert.match(source,/deletedAt = new Date\(\)\.toISOString\(\)/,'delete is implemented as a recoverable soft deletion');
+assert.match(source,/markPromptDraftUsed/,'Use Again records real last-used activity');
+
+const actor={userId:'history-student',tenantId:'history-school',role:'student'};
+const other={userId:'other-student',tenantId:'history-school',role:'student'};
+const session=Coach.createPromptCoachSession({idempotencyKey:'history-session',fictionalTask:false},actor).session;
+const base={promptCoachSessionId:session.id,goal:'Help me practise factoring quadratics.',context:'Grade 10 Mathematics',currentUnderstanding:'I can find two factors of a constant.',confusionOrGap:'I am unsure how the middle term works.',constraints:['Do not give the final answer.'],helpMode:'GUIDING_QUESTIONS',selectedLearningMode:'GUIDING_QUESTIONS',learningModeInstruction:'Ask me one guiding question at a time.',desiredFormats:['ONE_STEP_AT_A_TIME'],academicTermsToPreserve:[],sourceRequirements:['NO_EXTERNAL_SOURCE_NEEDED'],verificationRequirements:['CHECK_AGAINST_COURSE_NOTES'],privacyStatus:'NO_OBVIOUS_SENSITIVE_INFORMATION_DETECTED',policyState:'AI_ALLOWED_FOR_LIMITED_TASKS',studentAttemptRule:'WAIT_FOR_STUDENT_RESPONSE',academicWorkType:'HOMEWORK',aiAssistancePermission:'HINTS_OR_QUESTIONS_ONLY',academicIntegrityStatus:'READY',assignmentPolicyRevalidated:true,successCriteria:'I can factor a similar expression.'};
+const draft=Coach.createPromptDraftVersion({idempotencyKey:'history-draft',...base,title:'Factoring Help Prompt',subject:'Grade 10 Mathematics'},actor).draft;
+assert.equal(draft.title,'Factoring Help Prompt');
+assert.equal(draft.subject,'Grade 10 Mathematics');
+assert.equal(draft.favourite,false);
+assert.equal(draft.lastUsedAt,null);
+assert.ok(draft.createdAt);
+assert.equal(Coach.listPromptDraftHistory(actor).length,1);
+assert.equal(Coach.listPromptDraftHistory(other).length,0,'another student cannot list the prompt');
+assert.throws(()=>Coach.renamePromptDraft({promptDraftVersionId:draft.id,title:'Stolen'},other),error=>error.code==='OWNERSHIP_DENIED');
+
+const renamed=Coach.renamePromptDraft({promptDraftVersionId:draft.id,title:'Factoring Practice Guide'},actor);
+assert.equal(renamed.title,'Factoring Practice Guide');
+assert.equal(Coach.setPromptDraftFavourite({promptDraftVersionId:draft.id,favourite:true},actor).favourite,true);
+assert.ok(Coach.markPromptDraftUsed({promptDraftVersionId:draft.id},actor).lastUsedAt);
+const duplicate=Coach.duplicatePromptDraft({promptDraftVersionId:draft.id,idempotencyKey:'history-duplicate'},actor);
+assert.equal(duplicate.title,'Factoring Practice Guide Copy');
+assert.notEqual(duplicate.promptCoachSessionId,draft.promptCoachSessionId,'duplicate is a separate private prompt');
+assert.equal(duplicate.favourite,false);
+assert.equal(Coach.listPromptDraftHistory(actor).length,2);
+const deleted=Coach.deletePromptDraft({promptDraftVersionId:duplicate.id},actor);
+assert.deepEqual({deleted:deleted.deleted,recoverable:deleted.recoverable},{deleted:true,recoverable:true});
+assert.equal(Coach.listPromptDraftHistory(actor).length,1,'soft-deleted prompt is absent from student lists');
+
+assert.match(source,/promptCoachSessionId = draft\.promptCoachSessionId/,'Edit reuses the session so Save creates the next version');
+assert.match(source,/root\.showView\?\.\('promptBuilder'\)/,'Use Again opens the Guided Prompt Builder');
+assert.doesNotMatch(source,/function useSavedPrompt[\s\S]{0,1200}composer\.(?:submit|click)\(/,'Use Again never sends automatically');
+assert.match(css,/\.recent-prompt-row/,'Recent Prompts has a structured responsive row');
+assert.match(css,/\.saved-prompts-grid/,'Saved Prompts has a responsive grid');
+assert.match(css,/@media\(max-width:58rem\)[\s\S]*?\.saved-prompts-grid\{grid-template-columns:1fr/,'saved cards stack at narrow widths');
+console.log('Prompt Coach history and saved prompt tests passed');

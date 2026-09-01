@@ -1,0 +1,46 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const Coach=require('../prompt-writing-coach.js');
+const source=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+const router=fs.readFileSync(path.join(root,'script.js'),'utf8');
+const navigation=fs.readFileSync(path.join(root,'first-screen-navigation.js'),'utf8');
+
+assert.deepEqual(Coach._test.promptTemplateCategories,['Learning','Reasoning','Research','Writing','Test Preparation','Coding','Source Verification'],'library contains every required category');
+assert.equal(Coach._test.promptTemplateLibrary.length,12,'library has a useful set of twelve templates');
+for(const category of Coach._test.promptTemplateCategories) assert.ok(Coach._test.promptTemplateLibrary.some(template=>template.category===category),`${category} has templates`);
+assert.ok(Coach._test.promptTemplateLibrary.every(template=>template.automaticallySent===false),'templates never auto-send');
+assert.ok(Coach._test.promptTemplateLibrary.every(template=>Coach._test.starterTemplates.some(starter=>starter.id===template.starterTemplateId)),'every library template maps to an editable Guided Prompt Builder template');
+
+assert.match(router,/promptTemplates:'\/ai-coach\/prompt-coach\/templates'/,'library uses the canonical route');
+assert.match(router,/promptTemplates:'promptWithPurpose'/,'Back falls safely to Prompt Coach');
+assert.match(navigation,/promptTemplates:\{title:'Prompt Templates',description:'Find a starting prompt for learning, reasoning, research, writing, or test preparation\. Every template can be reviewed and changed before use\.'/,'shared header uses the exact title and description');
+assert.match(source,/id="promptTemplatesView"/,'library is a dedicated child page');
+assert.match(source,/>Browse Prompt Templates</,'Prompt Coach includes the required entry title');
+assert.match(source,/Explore prompts for explanations, reasoning, research, writing feedback, and test preparation\./,'entry uses the exact description');
+assert.match(source,/>Browse Templates</,'entry uses the exact action');
+assert.match(source,/for="prompt-template-search">Search Prompt Templates</,'search has the required visible label');
+assert.match(source,/placeholder="Search by goal, subject, skill, or type of help"/,'search uses the exact placeholder');
+assert.match(source,/data-template-category/,'category filters are interactive');
+assert.match(source,/aria-pressed="\$\{state\.category === category\}"/,'filters expose selected state');
+assert.match(source,/data-template-preview/,'templates can be previewed');
+assert.match(source,/data-template-select/,'templates can be selected');
+assert.match(source,/openGuidedPromptBuilder\(template\.starterTemplateId\)/,'selection fills the existing Guided Prompt Builder');
+assert.match(source,/Edit every field, then review and save your customized version/,'selected templates remain editable and saveable');
+assert.doesNotMatch(source,/Prompt Quality:\s*\d+%|template leaderboard|student ranking/i,'library has no score, ranking, or leaderboard');
+assert.doesNotMatch(source,/data-template-select[\s\S]{0,300}sendApprovedPromptDraft/,'selection does not send a prompt');
+
+assert.equal(Coach._test.filteredPromptTemplates({query:'active recall',category:'All'}).length,1,'search indexes template skills');
+assert.ok(Coach._test.filteredPromptTemplates({query:'source',category:'Research'}).every(template=>template.category==='Research'),'search and category filters combine');
+assert.equal(Coach._test.filteredPromptTemplates({query:'writing feedback',category:'Writing'})[0].title,'Writing Feedback');
+assert.equal(Coach._test.filteredPromptTemplates({query:'debug',category:'Coding'})[0].title,'Debug My Code');
+assert.equal(Coach._test.filteredPromptTemplates({query:'evidence',category:'Source Verification'})[0].title,'Verify Evidence and Claims');
+assert.equal(Coach._test.filteredPromptTemplates({query:'not-a-template',category:'All'}).length,0,'empty searches return no fake fallback');
+assert.match(Coach._test.promptLibraryPreview(Coach._test.promptTemplateLibrary[0]),/learn|understand|Explain/i,'preview shows real starting content');
+assert.match(css,/\.prompt-library-grid\{display:grid;grid-template-columns:repeat\(2/,'first template row uses a responsive card grid');
+assert.match(css,/@media\(max-width:48rem\)[\s\S]*?\.prompt-library-grid\{grid-template-columns:1fr/,'cards stack on narrow screens');
+assert.doesNotMatch(css,/\.prompt-templates-shell[^}]*position:(?:fixed|absolute)/,'library is not a floating or full-screen overlay');
+console.log('Prompt Coach template library tests passed');

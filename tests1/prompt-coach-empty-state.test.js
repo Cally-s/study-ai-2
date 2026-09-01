@@ -1,0 +1,25 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const source=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+
+assert.match(source,/>You have not created a prompt yet\.<\/h2>/,'empty state uses the exact required heading');
+assert.match(source,/Start with a template or let Prompt Coach guide you through your first prompt\.<\/p>/,'empty state uses the exact required message');
+assert.match(source,/if \(!saved\.length\) \{/,'first-time state is based on real authorized saved data');
+assert.match(source,/saved = latestSavedPromptDrafts\(actor\), recent = saved\.filter/,'empty decision follows owner-scoped prompt loading');
+assert.match(source,/data-first-prompt-create>Create My First Prompt/,'empty state offers the existing guided creation flow');
+assert.match(source,/data-first-prompt-templates>Use a Template/,'empty state offers the real template library');
+assert.match(source,/data-first-prompt-improve>Improve an Existing Prompt/,'empty state offers prompt improvement');
+assert.match(source,/data-first-prompt-learn>Learn How Prompts Work/,'empty state offers prompt education');
+assert.match(source,/openGuidedPromptBuilder\(\)/,'first-prompt action opens the existing builder');
+assert.match(source,/data-first-prompt-templates[^\n]*openPromptTemplateLibrary/,'template action opens the existing library');
+assert.match(source,/data-first-prompt-improve[^\n]*openImprovePrompt/,'improvement action opens the existing workflow');
+assert.match(source,/data-first-prompt-learn[^\n]*openPromptExamples/,'learning action opens the existing examples');
+assert.doesNotMatch(source,/prompt-first-empty-state[\s\S]{0,1000}(?:Factoring Help Prompt|fake|demo prompt)/i,'empty state contains no fake prompt records');
+assert.match(css,/\.prompt-first-empty-state/,'empty state has a complete welcoming panel');
+assert.match(css,/@media\(max-width:36rem\)[\s\S]*?\.prompt-first-empty-state\{grid-template-columns:1fr/,'empty state stacks on mobile');
+assert.match(css,/@media\(forced-colors:active\)[\s\S]*?\.prompt-first-empty-state/,'empty state supports forced colours');
+console.log('Prompt Coach first-time empty state tests passed');
