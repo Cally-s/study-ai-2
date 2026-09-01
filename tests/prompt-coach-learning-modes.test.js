@@ -1,0 +1,57 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const Coach=require('../prompt-writing-coach.js');
+const source=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+
+const labels=['Give Me a Hint','Ask Me Guiding Questions','Explain in Simpler Language','Show Me a Similar Example','Check My Reasoning','Challenge My Answer','Quiz Me','Help Me Verify the Source','Do Not Give Me the Final Answer'];
+assert.deepEqual(Coach._test.guidedLearningModes.map(mode=>mode.label),labels,'selector contains the exact nine learning modes in order');
+assert.equal(Coach._test.guidedLearningModes.length,9);
+assert.ok(Coach._test.guidedLearningModes.every(mode=>mode.instruction && mode.attemptRule),'every mode has a structured instruction and attempt boundary');
+const reasoning=Coach._test.guidedLearningModes.find(mode=>mode.value==='CHECK_REASONING');
+assert.equal(reasoning.instruction,'Review my steps, identify the first incorrect or unclear step, and ask me to revise it. Do not replace my full solution.');
+const noFinal=Coach._test.guidedLearningModes.find(mode=>mode.value==='NO_FINAL_ANSWER');
+assert.equal(noFinal.locked,true,'the required no-final-answer boundary cannot be edited away');
+assert.equal(noFinal.attemptRule,'NEVER_REVEAL_FINAL_ANSWER_IN_THIS_MODE');
+
+const state=Coach._test.newGuidedBuilderState('check-reasoning');
+state.values.goal='Help me review the reasoning in my algebra solution.';
+state.values.understanding='I can isolate variables but I may have changed a sign.';
+state.values.level='Grade 9 Mathematics';
+state.values.avoid='Do not replace my complete solution.';
+state.values.academicWorkType='HOMEWORK';
+state.values.aiAssistancePermission='FEEDBACK_ON_MY_ATTEMPT_ONLY';
+assert.equal(state.values.helpType,'CHECK_REASONING');
+assert.equal(state.values.modeInstruction,reasoning.instruction);
+const input=Coach._test.guidedDraftInput(state);
+assert.equal(input.selectedLearningMode,'CHECK_REASONING','selected mode is included in the structured draft');
+assert.equal(input.learningModeInstruction,reasoning.instruction,'added instruction is included in the structured draft');
+assert.ok(input.constraints.includes(reasoning.instruction),'mode instruction enters prompt generation');
+assert.equal(input.studentAttemptRule,'WAIT_FOR_STUDENT_RESPONSE');
+assert.equal(input.assignmentPolicyRevalidated,true,'draft records policy revalidation');
+assert.match(Coach._test.revalidateLearningModePolicy(state).message,/Assignment AI Policy revalidated/);
+assert.equal(Coach._test.promptQualityChecks(state).find(check=>check.id==='mode').passed,true,'Prompt Check recognizes the selected mode and instruction');
+
+const actor={userId:'learning-mode-student',tenantId:'learning-mode-school',role:'student'};
+const session=Coach.createPromptCoachSession({idempotencyKey:'learning-mode-session',fictionalTask:false},actor).session;
+const draft=Coach.createPromptDraftVersion({idempotencyKey:'learning-mode-draft',promptCoachSessionId:session.id,...input},actor).draft;
+assert.equal(draft.selectedLearningMode,'CHECK_REASONING','private prompt draft saves the selected mode');
+assert.equal(draft.learningModeInstruction,reasoning.instruction,'private prompt draft saves the instruction');
+assert.equal(draft.assignmentPolicyRevalidated,true);
+assert.equal(draft.studentAttemptRule,'WAIT_FOR_STUDENT_RESPONSE');
+assert.equal(draft.automaticallySent,undefined,'saving a learning mode does not send the draft');
+
+assert.match(source,/data-guided-mode-instruction/,'selected mode shows an editable instruction field');
+assert.match(source,/Selected mode:<\/strong>/,'student can see the selected mode');
+assert.match(source,/Added instruction:<\/strong>/,'student can see the added instruction');
+assert.match(source,/mode\.locked/,'instruction editability follows policy protections');
+assert.match(source,/state\.assignmentPolicyValidation = revalidateLearningModePolicy\(state\)/,'mode changes revalidate assignment policy');
+assert.match(source,/updateGuidedLivePreview\(state, target\)/,'mode changes use the live preview and Prompt Check update path');
+assert.match(source,/state\.confirmed = false/,'mode changes revoke previous confirmation');
+assert.doesNotMatch(source,/data-guided-mode-instruction[\s\S]{0,500}sendApprovedPromptDraft/,'selecting a mode never sends a prompt');
+assert.match(css,/\.guided-mode-instruction/,'learning mode instruction has an organized visible panel');
+assert.match(css,/\.guided-learning-mode-summary/,'selected mode remains visible beside the preview');
+console.log('Prompt Coach learning mode tests passed');

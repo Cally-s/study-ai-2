@@ -1,0 +1,11 @@
+const assert=require('assert'),fs=require('fs'),path=require('path'),root=path.resolve(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index (2).html'),'utf8'),source=fs.readFileSync(path.join(root,'sidebar-navigation.js'),'utf8');
+assert.match(html,/id="appNav"[^>]*aria-label="Primary navigation"/);
+const navMarkup=html.match(/<nav id="appNav"[\s\S]*?<\/nav>/)?.[0]||'';
+assert.ok(!navMarkup.includes('My Notes'),'legacy sidebar items must not remain in static navigation');
+for(const label of ['Home','AI Coach','Learn','Assignments','Study Together','Projects','Progress','Settings','Help'])assert.ok(source.includes(`'${label}'`),`missing ${label}`);
+for(const label of ['MVP Stages','Current Session','Connection Status','Feature Flags','Development Status'])assert.ok(!source.includes(`'${label}'`),`internal item exposed: ${label}`);
+assert.match(source,/allowedRoles/);assert.match(source,/requiredPermissions/);assert.match(source,/featureFlag/);assert.match(source,/parentId/);assert.match(source,/ready/);
+const studentDefinitions=[...source.matchAll(/item\('student-/g)];assert.strictEqual(studentDefinitions.length,7,'student navigation must have exactly seven primary definitions including Study Together');
+assert.match(source,/student-study-together','Study Together','studyTogether',navIconSVG\('usersRound'\)/,'Study Together must use an icon, not a plain letter');
+console.log('sidebar-navigation tests passed');
