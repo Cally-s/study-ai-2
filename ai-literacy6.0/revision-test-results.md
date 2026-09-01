@@ -1,0 +1,3 @@
+# Revision Test Results
+
+Focused tests passed **276/276 assertions** and cover the four-part comparison, exact questions, decision/rejection/partial-use semantics, provenance, meaning/certainty/voice review, independent verification, versioned explanations/records, Steps 14–19 integration contracts, privacy, accessibility markers, offline/security, ownership, idempotency, and no score/auto-apply/award rules. JavaScript syntax passed. Full regression passed **108 test files** with zero failures. Production persistence, live services, browser E2E, localization/speech, offline sync, and manual assistive-technology checks remain unavailable.
