@@ -1,0 +1,3 @@
+# AI Use Receipt Sharing
+
+The canonical receipt is private and immutable; a separate shareable version selects fields/items and contains physical redactions rather than hidden text. Students may remove private/irrelevant prompts, sources, or revisions and make multiple recipient-specific versions. Policy-required omissions are warned and never falsely marked compliant. Sharing requires preview of the exact snapshot, recipient/method validation, and intentional confirmation. Shared snapshots stay immutable. Revocation can stop future in-app/link access but cannot promise deletion of downloaded or printed copies.

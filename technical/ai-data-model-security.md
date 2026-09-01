@@ -1,0 +1,3 @@
+# AI Data Model Security
+
+Authorization is deny-by-default: authentication and tenant context are mandatory, private aggregates enforce ownership, and publication/review operations enforce roles. Tenant keys namespace both records and idempotency keys. Inputs reject passwords, API keys, auth tokens, privacy findings, raw safety content, raw audio, birthdates, identity documents, misconduct/authorship probabilities, hidden scores, inferred age, and rankings. Audit/outbox payloads are metadata-only and tenant-filtered. No model triggers discipline, messaging, sharing, grading, consent, or recognition automatically.

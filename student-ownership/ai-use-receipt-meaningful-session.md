@@ -1,0 +1,3 @@
+# AI Use Receipt Meaningful Session
+
+Meaningful events include explanations, practice, hints/questions/examples, reasoning/source/draft/grammar/code/image/model-answer/verification/disclosure assistance and validated student revisions or decisions. Trivial navigation, greetings, map/policy views, confirmations, errors, abandoned prompts, accessibility presentation, and safety-only interactions are excluded. Offers occur at natural pauses/checkpoints or when policy requires, not after each response. Event-set fingerprints and idempotency prevent duplicates; Not Now creates no label or notification.

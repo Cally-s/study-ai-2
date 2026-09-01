@@ -1,0 +1,3 @@
+# AI Use Map Test Results
+
+Focused tests cover exact categories/symbols/labels, all 18 items/default mapping, variant and enum families, no-colour-only semantics, suitable-versus-actual policy separation, active-assessment blocking, accessibility translation, integrity boundaries, higher-policy conflict, unknown/student-reported policy, attempts/conditions/disclosure, authorization/version checks, tenant isolation, planned-use privacy, clarification review, event redaction, offline stale state, structured-response 1.1, safety bypass, and idempotency. The full regression checks Steps 1–48. Limits: deterministic in-memory resolution, no database/provider/editor/real offline sync, and no completed browser/assistive-technology lab review.

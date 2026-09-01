@@ -1,0 +1,3 @@
+# AI Use Receipt Sources and Revisions
+
+Source entries reuse trusted Step 43 records with title, organization/type, claim, outcome/currentness/limitation, selection/verification, server trust, and final-use state. Search snippets and invented sources are prohibited; no-source and unverified states use exact wording; receipts do not replace bibliographies. Revisions are concise references to intentional student actions or validated artifact comparisons. Full drafts and keystrokes are excluded; automatic AI rewrites are not student revisions; rejected advice and removed AI wording may be recorded.

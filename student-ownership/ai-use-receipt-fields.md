@@ -1,0 +1,3 @@
+# AI Use Receipt Fields
+
+Assignment comes from trusted metadata; Date from the server clock; Learning mode from meaningful events; Purpose is a concise student-confirmed narrative. Important prompts use material privacy-safe summaries. AI contribution and Student contribution remain separate and provenance based. Sources checked reuse trusted records and distinguish retrieval, verification, and final use. Student revisions require intentional actions or validated artifact comparison. Disclosure requirement comes from verified policy; suggested wording reflects actual events and confirmed contribution.
