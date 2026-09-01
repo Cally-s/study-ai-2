@@ -1,0 +1,3 @@
+# Age-Safeguard Account Transitions
+
+Grade changes, school transfers, graduation, verified-adult changes, programme changes, and consent expiry create a new safeguard snapshot. The old snapshot remains attached to historical AI interactions, assignment/assessment evidence, portfolio shares, badge displays, consent decisions, and project approvals. Changes apply prospectively and never convert past permitted activity into a violation. Active public shares, community invitations, reviewer access, consent, provider permissions, and final-answer rules are revalidated. Private work remains intact and students receive material-change notice.

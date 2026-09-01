@@ -1,0 +1,3 @@
+# Age-Safeguard Consent
+
+Consent is purpose-, scope-, actor-, text-, and policy-version specific. Scopes separately cover core/external AI processing, STT, images, uploads, public portfolio or badge display, external links, community feedback/contact, optional analytics, and account transfer. Guardian/authorized-adult consent, school authorization, organization authorization, student self-consent, and student assent remain distinct. Silence and account creation are not consent. Revocation applies prospectively and preserves private work where allowed. Consent actors see the notice and scope—not private conversations, drafts, receipts, reflections, safety conversations, or unrelated portfolio evidence.

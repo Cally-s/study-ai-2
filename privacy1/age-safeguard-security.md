@@ -1,0 +1,3 @@
+# Age-Safeguard Security
+
+Production operations must authenticate session identity and authorize tenant, organization, school, programme, role, account category, trusted source, profile/mapping/consent/assignment/sharing/project versions, and activity stage. Provider gateways use server-derived envelopes and reject client overrides. Published snapshots and historical references are immutable; updates use optimistic concurrency and idempotency. Prompt/retrieved content and student self-assertions cannot alter policy. Cross-tenant access is denied. Logs and analytics exclude raw birthdates, writing/voice/image inference inputs, guardian details, content, risk scores, and discipline signals.

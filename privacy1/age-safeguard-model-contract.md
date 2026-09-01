@@ -1,0 +1,3 @@
+# Age-Safeguard Model Contract
+
+The provider receives a minimum server-derived projection: safeguard snapshot reference, communication and lesson profiles, final-answer rule, source/assessment profiles, oversight requirement, consent summary, current-action sharing permission, and protected-workflow requirement. It receives no raw birthdate, guardian details, identity documents, legal classification, consent evidence, inferred age, or confidence. Trusted instructions prohibit age/maturity inference, patronizing language, personal-data requests, final-answer bypass, and accessibility weakening. Model output remains untrusted and is blocked when it infers age/maturity or leaks restricted answers.
