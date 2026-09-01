@@ -1,0 +1,3 @@
+# Reasoning-Check Task Contracts
+
+Math reviews transformations/calculations; proof reviews statements and reasons; multiple choice reviews the student’s elimination/justification without revealing an option; writing/literature reviews claim/evidence/interpretation without rewriting; coding reviews explicit lines/state/control flow without complete code; research checks exact source support; science/data/labs review operations/inferences without conclusions; translation reviews meaning choices; reflection preserves first-person authorship; AI projects/ethics review design assumptions and evidence without making the decision.

@@ -1,0 +1,3 @@
+# Guiding-Question Test Results
+
+Focused tests cover exact student/final-explanation messages, trusted mode session, privacy/non-profile defaults, one-question schema, no question plan/full solution/solver, waiting and no auto-continuation, actual-response linking, minimal thinking records, adaptive supported response, compound-task and self-answer rejection, misconception correction without takeover, embedded V2 hints without mode change, student-authored final review, no auto-submission/rewrite, and ambiguous-context confirmation. Full regression follows; real semantic question counting, model/stream validation, durable offline state, localization, browser and assistive-technology testing remain production/manual work.
