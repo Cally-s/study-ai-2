@@ -1,0 +1,3 @@
+# Accessible Math, Code, Tables, Charts, and Diagrams
+
+Math provides semantic structure, navigable speech, MathML/accessible notation where available, and accurate linear fallback. Code uses keyboard-operable editing, line/token reading, language labels, errors with positions, and plain-text export. Tables use real headers/captions; charts and diagrams include data tables, concise and extended descriptions, relationships, trends, units, uncertainty, and non-colour states. Media includes captions, transcripts, descriptions, and keyboard controls. Equivalent written, spoken, diagram, sorting, or structured responses use the same rubric.

@@ -1,0 +1,5 @@
+# Accessibility and Language Test Results
+
+Focused tests cover every required capability; exact bilingual term card; independent languages; private/reset/versioned profiles; no diagnosis/age/ability/integrity inference; canonical terms and human-reviewed translation; term preservation and publication blocks; policy/uncertainty meaning drift; reading adaptations; keyboard/screen-reader contracts; TTS no autoplay; STT intent/edit/privacy/confirmation/no audio; captions/transcripts; contrast/motion/dyslexia CSS; print hidden-answer protection; transcript-backed audio; math/code/diagram metadata; accessible activity state; equivalent assessment/portfolio/badge behavior; private issue reports; AIResponseRecord 1.6; tenant/version/idempotency security; Low-Bandwidth/offline; and page wiring. Manual browsers, assistive technologies, pronunciation, caption quality, print layout, and production media/provider testing remain required.
+
+Step 69 adds UJ-030–UJ-033 and UJ-050 journey contracts; manual device and accessibility-tree evidence remains unavailable.
