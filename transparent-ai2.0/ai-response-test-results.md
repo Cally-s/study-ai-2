@@ -1,0 +1,3 @@
+# AI Response Test Results
+
+The focused Step 48 suite covers record/draft/view-model contracts, versions/order/core fields, strict ownership/unknown-field rejection, enums/unions, trusted composition, sources, confidence, assumptions, verification defaults, final question, disclosure, warnings, server IDs/timestamps, idempotency, tenant access, renderers, loading, unsupported versions, and fallback. The full suite checks Steps 1–47 compatibility. Known limits are in-memory persistence, deterministic rather than semantic/provider validation, no database/stream transport, and no completed browser or assistive-technology lab review.
