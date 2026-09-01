@@ -1,0 +1,3 @@
+# Age-Safeguard Community Projects
+
+Younger community projects use explicit stage reviews for problem selection, stakeholder/data/privacy/contact plans, prototype design/testing, feedback invitations, demonstration, sharing, and deployment decisions. Contact is school managed and invitation based. Data is public, synthetic, teacher approved, or properly anonymized; confidential health, financial, immigration, counselling, discipline, and student records are excluded. Safe previews, paper/mock prototypes, simulations, and school sandboxes are valid. Public deployment is never required. Approval is stage-specific and grants no access to private conversations or unrelated sharing.

@@ -1,0 +1,3 @@
+# Prompt Privacy Security
+
+Every server operation authenticates the actor and derives identity from the session; validates tenant, role, destination, ownership, draft/detector/policy versions, and preflight state; uses optimistic concurrency and idempotency; and returns privacy-safe errors. Provider endpoints reject direct bypass. Prompt or retrieved-content instructions cannot disable scanning or set permission. Logs, analytics, crash reports, session replay, and audit events exclude raw content and exact values. Privacy findings create no teacher/parent alert, discipline case, misconduct record, risk score, or training input.

@@ -1,0 +1,3 @@
+# Age-Safeguard Profile Resolution
+
+Resolution precedence is: non-overridable safety/privacy; organization or school policy; programme policy; trusted school-level/age-band mapping; account-category policy; Assignment AI Policy; then presentation preferences. Trusted sources include rosters, verified account categories, school/programme configuration, guardian-managed status, administrator configuration, and verified adult status. Conflicts temporarily use the more protective rules and request human correction. Unknown state uses `UNKNOWN_CONSERVATIVE`. Identity services may hold a legally required birthdate, but downstream systems receive only a derived immutable snapshot; raw birthdates never enter model requests or ordinary analytics.

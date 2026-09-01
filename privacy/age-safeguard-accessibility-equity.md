@@ -1,0 +1,3 @@
+# Age-Safeguard Accessibility and Equity
+
+Age safeguards are independent of reading preference, disability, accommodations, TTS, STT, dyslexia-friendly mode, translation, screen readers, language proficiency, academic performance, and AI-use patterns. An adult may select simpler language without younger-account restrictions; a younger advanced learner may use advanced academic content within their privacy/sharing boundaries. Interfaces preserve keyboard, screen-reader, contrast, Reduced Motion, bilingual, RTL, Low-Bandwidth, and offline support. Equity testing rejects age or maturity inference from writing, voice, image, behaviour, grammar, spelling, response time, device, portfolio, or assessment performance.

@@ -1,0 +1,3 @@
+# Prompt Privacy Structured Data
+
+Schema `prompt-privacy-preflight/1.0` defines the exact finding, handling, destination, confidence, status, action, and policy-reason enums. `PromptPrivacyPreflightRecord` contains identifiers, scope, draft/destination/purpose, server status, versions, counts, handling requirements, action/confirmation, optional protected-workflow reference, HMAC references, retention timestamps, and content-store reference—never raw prompt text or exact findings. The trusted request envelope adds `privacyPreflightId`, server-controlled `privacyPreflightPassed`, `privacyAction`, `sanitizedMessageUsed`, and `destinationPolicyVersion`. Unknown fields and client-controlled sent/pass state are rejected.

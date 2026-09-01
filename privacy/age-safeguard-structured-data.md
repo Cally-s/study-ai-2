@@ -1,0 +1,3 @@
+# Age-Safeguard Structured Data
+
+Schema `age-appropriate-safeguards/1.0` defines trusted context sources; configurable school levels and age bands; account/profile/dimension types; communication, lesson, final-answer, source, image, code, sharing, messaging, consent, oversight, resolution, violation, and compliance enums. Versioned profiles and mappings publish immutably. Resolved snapshots contain safe derived policy references, limitations, and effective times—never raw birthdates. Consent and project approvals are purpose/stage specific. Unknown fields and inferred-age, maturity, ranking, surveillance, and risk fields are rejected.

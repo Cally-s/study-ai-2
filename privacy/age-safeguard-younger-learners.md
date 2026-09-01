@@ -1,0 +1,3 @@
+# Younger-Learner Safeguards
+
+The `YOUNGER_LEARNER_STRONG` template uses respectful plain language with academic terms, one concept and question at a time, pausable lesson chunks, progressive hints, student attempts, and server-enforced final-answer restrictions. Privacy Check is always active with concrete examples. Consent and student assent are purpose-specific. Public Web, Anyone with the Link, public comments, indexing, direct external messaging, sensitive community data, and required public deployment are disabled by default. Community work uses stage-specific adult review, school-managed contact, synthetic/public/approved data, and safe sandbox or simulated prototypes. Advanced academic content remains available.
