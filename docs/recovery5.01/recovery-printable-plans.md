@@ -1,0 +1,3 @@
+# Recovery Printable Plans
+
+Print variants cover Today/Seven-Day/Test/Missed/Prerequisite/Parent Summary/Vocabulary/student-selected Metrics. Black text, black-and-white statuses, headings, bilingual associations, checkboxes, writing space, dates, page/version labels, Minimum/Optional Stretch, and sensible page breaks are required; navigation/private controls are hidden. Preview warns that academic information may be private and allows removal of names/courses/tasks/teachers/support/tutor/notes. Never print transcripts, emotional/safety/disability/accommodation data, private AI, hidden IDs or device data. Accessible HTML/plain text is always available; formal PDF conformance is not claimed.

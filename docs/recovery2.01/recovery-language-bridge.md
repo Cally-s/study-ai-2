@@ -1,0 +1,3 @@
+# Recovery Language Bridge
+
+Interface, home, explanation, plan, teacher-message, parent-summary, notification, audio, and glossary languages remain independent. Modes: English only; home language with English terms; English then home language; home language then English; side-by-side; or English with translated keywords. Important English terms always remain visible. Machine translation is labelled and versioned; names, course codes, URLs, filenames, formulas, numbers, units, dates, times, status, negation, conditions, authority and safety urgency are invariant. Official messages require separate bilingual review and explicit send. RTL uses logical layout.

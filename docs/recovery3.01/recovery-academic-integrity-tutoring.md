@@ -1,0 +1,3 @@
+# Academic Integrity in Verified Tutoring
+
+Tutors may explain, question, hint, model distinct examples, review learner attempts, debug learner code, rehearse and plan. They may not complete graded work, answer active assessments, fabricate data/citations/attendance, impersonate, submit, evade detection, reveal hidden tests or misstate participation. In-session controls allow neutral redirection and concern reporting; serious/disputed matters require authorized human review. Post-session learning records describe learning, not generated work. Attendance remains evidence-based and separate from verifier-approved service hours and Help Credits.

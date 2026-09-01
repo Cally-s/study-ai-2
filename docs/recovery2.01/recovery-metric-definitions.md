@@ -1,0 +1,3 @@
+# Recovery Metric Definitions
+
+Tasks Clarified counts one unique task per material clarification cycle. Tasks Resolved counts one task per valid resolution cycle with a type. Teacher Decisions counts materially distinct reviewed authoritative decisions. Deadlines Revised requires an exact approved date. Prerequisites Repaired requires task-specific readiness after completed repair. Work Submitted requires confirmed submission. Help Requested requires confirmed send. Study Blocks Completed requires a defined minimum goal and meaningful output. Workload is a current protected-capacity status. Risks Addressed requires an actionable resolution, owner/review waiting state, mitigation, or resolution.

@@ -1,0 +1,3 @@
+# Prerequisite Help Test Results
+
+On 2026-08-11, `tests/academic-recovery-prerequisite-help.test.js` passed 156/156 assertions. Coverage includes enums/policy, eligibility, six natural-language examples, candidate narrowing/verification, diagnostic limits/privacy, mini-lesson/example/hints/check/bridge/integrity, distinctness/count exclusions, two/three/fourth-attempt rules, human previews, readiness/integrations, pause/resume/offline/privacy/analytics, UI/CSS/loader and safe copy. Manual browser/AT/math-speech and production concept/content/question/communication/tutor/persistence tests remain `NOT_RUN`.

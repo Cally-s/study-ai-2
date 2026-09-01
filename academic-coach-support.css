@@ -1,0 +1,524 @@
+#coachView .coach-academic-context {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: .8rem;
+  padding: .9rem;
+  border: 1px solid color-mix(in srgb, var(--blue) 16%, var(--line));
+  border-radius: 1rem;
+  background:
+    radial-gradient(circle at top left, rgba(93, 99, 255, .13), transparent 42%),
+    linear-gradient(135deg, #ffffff, #f8f7ff);
+}
+
+#coachView .coach-academic-context__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+#coachView .coach-academic-context__header h3 {
+  margin: .2rem 0 0;
+  font: 800 .98rem Manrope, sans-serif;
+  color: var(--ink);
+}
+
+#coachView .coach-academic-context__header p {
+  max-width: 22rem;
+  font-size: .78rem;
+  line-height: 1.45;
+  color: var(--muted);
+}
+
+#coachView .coach-academic-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(0, 1.15fr) minmax(0, .85fr);
+  gap: .65rem;
+}
+
+#coachView .coach-academic-fields label {
+  display: grid;
+  gap: .35rem;
+  min-width: 0;
+  font-size: .78rem;
+  font-weight: 800;
+  color: #34405a;
+}
+
+#coachView .coach-academic-fields :is(select, input) {
+  min-height: 2.65rem;
+  width: 100%;
+  border: 1px solid #dfe3f1;
+  border-radius: .8rem;
+  background: #fff;
+  color: var(--ink);
+  font: inherit;
+  font-size: .9rem;
+  padding: .62rem .75rem;
+}
+
+#coachView .coach-subject-quickstarts {
+  grid-column: 1 / -1;
+  display: grid;
+  gap: .65rem;
+  padding-top: .2rem;
+}
+
+#coachView .coach-subject-quickstarts__top {
+  display: flex;
+  align-items: center;
+  gap: .65rem;
+  flex-wrap: wrap;
+}
+
+#coachView .coach-subject-quickstarts__top > span {
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+#coachView .coach-subject-quickstarts__top div,
+#coachView .coach-subject-examples {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+#coachView .coach-subject-quickstarts button,
+#coachView .academic-vocab-actions button {
+  min-height: 2.25rem;
+  width: fit-content;
+  max-width: 100%;
+  border: 1px solid #dfe3f1;
+  border-radius: 999px;
+  background: #fff;
+  color: #485572;
+  font: inherit;
+  font-size: .8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: .5rem .75rem;
+  box-shadow: 0 5px 14px rgba(31, 43, 87, .04);
+}
+
+#coachView .coach-subject-quickstarts button:hover,
+#coachView .academic-vocab-actions button:hover {
+  border-color: color-mix(in srgb, var(--blue) 42%, #dfe3f1);
+  background: #f4f5ff;
+  color: var(--blue);
+}
+
+#coachView .academic-coach-response {
+  display: grid;
+  gap: .8rem;
+  max-width: 48rem;
+}
+
+#coachView .academic-response-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+}
+
+#coachView .academic-response-chips span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  max-width: 100%;
+  border: 1px solid #dfe3f1;
+  border-radius: 999px;
+  background: #f8f9ff;
+  color: #46516d;
+  font-size: .72rem;
+  font-weight: 850;
+  line-height: 1.2;
+  padding: .28rem .6rem;
+}
+
+#coachView .academic-response-section {
+  border: 1px solid #edf0f7;
+  border-radius: .95rem;
+  background: #fff;
+  padding: .85rem .95rem;
+}
+
+#coachView .academic-response-main {
+  border-color: color-mix(in srgb, var(--blue) 24%, var(--line));
+  background:
+    radial-gradient(circle at top right, rgba(96, 103, 232, .12), transparent 42%),
+    linear-gradient(135deg, #ffffff, #f7f8ff);
+}
+
+#coachView .academic-response-section h3 {
+  margin: 0 0 .4rem;
+  font: 800 .78rem Manrope, sans-serif;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--blue);
+}
+
+#coachView .academic-response-section p,
+#coachView .academic-response-section li {
+  color: #4e5b73;
+  font-size: .88rem;
+  line-height: 1.55;
+}
+
+#coachView .academic-response-section ul {
+  display: grid;
+  gap: .35rem;
+  margin: 0;
+  padding-left: 1.15rem;
+}
+
+#coachView .academic-key-terms ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .4rem;
+  padding-left: 0;
+  list-style: none;
+}
+
+#coachView .academic-key-terms li {
+  border: 1px solid #dfe3f1;
+  border-radius: 999px;
+  background: #f8f9ff;
+  padding: .28rem .55rem;
+}
+
+#coachView .academic-next-step,
+#coachView .academic-thinking-question {
+  background: #fbfcff;
+}
+
+#coachView .academic-trust-drawer {
+  border: 1px solid #dfe5f3;
+  border-radius: .95rem;
+  background: #fbfcff;
+  overflow: hidden;
+}
+
+#coachView .academic-trust-toggle {
+  display: flex;
+  width: 100%;
+  min-height: 2.75rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: .75rem;
+  border: 0;
+  background: transparent;
+  color: #33405c;
+  font: inherit;
+  font-weight: 850;
+  line-height: 1.35;
+  padding: .75rem .9rem;
+  text-align: left;
+}
+
+#coachView .academic-trust-toggle small {
+  color: var(--muted);
+  font-size: .74rem;
+  font-weight: 700;
+  text-align: right;
+}
+
+#coachView .academic-trust-toggle::after {
+  content: "▾";
+  flex: 0 0 auto;
+  color: var(--blue);
+}
+
+#coachView .academic-trust-toggle[aria-expanded="true"]::after {
+  content: "▴";
+}
+
+#coachView .academic-trust-panel {
+  display: grid;
+  gap: .8rem;
+  border-top: 1px solid #e5e9f4;
+  padding: .9rem;
+}
+
+#coachView .academic-trust-panel[hidden] {
+  display: none;
+}
+
+#coachView .academic-trust-panel dl {
+  display: grid;
+  gap: .6rem;
+  margin: 0;
+}
+
+#coachView .academic-trust-panel dt,
+#coachView .academic-trust-columns h4 {
+  margin: 0 0 .25rem;
+  color: var(--blue);
+  font-size: .74rem;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+#coachView .academic-trust-panel dd,
+#coachView .academic-trust-panel p,
+#coachView .academic-trust-panel li {
+  margin: 0;
+  color: #4e5b73;
+  font-size: .82rem;
+  line-height: 1.5;
+}
+
+#coachView .academic-trust-columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: .75rem;
+}
+
+#coachView .academic-vocab-actions > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+}
+
+#coachView .academic-vocab-action-status {
+  min-height: 1.25rem;
+  margin-top: .6rem;
+  color: var(--muted);
+}
+
+#coachView .coach-academic-fields :is(select, input):focus-visible,
+#coachView .coach-subject-quickstarts button:focus-visible,
+#coachView .academic-trust-toggle:focus-visible,
+#coachView .ai-coach-fullscreen-button:focus-visible,
+#coachView .academic-vocab-actions button:focus-visible {
+  outline: 3px solid color-mix(in srgb, var(--blue) 42%, transparent);
+  outline-offset: 2px;
+}
+
+body.ai-coach-fullscreen-active {
+  overflow: hidden;
+  overscroll-behavior: none;
+}
+
+#coachView .ai-coach-fullscreen-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .5rem;
+  min-height: 2.625rem;
+  width: fit-content;
+  max-width: 100%;
+  padding: .56rem .8rem;
+  border: 1px solid rgba(91, 79, 225, .22);
+  border-radius: .8rem;
+  background: rgba(248, 247, 255, .96);
+  color: var(--blue);
+  font-weight: 850;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+#coachView .ai-coach-fullscreen-button:hover {
+  border-color: rgba(91, 79, 225, .44);
+  background: rgba(242, 240, 255, 1);
+}
+
+#coachView .ai-coach-fullscreen-icon {
+  font-size: 1rem;
+  line-height: 1;
+}
+
+#coachView .ai-coach-fullscreen-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: .875rem;
+  width: 100%;
+  min-height: 4rem;
+  padding: .7rem clamp(.875rem, 3vw, 1.75rem);
+  border-bottom: 1px solid #dfe4f2;
+  background: rgba(255, 255, 255, .96);
+  box-shadow: 0 10px 26px rgba(31, 43, 87, .08);
+}
+
+#coachView .ai-coach-fullscreen-header[hidden] {
+  display: none;
+}
+
+#coachView .ai-coach-fullscreen-header h2 {
+  margin: .1rem 0;
+  font: 900 1.25rem Manrope, sans-serif;
+  color: var(--ink);
+}
+
+#coachView .ai-coach-fullscreen-header p {
+  margin: 0;
+  color: var(--muted);
+  font-size: .85rem;
+}
+
+#coachView .ai-coach-fullscreen-meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .45rem;
+  min-width: 0;
+}
+
+#coachView .ai-coach-fullscreen-meta span {
+  border: 1px solid #dfe3f1;
+  border-radius: 999px;
+  background: #f7f8ff;
+  color: #46516d;
+  font-size: .76rem;
+  font-weight: 850;
+  line-height: 1.2;
+  padding: .34rem .6rem;
+}
+
+#coachView[data-full-screen="true"] {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: grid !important;
+  grid-template-rows: auto minmax(0, 1fr);
+  max-width: none;
+  width: 100vw;
+  height: 100dvh;
+  margin: 0;
+  padding: max(.5rem, env(safe-area-inset-top)) max(.5rem, env(safe-area-inset-right)) max(.5rem, env(safe-area-inset-bottom)) max(.5rem, env(safe-area-inset-left));
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(88, 103, 232, .12), transparent 32rem),
+    #f6f8fc;
+}
+
+#coachView[data-full-screen="true"] > .view-intro,
+#coachView[data-full-screen="true"] > .current-session-section {
+  display: none !important;
+}
+
+#coachView[data-full-screen="true"] .coach-layout {
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 0;
+  max-width: min(100%, 68rem);
+  width: 100%;
+  height: 100%;
+  margin-inline: auto;
+  overflow: hidden;
+}
+
+#coachView[data-full-screen="true"] .coach-side-panel,
+#coachView[data-full-screen="true"] .coach-conversation-heading,
+#coachView[data-full-screen="true"] .suggestions,
+#coachView[data-full-screen="true"] .coach-academic-context,
+#coachView[data-full-screen="true"] .learning-mode-control,
+#coachView[data-full-screen="true"] .coach-subject-quickstarts,
+#coachView[data-full-screen="true"] .ai-accessibility-commands,
+#coachView[data-full-screen="true"] .response-tools-section {
+  display: none !important;
+}
+
+#coachView[data-full-screen="true"] .chat-card {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+  min-height: 0;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+#coachView[data-full-screen="true"] .chat-messages {
+  height: auto;
+  max-height: none;
+  min-height: 0;
+  overflow-y: auto;
+  padding: clamp(1rem, 3vw, 1.875rem) clamp(.875rem, 4vw, 3rem) 2rem;
+  overscroll-behavior: contain;
+}
+
+#coachView[data-full-screen="true"] #coachForm.chat-input {
+  position: sticky !important;
+  bottom: 0;
+  border-top: 1px solid #dfe4f2;
+  border-radius: 0;
+  padding: .75rem clamp(.75rem, 3vw, 1.75rem) max(.75rem, env(safe-area-inset-bottom));
+}
+
+#coachView[data-full-screen="true"] .message > div {
+  max-width: min(100%, 48rem);
+}
+
+@media (max-width: 760px) {
+  #coachView .coach-academic-fields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #coachView .coach-academic-context__header {
+    display: grid;
+  }
+
+  #coachView .academic-trust-columns {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #coachView .academic-trust-toggle {
+    display: grid;
+    justify-items: start;
+  }
+
+  #coachView .academic-trust-toggle small {
+    text-align: left;
+  }
+
+  #coachView .ai-coach-fullscreen-header {
+    display: grid;
+    align-items: start;
+  }
+
+  #coachView .ai-coach-fullscreen-meta {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 420px) {
+  #coachView .coach-subject-quickstarts__top,
+  #coachView .coach-subject-quickstarts__top div,
+  #coachView .coach-subject-examples,
+  #coachView .academic-vocab-actions > div {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #coachView .coach-subject-quickstarts button,
+  #coachView .academic-vocab-actions button {
+    width: 100%;
+  }
+
+  #coachView .ai-coach-fullscreen-button {
+    width: 100%;
+  }
+}
+
+@media (forced-colors: active) {
+  #coachView .coach-academic-context,
+  #coachView .coach-academic-fields :is(select, input),
+  #coachView .academic-response-section,
+  #coachView .academic-response-chips span,
+  #coachView .academic-trust-drawer,
+  #coachView .academic-trust-toggle,
+  #coachView .ai-coach-fullscreen-header,
+  #coachView .ai-coach-fullscreen-meta span,
+  #coachView .coach-subject-quickstarts button,
+  #coachView .academic-vocab-actions button {
+    border: 1px solid CanvasText;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #coachView .coach-subject-quickstarts button,
+  #coachView .academic-vocab-actions button {
+    transition: none;
+  }
+}

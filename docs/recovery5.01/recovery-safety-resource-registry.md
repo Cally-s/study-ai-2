@@ -1,0 +1,3 @@
+# Safety Resource Registry
+
+Resources are server-controlled/versioned, official-source reviewed, localized, accessible and typed by emergency/crisis scope, language/age and freshness. Student-confirmed country/region is preferred; GPS is unnecessary. Canada synthetic configuration references server-resolved emergency, national crisis and youth services without embedding/model-generating numbers. Stale/unverified resources cannot be authoritative; failure shows local emergency/department/trusted-adult/verified-directory/country-selection fallbacks. Valid cached resources require visible freshness.

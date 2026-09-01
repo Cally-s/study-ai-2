@@ -1,0 +1,12 @@
+.decomposition-shell{max-width:72rem;margin-inline:auto;padding:clamp(1rem,3vw,2rem);color:var(--text,#172033)}
+.decomposition-shell section,.decomposition-notices,.decomposed-action-list article{border:1px solid var(--border,#c8d2df);border-radius:.75rem;padding:1rem;background:var(--surface,#fff)}
+.decomposition-shell section+section{margin-block-start:1rem}.decomposition-notices,.next-action-list,.decomposed-action-list{padding-inline-start:1.6rem}
+.decomposed-action-list article{margin-block:.75rem}.decomposed-action-list button,.decomposition-actions button{min-height:2.75rem;margin:.25rem;padding:.55rem .8rem}
+.decomposition-shell :focus-visible{outline:3px solid var(--focus,#075fd8);outline-offset:3px}.decomposition-shell [role=status],.decomposition-shell [role=alert]{display:block;margin-block:1rem}
+.low-bandwidth .decomposed-action-list article,.simplified-layout .decomposed-action-list article{box-shadow:none;background:Canvas;color:CanvasText}.low-bandwidth .decomposed-action-list li:nth-child(n+4){display:none}
+.dyslexia-friendly .decomposition-shell{line-height:1.7;letter-spacing:.02em}.reading-ruler .decomposed-action-list li:hover{background:#fff4b8}
+[dir=rtl] .decomposition-shell{text-align:start}[dir=rtl] .decomposition-notices,[dir=rtl] .next-action-list,[dir=rtl] .decomposed-action-list{padding-inline-start:0;padding-inline-end:1.6rem}
+@media(max-width:42rem){.decomposition-shell{padding:.75rem}.decomposition-shell button{display:block;width:100%;margin:.35rem 0}}
+@media(forced-colors:active){.decomposition-shell section,.decomposition-notices,.decomposed-action-list article{border:2px solid CanvasText}.decomposition-shell :focus-visible{outline-color:Highlight}}
+@media(prefers-reduced-motion:reduce){.decomposition-shell *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
+@media print{.decomposition-shell button,.decomposition-actions,[role=alert],[role=status]{display:none!important}.decomposition-shell section,.decomposition-notices,.decomposed-action-list article{border:1px solid #000;break-inside:avoid}.decomposition-shell{max-width:none;color:#000}}
