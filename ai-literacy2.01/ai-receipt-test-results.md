@@ -1,0 +1,3 @@
+# AI Receipt Test Results
+
+Focused tests passed **293/293 assertions** and cover the three-responsibility distinction, required fields, source verification, contributions, revisions, policy, required examples, disclosure generation/accuracy, explicit sharing actions, versioning, Steps 9–16 integration contracts, privacy, accessibility markers, offline/security contracts, ownership, idempotency, and no scoring/automatic sharing/award rules. JavaScript syntax passed. Full regression passed **105 test files** with zero failures. Production migrations, authenticated services, browser E2E, live citation formatting, offline sync, speech/localization, and manual assistive-technology checks remain unavailable.
