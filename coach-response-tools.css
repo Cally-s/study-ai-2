@@ -1,0 +1,114 @@
+/* Compact, clearly separated response actions beneath each Coach message. */
+#coachView .ai-accessibility-commands {
+  position: static !important;
+  display: grid !important;
+  gap: .55rem;
+  inline-size: 100%;
+  max-inline-size: 100%;
+  margin-block-start: .8rem;
+  padding-block-start: .75rem;
+  border-block-start: 1px solid var(--line, #d7dce7);
+}
+
+#coachView .ai-response-tools-title {
+  display: block;
+  margin: 0;
+  color: var(--ink, #172033);
+  font-size: 1rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+#coachView .ai-response-tools-groups {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+#coachView .ai-response-tools-group {
+  min-inline-size: 0;
+  padding: .75rem;
+  border: 1px solid var(--line, #d7dce7);
+  border-radius: .75rem;
+  background: #fbfcff;
+}
+
+#coachView .ai-response-tools-group h4 {
+  margin: 0 0 .55rem;
+  color: var(--muted, #5f6572);
+  font-size: .78rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+#coachView .ai-response-action-list {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: .5rem !important;
+  min-inline-size: 0;
+}
+
+#coachView .ai-response-action-list > button {
+  display: inline-flex !important;
+  flex: 0 1 auto !important;
+  inline-size: auto !important;
+  min-inline-size: 0;
+  min-block-size: 40px;
+  max-inline-size: 100%;
+  align-items: center;
+  justify-content: center;
+  padding: .5rem .75rem !important;
+  border: 1px solid #cfd5e4 !important;
+  border-radius: .65rem !important;
+  background: #fff !important;
+  color: var(--ink, #172033) !important;
+  font-size: .8rem !important;
+  font-weight: 700;
+  line-height: 1.25 !important;
+  white-space: normal !important;
+  text-align: center;
+}
+
+#coachView .ai-response-action-list > button:hover {
+  border-color: var(--blue, #5867e8) !important;
+  background: #f4f5ff !important;
+}
+
+#coachView .ai-response-action-list > button:focus-visible {
+  outline: 3px solid var(--blue, #5867e8) !important;
+  outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+  #coachView .ai-response-tools-groups {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #coachView .ai-response-action-list {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  #coachView .ai-response-action-list > button {
+    inline-size: 100% !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #coachView .ai-response-action-list {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (forced-colors: active) {
+  #coachView .ai-response-action-list > button {
+    border-color: ButtonText !important;
+  }
+}
+
+@media print {
+  #coachView .ai-accessibility-commands {
+    display: none !important;
+  }
+}
