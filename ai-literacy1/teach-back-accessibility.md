@@ -1,0 +1,3 @@
+# Teach-Back Accessibility
+
+Prompts, responses, evidence, feedback, retry, pause, and human support use semantic headings, keyboard focus, 44-pixel controls, screen-reader announcements, controlled TTS, and intentional STT/audio with editable transcript review; raw audio is not retained by default. Formats include concise text, equations, code, diagrams plus text, ordered steps, accessible choices, and human response. Layout supports 200%/320px, contrast/forced colours, Reduced Motion, bilingual meaning/essential English terms, RTL, mobile, print/text-only, Low-Bandwidth, and cached offline drafting without offline evaluation.

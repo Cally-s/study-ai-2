@@ -1,0 +1,3 @@
+# Teach-Back Structured Response
+
+Step 51 adds AIResponseRecord ai-response-record/1.3 while historical 1.0–1.2 remain supported. Nullable server-owned teachBackCheck stores stage, applicability/type/target/selection, prompt/no-copy/format/demand/requirement/status, protected criteria reference, attempt/evidence/feedback references, actions, retry/review, and timestamp. TEACH_BACK_EXPLANATION_CONTEXT and TEACH_BACK_FEEDBACK are structured unions. Version 4 remains; Your Next Thinking Step is final, references the check, has one semantic question, and waits. Expected answers/hidden criteria never reach the client.
