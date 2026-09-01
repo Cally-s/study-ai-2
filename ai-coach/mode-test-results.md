@@ -1,0 +1,3 @@
+# Exact Mode Contract Test Results
+
+Focused tests cover runtime/task/boundary contracts, direct scaffold requests, hint waiting and cumulative disclosure, solver filtering, compliant candidates, final-answer and hidden-payload blocking, privacy-safe violation events, no ordinary history/analytics/receipt/print storage, persistent restriction sessions and explicit ending, similar-example distance, Coach Me compatibility, source-only verification, and schema completeness. Full regression follows integration; real model, streaming, database, localization, browser, and assistive-technology tests remain production work.

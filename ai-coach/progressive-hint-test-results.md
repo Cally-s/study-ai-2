@@ -1,0 +1,3 @@
+# Progressive Hint Test Results
+
+Focused coverage checks exact levels/labels/order, no Hint 4, exact prompt/actions, V2 defaults, legacy preservation/migration notice, direct generation, solver filtering, all three intentional transitions, waiting/no auto-continuation, student-try focus without model call, attempt without increment, prerequisite support without increment, maximum-level blocking, answer leakage, ambiguous context reset, task-specific coding boundaries, ownership, idempotency, and optimistic concurrency. Full regression follows integration; real providers, durable offline sync, semantic leakage detection, bilingual text, browsers, and assistive technology remain production/manual work.
