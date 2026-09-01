@@ -1,0 +1,46 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const Coach=require('../prompt-writing-coach.js');
+const source=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+
+assert.match(source,/>Prompt Check</,'checklist uses the exact required title');
+const empty=Coach._test.newGuidedBuilderState();
+let checks=Coach._test.promptQualityChecks(empty);
+assert.equal(checks.length,9,'Prompt Check contains all nine requested checks');
+assert.deepEqual(checks.map(check=>check.id),['goal','context','understanding','question','mode','format','sources','integrity','privacy']);
+assert.equal(checks.find(check=>check.id==='goal').passed,false);
+assert.equal(checks.find(check=>check.id==='understanding').passed,false);
+assert.equal(checks.find(check=>check.id==='context').actionLabel,'Add the subject and course or grade');
+assert.match(checks.find(check=>check.id==='integrity').actionLabel,/teacher AI policy/);
+assert.equal(checks.find(check=>check.id==='privacy').passed,true);
+assert.equal(checks.find(check=>check.id==='privacy').passedLabel,'No obvious private information was found');
+
+empty.values.goal='Help me understand how photosynthesis stores energy.';
+empty.values.understanding='I understand that plants use sunlight.';
+empty.values.subject='Science';
+empty.values.level='Grade 9 Science';
+empty.values.confusion='I do not understand how light energy becomes chemical energy.';
+empty.values.helpType='SIMPLER_EXPLANATION';
+empty.values.modeInstruction='Explain the idea in simpler language while preserving important terms.';
+empty.values.presentation='PLAIN_LANGUAGE';
+empty.values.sources='NO_EXTERNAL_SOURCE_NEEDED';
+empty.values.avoid='Do not write my assignment for me.';
+empty.values.academicWorkType='INDEPENDENT_PRACTICE';
+empty.values.aiAssistancePermission='GENERAL_LEARNING_SUPPORT';
+checks=Coach._test.promptQualityChecks(empty);
+assert.ok(checks.every(check=>check.passed),'complete, privacy-safe builder answers pass every check');
+empty.editedPrompt='My student number is 123456. Explain photosynthesis.';
+assert.equal(Coach._test.promptQualityChecks(empty).find(check=>check.id==='privacy').passed,false,'direct preview edits are privacy checked');
+
+assert.match(source,/updateGuidedLivePreview[\s\S]*?promptCheck\.innerHTML = promptQualityCheckHTML\(state\)/,'checklist refreshes with live builder updates');
+assert.match(source,/guidedLivePromptEditor[\s\S]*?updateGuidedLivePreview\(state, target\)/,'checklist refreshes after direct preview edits');
+assert.match(source,/class="\$\{check\.passed \? 'is-ready' : 'needs-work'\}"/,'check rows expose status classes');
+assert.match(source,/class="sr-only">\$\{check\.passed \? 'Complete' : 'Needs attention'\}/,'status is not communicated by colour alone');
+assert.match(css,/\.guided-prompt-check/,'Prompt Check has an organized panel style');
+assert.match(css,/\.guided-prompt-check \.is-ready/,'complete state has a distinct style');
+assert.match(css,/\.guided-prompt-check \.needs-work/,'needs-attention state has a distinct style');
+console.log('Prompt Coach quality check tests passed');

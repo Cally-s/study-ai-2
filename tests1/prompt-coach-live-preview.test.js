@@ -1,0 +1,26 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const source=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+
+assert.match(source,/>Live Prompt Preview</,'preview uses the exact required title');
+for(const label of ['Copy Prompt','Edit Prompt','Use in AI Coach','Save Prompt','Start Over']) assert.match(source,new RegExp(label),`preview includes ${label}`);
+assert.match(source,/function guidedLivePrompt/,'one helper supplies the current generated or edited prompt');
+assert.match(source,/field\?\.addEventListener\('input',[\s\S]*?updateGuidedLivePreview\(state, target\)/,'preview updates as the current builder answer changes');
+assert.match(source,/data-guided-live-output/,'live preview has a stable output target');
+assert.match(source,/state\.editedPrompt = event\.currentTarget\.value/,'direct prompt edits are retained');
+assert.match(source,/navigator\?\.clipboard\?\.writeText\(prompt\)/,'Copy Prompt uses the clipboard API');
+assert.match(source,/data-guided-use\$\{state\.confirmed \? '' : ' disabled'\}/,'Use in AI Coach remains locked until explicit confirmation');
+assert.match(source,/composer\.value = prompt/,'confirmed prompt is placed in the AI Coach composer');
+assert.doesNotMatch(source,/composer\.(?:submit|click)\(/,'the preview never submits the AI Coach composer automatically');
+assert.match(source,/studentEditedPromptText: state\.editedPrompt/,'Save Prompt persists a student-edited preview through existing draft storage');
+assert.match(source,/enforceBoundary\(\{ \.\.\.normalized, generatedPromptText: studentEditedPromptText \}\)/,'edited prompts still pass policy and privacy enforcement');
+assert.match(source,/Start over and discard your unsaved prompt changes\?/,'Start Over protects unsaved work');
+assert.match(css,/\.guided-prompt-workspace\{display:grid;grid-template-columns:/,'desktop uses a two-column builder and preview workspace');
+assert.match(css,/@media\(max-width:56rem\)\{\.guided-prompt-workspace\{grid-template-columns:1fr\}/,'narrow screens stack the preview below the builder');
+assert.match(css,/overflow-x:hidden/,'the page prevents horizontal scrolling');
+assert.doesNotMatch(css,/\.guided-prompt-preview\{[^}]*position:(?:fixed|absolute)/,'preview is not floating or overlaid');
+console.log('Prompt Coach live preview tests passed');

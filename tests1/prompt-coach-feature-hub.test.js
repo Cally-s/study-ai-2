@@ -1,0 +1,27 @@
+'use strict';
+const assert=require('node:assert/strict');
+const fs=require('node:fs');
+const path=require('node:path');
+const root=path.resolve(__dirname,'..');
+const coach=fs.readFileSync(path.join(root,'prompt-writing-coach.js'),'utf8');
+const coachCss=fs.readFileSync(path.join(root,'prompt-writing-coach.css'),'utf8');
+const navigation=fs.readFileSync(path.join(root,'first-screen-navigation.js'),'utf8');
+const navigationCss=fs.readFileSync(path.join(root,'first-screen-navigation.css'),'utf8');
+const router=fs.readFileSync(path.join(root,'script.js'),'utf8');
+
+assert.match(navigation,/promptWithPurpose:\{hub:true/,'Prompt Coach is a feature hub');
+for(const pair of [["Build a Prompt","promptBuilder"],["Improve a Prompt","promptImprove"],["Prompt Templates","promptTemplates"],["My Prompts","promptHistory"],["How Prompts Work","promptLearn"]]) assert.match(navigation,new RegExp(`\\['${pair[0]}','${pair[1]}'\\]`),`${pair[0]} opens a child view`);
+for(const route of ['/ai-coach/prompt-coach/new','/ai-coach/prompt-coach/improve','/ai-coach/prompt-coach/templates','/ai-coach/prompt-coach/prompts','/ai-coach/prompt-coach/learn']) assert.ok(router.includes(route),`${route} is canonical`);
+assert.match(router,/promptHistory:'promptWithPurpose'/,'My Prompts has a safe Prompt Coach back fallback');
+assert.match(coach,/id="promptHistoryView"/,'history is a dedicated app view');
+assert.match(coach,/function renderPromptHistoryPage\(\)/,'history has a focused renderer');
+assert.match(coach,/data-first-screen-view="promptHistory"/,'overview status opens history rather than scrolling');
+assert.match(coach,/target\.querySelector\('h1'\)\?\.focus\?\.\(\);\n    return;/,'overview returns after rendering the compact hub content');
+assert.match(coach,/Your safeguards travel with every workflow/,'hub keeps safeguards visible without stacking full workflows');
+assert.match(coachCss,/\.prompt-hub-status/);
+assert.match(coachCss,/\.prompt-hub-safety/);
+assert.match(coachCss,/\.prompt-history-shell/);
+assert.match(navigationCss,/#promptWithPurposeView \.feature-hub-grid/,'hub has a dedicated responsive card layout');
+assert.match(navigationCss,/@media\(max-width:42rem\)[\s\S]*?#promptWithPurposeView \.feature-hub-grid\{grid-template-columns:1fr\}/,'hub cards stack on mobile');
+assert.doesNotMatch(coach.match(/function promptHubStatusHTML[\s\S]*?\n  \}/)?.[0]||'',/scrollIntoView|window\.scrollTo|location\.hash/,'hub actions do not use same-page scrolling');
+console.log('Prompt Coach feature hub tests passed');

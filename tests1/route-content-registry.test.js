@@ -1,0 +1,21 @@
+const assert=require('assert');
+const fs=require('fs');
+const path=require('path');
+const root=path.join(__dirname,'..');
+const html=fs.readFileSync(path.join(root,'index (2).html'),'utf8');
+const script=fs.readFileSync(path.join(root,'script.js'),'utf8');
+const dyslexia=fs.readFileSync(path.join(root,'dyslexia-display.js'),'utf8');
+const accessibility=fs.readFileSync(path.join(root,'accessibility-language.js'),'utf8');
+
+assert.ok(script.includes('const PageContentRequirement=Object.freeze'));
+for(const field of ['role','title','description','primaryAction','emptyState','loadingState','errorState','featureFlag','requiredServerOperation','minimumContentReady','testReference'])assert.ok(script.includes(`${field}:`),`registry field ${field}`);
+for(const route of ['dashboard','notes','coach','flashcards','quiz','planner','folders','peerTutoring','accessibilityLanguage'])assert.ok(script.includes(`${route}:{`),`ready route ${route}`);
+assert.ok(!html.includes('data-view="journeyTesting"'));
+assert.ok(!html.includes('data-view="completeJourneys"'));
+assert.ok(script.includes("minimumContentReady:false"));
+assert.ok(script.includes('This page is not available'));
+assert.ok(script.includes('Return to Dashboard'));
+assert.ok(dyslexia.includes('const html=document.documentElement,font='));
+assert.ok(!dyslexia.includes('document.documentElement;font='));
+assert.ok(accessibility.includes("id:'guest-device'"));
+console.log('route-content-registry: all assertions passed');

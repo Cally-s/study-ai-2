@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path'),assert=require('assert'),vm=require('vm');
+const root=path.join(__dirname,'..');
+const js=fs.readFileSync(path.join(root,'verify-answer-experience.js'),'utf8');
+const css=fs.readFileSync(path.join(root,'verify-answer-experience.css'),'utf8');
+const html=fs.readFileSync(path.join(root,'index (2).html'),'utf8');
+new vm.Script(js);
+for(const text of ['Verify an Answer','Check whether an AI answer, website claim, quotation, calculation, or source is accurate and properly supported.','Paste an Answer','Upload a File','Verify a Website or Source','Verify an AI Answer','Verify a Source','Verify a Quotation','Verify a Calculation','Compare Two Answers','Check My Own Reasoning','Verify This Answer'])assert(js.includes(text),`missing ${text}`);
+for(const text of ['Quick Check','Standard Check','Detailed Investigation','Facts may be wrong','Source may be unreliable','Quotation may be invented','Calculation may be incorrect','Answer may be outdated','Reasoning may contain a gap','Answer may be biased','I am not sure'])assert(js.includes(text),`missing form option ${text}`);
+for(const text of ['Reading the answer','Identifying claims','Checking reasoning','Finding evidence','Comparing sources','Preparing the report','Supported','Partially Supported','Outdated','Missing Context','Unable to Verify','Opinion'])assert(js.includes(text),`missing workflow text ${text}`);
+for(const text of ['Overall Result','What Appears Correct','What Needs Correction','Missing Evidence','Assumptions','Confidence and Reason','What the Student Should Verify','Next Thinking Question','No reliable source was confirmed. Treat this claim as unverified rather than automatically false.'])assert(js.includes(text),`missing report text ${text}`);
+for(const text of ['Original Answer','Verified Revision Draft','Accept Correction','Edit It Myself','Copy Verified Version','Save to Notes','Ask Why This Changed','Recent Verifications'])assert(js.includes(text),`missing comparison/history text ${text}`);
+assert(js.includes('localStorage'));assert(js.includes('SpeechRecognition'));assert(js.includes('10*1024*1024'));assert(js.includes('Privacy warning'));
+assert(css.includes('@media(max-width:520px)'));assert(css.includes('@media(prefers-reduced-motion:reduce)'));assert(css.includes('@media(forced-colors:active)'));assert(css.includes('[dir=rtl]'));assert(css.includes('@media print'));
+assert(html.includes('verify-answer-experience.css?v=verify-answer-complete-20260827'));assert(html.includes('verify-answer-experience.js?v=verify-answer-complete-20260827'));
+console.log('verify-answer-experience.test.js passed');
