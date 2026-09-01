@@ -14,6 +14,7 @@
   width: min(100%, 560px);
   min-width: 220px;
   min-height: 46px;
+  container-type: inline-size;
   display: flex;
   align-items: center;
   gap: 10px;
@@ -62,7 +63,10 @@
 .global-search-input-wrap input,
 .global-search-page-input-row input {
   min-width: 0;
-  flex: 1;
+  flex: 1 1 auto;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
   border: 0;
   border-radius: 0;
   padding: 0;
@@ -101,6 +105,17 @@
   color: #6e7890;
   font: 800 10px/1.2 "DM Sans", sans-serif;
   letter-spacing: 0.02em;
+}
+
+.global-search-dictation {
+  flex: 0 0 auto;
+  min-block-size: 36px;
+  margin: 0;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 12px;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
 .global-search-spinner {
@@ -482,6 +497,18 @@ body.global-search-open {
   }
 }
 
+@container (max-width: 720px) {
+  .global-search-dictation {
+    display: none !important;
+  }
+}
+
+@media (max-width: 1000px) {
+  .global-search-dictation {
+    display: none !important;
+  }
+}
+
 @media (max-width: 860px) {
   .global-search-trigger {
     width: min(42vw, 360px);
@@ -533,7 +560,8 @@ body.global-search-open {
 
   .global-search-trigger .global-search-clear,
   .global-search-trigger .global-search-spinner,
-  .global-search-trigger .global-search-shortcut {
+  .global-search-trigger .global-search-shortcut,
+  .global-search-trigger .global-search-dictation {
     display: none !important;
   }
 
