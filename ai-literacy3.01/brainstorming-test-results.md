@@ -1,0 +1,3 @@
+# Brainstorming Test Results
+
+Focused tests passed **309/309 assertions** and cover modes, idea types/origins, decisions, distinctness, student ideas, combination provenance, independent development, policy/privacy gates, Step 17 receipt links, evidence candidates, accessibility markers, offline/security contracts, ownership, idempotency, and no score/automatic selection/submission. JavaScript syntax passed. Full regression passed **106 test files** with zero failures. Production persistence, live generation, browser E2E, localization/speech, offline sync, and manual assistive-technology checks remain unavailable.
