@@ -1,0 +1,27 @@
+'use strict';
+const assert=require('assert'),fs=require('fs'),path=require('path');
+const root=path.join(__dirname,'..'),html=fs.readFileSync(path.join(root,'index (2).html'),'utf8'),css=fs.readFileSync(path.join(root,'style.css'),'utf8'),script=fs.readFileSync(path.join(root,'script.js'),'utf8');let n=0;
+const ok=(value,message)=>{assert.ok(value,message);n++};
+const visibleText=html.replace(/<script\b[\s\S]*?<\/script>/gi,'').replace(/<style\b[\s\S]*?<\/style>/gi,'').replace(/<[^>]+>/g,' ').replace(/\s+/g,' ');
+
+ok(!/\bMVP\b/i.test(visibleText),'ordinary pages contain no visible MVP wording');
+ok(!/Minimum Viable Product/i.test(visibleText),'ordinary pages contain no expanded MVP wording');
+ok(!/MVP Status|MVP Roadmap|Development Progress|Release Stages|Feature Flags/i.test(visibleText),'no internal release navigation labels remain');
+ok(!html.includes('data-view="mvpStatus"'),'desktop/mobile navigation has no MVP Status link');
+ok(!html.includes('data-view="accessibilityMvp"'),'desktop/mobile navigation has no Accessibility MVP link');
+ok(!html.includes('id="mvpStatusView"'),'release-status view is not mounted');
+ok(!html.includes('id="accessibilityMvpView"'),'accessibility release-stage view is not mounted');
+ok(!html.includes('mvp-stage.js'),'MVP status renderer is not shipped to ordinary pages');
+ok(!html.includes('accessibility-mvp.js'),'accessibility stage renderer is not shipped to ordinary pages');
+ok(!html.includes('studyspark-mvp-release-runtime.js'),'global release dashboard renderer is not shipped to ordinary pages');
+ok(!html.includes('studyspark-mvp-release-runtime.css'),'global release dashboard styles are not shipped to ordinary pages');
+ok(!html.includes('config/studyspark-mvp-capabilities.js'),'capability manifest is not exposed through ordinary page markup');
+ok(!css.includes('.mvp-stage-hero')&&!css.includes('.mvp-stage-grid'),'removed release panels reserve no layout space');
+ok(!/mvp(Stage|Progress)|currentMvpStage|releaseStage|developmentStatus|featureFlagDetails|capabilityManifest|internalReleaseStatus/.test(script),'main user runtime exposes no MVP response fields');
+ok(html.includes('id="coachView"')&&html.includes('id="coachForm"'),'AI Coach and composer remain mounted');
+ok(html.includes('ai-literacy-lab.js'),'AI Literacy Lab remains mounted through its existing runtime');
+ok(html.includes('id="roleDashboardsView"'),'role dashboards remain mounted');
+ok(html.includes('accessibility-toolbar.js')&&html.includes('low-bandwidth.js'),'accessibility and offline controls remain mounted');
+ok(!/mvp[^\n]{0,80}(position\s*:\s*fixed|inset\s*:\s*0|z-index)/i.test(css),'no MVP overlay or floating box remains');
+ok(!html.includes('/internal/release-status')&&!html.includes('/admin/development'),'no insecure client-only internal route is advertised');
+console.log(`${n}/${n} assertions passed`);
