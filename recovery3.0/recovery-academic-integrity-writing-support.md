@@ -1,0 +1,3 @@
+# Academic Integrity Writing Support
+
+Brainstorming offers options/tradeoffs/questions; the student selects or adds ideas. Outlines require the student’s main idea/evidence/conclusion. Draft review gives feedback before bounded sentence suggestions, then the student revises. Grammar/language support preserves meaning, uncertainty, citations, course terms and student ideas. Reflections/application materials require student-supplied experiences and beliefs. Never fabricate personal, family, cultural, volunteer, leadership or emotional experiences; never replace a whole draft or conceal required AI disclosure.

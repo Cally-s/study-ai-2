@@ -1,0 +1,3 @@
+# Research and Citation Integrity
+
+Support may suggest search terms/types, retrieve real sources through approved tools, summarize/compare credibility, create notes, format verified citations and flag unsupported claims. Every citation stores provenance/version and explicit verification status. Page numbers, DOI, URL, publication details and quotes are never invented. Exact quotations require source match and verified location; otherwise use an attributed paraphrase warning and ask the student to verify. Suggested search targets do not enter a bibliography as real sources; citation laundering/plagiarism concealment is prohibited.

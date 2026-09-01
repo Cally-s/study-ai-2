@@ -1,0 +1,3 @@
+# Recovery Audio Daily Plan
+
+Audio may cover Today Minimum/full plan, tomorrow’s first action, Test Tomorrow, or Seven-Day summary with exact date, selected situation, priorities, actions, durations, done definitions, deadlines, English terms, optional translations, stopping time and Finish permission. Languages, Short/Standard/Detailed length, speeds 0.75–2x, stream/permitted download are selectable. Every audio has matching visible transcript, source version, creation/plan date, language, duration and size. Privacy removal options apply. Source changes label prior audio outdated and offer regeneration; never silently replace or autoplay.

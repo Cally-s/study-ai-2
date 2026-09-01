@@ -1,0 +1,3 @@
+# Recovery Accessibility Privacy
+
+Accessibility/language preferences are private functional choices, not diagnoses. Public, parent, teacher, tutor and counsellor views exclude settings unless the student separately approves a minimum functional tutoring preference. Never share diagnosis/medical/immigration/labels/accommodation records automatically. Voice disclosure covers recording/provider/retention/deletion; raw audio and transcripts stay out of analytics/profiles and emotion analysis. Translation providers receive minimum text. Offline files are account isolated with deletion controls; notification previews stay generic.

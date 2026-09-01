@@ -1,0 +1,3 @@
+# Recovery Accessibility Audit
+
+The route inventory contains 40 Recovery surfaces. Automated source checks cover enums, invariants, semantics, labels, focus hooks, reflow/forced-colour/motion/RTL/print CSS, privacy serializers and loader integration. Issues use Critical/High/Medium/Low and keyboard, focus, labels, headings, landmarks, status, contrast, colour, reflow, motion, TTS/STT, translation, English terms, bandwidth/offline, print, transcript and privacy types. Every route still requires manual review. No WCAG, PDF, browser, screen-reader or representative-user conformance is claimed from automation alone.
