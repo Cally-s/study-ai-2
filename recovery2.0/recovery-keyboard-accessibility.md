@@ -1,0 +1,3 @@
+# Recovery Keyboard Accessibility
+
+All actions use semantic links/buttons/fields/radios/checkboxes/tabs/accordions/date/time/language/audio/print/download controls reachable by Tab/Shift+Tab, Enter, Space, Escape, arrows, Home and End as appropriate. Skip to Content/Recovery Plan is available; focus is visible and ordered. Dialogs receive focus, trap it only while open, warn before discarding, close with Escape, and return focus. Routes focus the primary heading. No drag, hover, touch gesture, or mouse-only operation is required by the source contract. Manual keyboard execution remains NOT RUN.
