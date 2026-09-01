@@ -1,0 +1,3 @@
+# Offline Privacy
+
+Local data uses the strongest available platform protection, minimum content/retention, account/tenant/device isolation, clear storage size and deletion, and shared-device warnings. Passwords, API keys, tokens, payment/government identifiers, raw audio, safety content, private paths, and network identifiers are excluded from sync. Teachers/parents cannot inspect local drafts by default. Events contain operational categories only. Connectivity, device type, location, usage, and storage choices never become socioeconomic, disability, ability, engagement, risk, or rank signals.

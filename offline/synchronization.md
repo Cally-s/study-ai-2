@@ -1,0 +1,3 @@
+# Synchronization
+
+Reconnection only suggests availability. Before mutation, authenticate user/account/tenant/device and validate package signature/version, activity/content/adaptation/term, assignment policy, safeguard, consent, accessibility/language, assignment, source/currentness, and expiration. Non-conflicting drafts synchronize idempotently; partial status is visible. Source verification and human review remain pending. Final submission, message, public share, consent, badge application, external invitation/contact, and deployment require intentional online confirmation. Local data remains until validated server acknowledgement.

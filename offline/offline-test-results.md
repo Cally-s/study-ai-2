@@ -1,0 +1,11 @@
+# Offline Test Results
+
+Focused tests cover exact labels/capabilities; text-first order/policy/accessibility; compressed asset alternatives; package type, protected-content/secret rejection, hashes/signatures/corruption, shared-device consent, tenant access; source activity contracts; local progress/no formal state; exact pending status; cached-source limits; secret-free batches; idempotency; account/tenant/package validation; partial synchronization; no automatic protected actions; local/server conflict preservation and explicit resolution; unavailable/changed/current source checks; low-bandwidth/offline request envelope; fake AI/verification/answer/audio/silent-merge/connectivity validation; redacted events; keyboard/mobile/contrast/motion/RTL/print CSS; and page wiring. Production service workers, secure device storage, signing keys, malware scanning, browser quota, download interruption, real source/provider checks, and assistive-technology testing remain required.
+
+Step 69 directly calls the offline validator for UJ-048 and asserts UJ-034, UJ-035, and UJ-049 contracts without claiming a real service worker.
+
+## Non-blocking connection status fix
+
+The legacy large fixed status panel was replaced with a compact top banner whose outer positioner uses `pointer-events: none` and whose controls alone accept interaction. The main application always renders during `UNKNOWN`, `CONNECTING`, `OFFLINE`, `SERVER_UNREACHABLE`, and `AUTHENTICATION_REQUIRED`. A five-second abortable health check resolves offline, 401, success, error, and timeout states; a restored notice hides after four seconds; persistent notices are dismissible without changing actual state; stable online/offline listeners are registered once and cleaned up. Online-only feature guards preserve navigation, accessibility/language settings, downloaded/local content, draft editing, and local saving.
+
+Focused results: legacy Low-Bandwidth suite **115/115 passed**; connection-status suite **57/57 assertions passed**. Live local-browser verification confirmed visible main content, a 67px-tall non-blocking banner at 1280×720, outer/inner pointer-event separation, polite status semantics, Dismiss behavior, and successful navigation into Guest Mode while the server-unreachable state remained active.
