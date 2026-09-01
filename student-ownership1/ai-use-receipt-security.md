@@ -1,0 +1,3 @@
+# AI Use Receipt Security
+
+Only immutable server-validated event/source/policy/map/artifact references compose system facts. Prompt, retrieved, model, and client text cannot create events, sources, contribution, permission, timestamps, or sharing. Tenant/conversation/assignment/receipt/recipient ownership, receipt and policy versions, optimistic concurrency, source watermarks, idempotency, redaction validation, and intentional preview/confirmation fail closed. Student narrative cannot relabel AI text as student work or fabricate contribution; logs exclude raw private/redacted/safety/accessibility content.

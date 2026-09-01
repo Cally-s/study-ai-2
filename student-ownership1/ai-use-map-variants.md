@@ -1,0 +1,3 @@
+# AI Use Map Variants
+
+Translation separates interface/accommodation/instruction translation from generated translated submissions and active-test content. Grammar separates pattern/rule feedback from paragraph or final-submission rewriting. Outlining separates organizing student ideas from generating the argument. Code debugging separates error/first-bug/test review from replacement functions or complete programs. Image use separates practice/brainstorming/editing from final assets or deceptive evidence. Sources distinguish verification/confirmed formatting/labelled fictional practice from invented citations, quotes, or pages. Reflection support asks questions or reviews student work but never invents experience.

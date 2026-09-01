@@ -1,0 +1,3 @@
+# AI Use Receipt Privacy
+
+Receipts start private and never become visible to teachers, parents, tutors, administrators, peers, or group members automatically. Safety and accessibility events are excluded before generation. Important prompts use minimal summaries; identifiers, other people’s information, raw files/transcripts, hidden reasoning, and unrelated personal details are excluded/redacted. Shareable versions contain only selected data. No profiling, surveillance, authorship/honesty/dependence scoring, or misconduct inference is allowed. Deletion and retention follow policy; prior shares remain historical.
