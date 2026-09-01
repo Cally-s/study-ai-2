@@ -1,0 +1,5 @@
+# Competency Portfolio Test Results
+
+The focused suite passes 136 assertions covering exact labels, private defaults, purposes/visibility/eligibility, student ownership, sections/items/versioning/reordering/removal, source references, receipt/System Card/scenario/reflection safety, teacher submission/review boundaries, public-policy fail-closed behavior, password handling, item/version selection, privacy/secret/metadata/assessment/copyright/security/accessibility preflight, advisory scans, exact preview/warning, immutable sanitized snapshots, static prototype view, reflection privacy, no comments/messaging/tracking/advertising/indexing, public notice, access/expiry/revocation, no contact or engagement recognition, source preservation, strict schema, redacted events, and idempotency.
+
+Known limitations: in-memory prototype without database/migrations, production policy/age/guardian services, object storage/sanitizer/scanners, secure token/password service, CDN purge, public renderer, export generator, browser E2E, or assistive-technology lab.

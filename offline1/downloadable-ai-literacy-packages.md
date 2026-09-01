@@ -1,0 +1,3 @@
+# Downloadable AI Literacy Packages
+
+Packages may combine Understand/Apply/Create lessons, bilingual glossaries, accessible text/media, worksheets, prompt/integrity practice, reflections, transcripts, permitted audio/cached sources, and policy/safeguard snapshots. The manifest lists every content/adaptation/term/activity/language/accessibility/source version, eligibility/sync rule, size/storage requirement, rights, dates, expiration, hash, signature, and revocation rule. Published manifests are immutable and server signed. Corrupt, unsigned, expired, or tampered packages are untrusted. Protected answers, teacher rubrics/notes, private work/conversations/receipts, safety content, secrets, share tokens, and unlicensed sources are prohibited.

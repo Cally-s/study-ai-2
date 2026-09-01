@@ -1,0 +1,3 @@
+# Printable Source-Checking Worksheets
+
+Worksheets preserve claim, possible source identity, publisher, date/update, quotation/citation notes, exact-claim support, currentness, disagreement, limitations, questions, planned online checks, revision, canonical terms, sources, warnings, writing space, and accessible descriptions. Student observations are visibly preliminary. The status is exactly **Verification pending internet access** and cannot become Verified, Supported, Current, Complete, evidence, competency, or badge status offline. Print remains keyboard/screen-reader-preparable, bilingual, high-contrast, and independent of colour.

@@ -1,0 +1,3 @@
+# Local Progress Storage
+
+Progress is scoped to authenticated account, tenant, device installation, package/activity/content/policy/safeguard/accessibility versions, section/instruction, and local row version. Response content remains in protected platform storage; metadata is minimized and retained only as configured. Shared/public devices show a warning and offer temporary text-only access. Students can inspect and delete local data. Teachers/parents do not see unsynchronized drafts. Account switching isolates records. Local progress never creates formal completion, evidence, grade, competency, or badge state.
