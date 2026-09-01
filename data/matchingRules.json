@@ -1,0 +1,130 @@
+{
+  "matching": {
+    "maximumExamDateDifferenceDays": 7,
+    "requireSameSubject": true,
+    "requireCompatibleCourse": true,
+    "requireSameExam": true,
+    "excludePastExams": true
+  },
+  "courseAliases": {
+    "mathematics": "math",
+    "bio": "biology",
+    "biology 10": "grade 10 biology",
+    "math 10": "grade 10 math",
+    "computer studies": "computer science"
+  },
+  "examAliases": {
+    "final": "final exam",
+    "midterm": "midterm exam",
+    "chapter test": "unit test"
+  },
+  "topicMatching": {
+    "firstComplementaryTopicPoints": 15,
+    "additionalComplementaryTopicPoints": 10,
+    "twoWayMatchBonus": 20,
+    "maximumTopicMatchPoints": 80
+  },
+  "topicAliases": {
+    "cell respiration": "cellular respiration",
+    "linear equations": "linear relations"
+  },
+  "timeMatching": {
+    "firstExactMatchPoints": 20,
+    "additionalExactMatchPoints": 10,
+    "relatedMatchPoints": 8,
+    "maximumTimeMatchPoints": 40,
+    "relatedCategories": [
+      [
+        "weekday morning",
+        "weekday afternoon"
+      ],
+      [
+        "weekday afternoon",
+        "weekday evening"
+      ],
+      [
+        "weekend morning",
+        "weekend afternoon"
+      ],
+      [
+        "weekend afternoon",
+        "weekend evening"
+      ]
+    ]
+  },
+  "preferenceMatching": {
+    "meetingTypeExactPoints": 8,
+    "meetingTypeCompatiblePoints": 4,
+    "groupSizeExactPoints": 6,
+    "groupSizeCompatiblePoints": 3,
+    "firstStudyMethodMatchPoints": 8,
+    "additionalStudyMethodMatchPoints": 3,
+    "mixedMethodCompatiblePoints": 3,
+    "maximumStudyMethodPoints": 14,
+    "sessionLengthExactPoints": 5,
+    "sessionLengthCompatiblePoints": 2,
+    "maximumPreferencePoints": 30,
+    "compatibleGroupSizes": [
+      [
+        "2",
+        "2-4"
+      ],
+      [
+        "2-4",
+        "4-6"
+      ]
+    ],
+    "compatibleSessionLengths": [
+      [
+        "20-30 minutes",
+        "30-45 minutes"
+      ],
+      [
+        "30-45 minutes",
+        "45-60 minutes"
+      ],
+      [
+        "45-60 minutes",
+        "60-90 minutes"
+      ]
+    ]
+  },
+  "finalScore": {
+    "maximumScore": 100,
+    "minimumDisplayedScore": 60,
+    "course": {
+      "exactPoints": 25,
+      "relatedPoints": 20
+    },
+    "exam": {
+      "exactPoints": 20
+    },
+    "examDate": {
+      "veryClosePoints": 10,
+      "closePoints": 8,
+      "acceptablePoints": 5
+    },
+    "complementaryTopics": {
+      "maximumPoints": 25,
+      "pointsPerTopic": 7,
+      "twoWayBonus": 6
+    },
+    "studyTime": {
+      "maximumPoints": 10,
+      "firstExactMatchPoints": 8,
+      "additionalExactMatchPoints": 2,
+      "relatedMatchPoints": 4
+    },
+    "meetingType": {
+      "exactPoints": 5,
+      "compatiblePoints": 3
+    },
+    "groupAndMethod": {
+      "maximumPoints": 5,
+      "groupSizeExactPoints": 2,
+      "groupSizeCompatiblePoints": 1,
+      "firstMethodMatchPoints": 3,
+      "mixedMethodPoints": 1
+    }
+  }
+}
