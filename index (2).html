@@ -1,0 +1,964 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudySpark AI Coach turns notes into flashcards, quizzes and practical study plans.">
+  <title>StudySpark AI Coach</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=study-together-account-gate-v2-20260831">
+  <link rel="stylesheet" href="global-search.css?v=global-search-20260831">
+  <link rel="stylesheet" href="speech-to-text.css">
+  <link rel="stylesheet" href="live-captions.css">
+  <link rel="stylesheet" href="plain-language.css">
+  <link rel="stylesheet" href="explanation-levels.css">
+  <link rel="stylesheet" href="language-bridge.css">
+  <link rel="stylesheet" href="academic-vocabulary.css">
+  <link rel="stylesheet" href="multilingual-ai.css">
+  <link rel="stylesheet" href="ai-coach-language-tools.css?v=help-step-support-row-20260831">
+  <link rel="stylesheet" href="academic-coach-support.css?v=academic-coach-20260831">
+  <link rel="stylesheet" href="help-centre.css?v=task-help-centre-compact-search-20260831">
+  <link rel="stylesheet" href="low-bandwidth.css">
+  <link rel="stylesheet" href="text-only-study-rooms.css">
+  <link rel="stylesheet" href="offline-study-packages.css">
+  <link rel="stylesheet" href="printable-review-plans.css">
+  <link rel="stylesheet" href="audio-lesson-summaries.css">
+  <link rel="stylesheet" href="digital-skills-support.css">
+  <link rel="stylesheet" href="ai-accessibility-commands.css?v=response-actions-20260826">
+  <link rel="stylesheet" href="student-privacy.css">
+  <link rel="stylesheet" href="accessible-resource-studio.css">
+  <link rel="stylesheet" href="complete-user-journeys.css">
+  <link rel="stylesheet" href="academic-recovery.css?v=assignment-recovery-20260824">
+  <link rel="stylesheet" href="academic-recovery-situations.css">
+  <link rel="stylesheet" href="academic-recovery-calm.css">
+  <link rel="stylesheet" href="academic-recovery-work.css">
+  <link rel="stylesheet" href="academic-recovery-entry-methods.css">
+  <link rel="stylesheet" href="academic-recovery-capacity.css">
+  <link rel="stylesheet" href="academic-recovery-feasibility.css">
+  <link rel="stylesheet" href="academic-recovery-verification.css">
+  <link rel="stylesheet" href="academic-recovery-prioritization.css">
+  <link rel="stylesheet" href="ai-literacy-lab.css?v=pathway-route-20260823">
+  <link rel="stylesheet" href="learning-pathway-module-flow.css?v=module-flow-20260823-3">
+  <link rel="stylesheet" href="ai-literacy-diagnostic.css?v=learning-check-actions-20260823">
+  <link rel="stylesheet" href="learning-check-setup.css?v=setup-step-20260823">
+  <link rel="stylesheet" href="learning-check-attempt.css?v=question-step-20260823">
+  <link rel="stylesheet" href="learning-check-results.css?v=results-step-20260823">
+  <link rel="stylesheet" href="learning-check-history.css?v=history-step-20260823">
+  <link rel="stylesheet" href="learning-check-privacy.css?v=privacy-panel-20260823">
+  <link rel="stylesheet" href="first-screen-navigation.css?v=study-together-dedupe-20260831">
+  <link rel="stylesheet" href="ai-literacy-competency-progress.css">
+  <link rel="stylesheet" href="competency-progress-experience.css?v=competency-progress-complete-20260828">
+  <link rel="stylesheet" href="ai-literacy-lessons.css">
+  <link rel="stylesheet" href="what-ai-is.css">
+  <link rel="stylesheet" href="human-agency-lesson.css">
+  <link rel="stylesheet" href="unsupported-ai-output.css">
+  <link rel="stylesheet" href="training-data-bias.css">
+  <link rel="stylesheet" href="privacy-before-prompting.css">
+  <link rel="stylesheet" href="ai-assistance-original-work.css">
+  <link rel="stylesheet" href="assignment-policy-awareness.css">
+  <link rel="stylesheet" href="prompt-writing-coach.css">
+  <link rel="stylesheet" href="prompt-iteration.css">
+  <link rel="stylesheet" href="answer-verification.css?v=verify-answer-20260827">
+  <link rel="stylesheet" href="verify-answer-experience.css?v=verify-answer-complete-20260827">
+  <link rel="stylesheet" href="source-comparison.css">
+  <link rel="stylesheet" href="source-comparison-experience.css?v=source-comparison-complete-20260827">
+  <link rel="stylesheet" href="claim-evidence-map.css">
+  <link rel="stylesheet" href="claim-evidence-map-experience.css?v=claim-evidence-map-complete-20260827">
+  <link rel="stylesheet" href="claim-evidence-map-goal-fix.css?v=goal-buttons-builder-layout-20260828">
+  <link rel="stylesheet" href="ai-use-receipt.css">
+  <link rel="stylesheet" href="ai-use-receipts-experience.css?v=ai-use-receipts-complete-20260827">
+  <link rel="stylesheet" href="brainstorming-studio.css">
+  <link rel="stylesheet" href="feedback-revision-studio.css">
+  <link rel="stylesheet" href="revision-decision-studio.css">
+  <link rel="stylesheet" href="academic-recovery-priority-explanations.css">
+  <link rel="stylesheet" href="academic-recovery-prerequisites.css">
+  <link rel="stylesheet" href="academic-recovery-repair.css">
+  <link rel="stylesheet" href="academic-recovery-plan.css">
+  <link rel="stylesheet" href="academic-recovery-seven-day.css">
+  <link rel="stylesheet" href="academic-recovery-decomposition.css">
+  <link rel="stylesheet" href="academic-recovery-test-tomorrow.css">
+  <link rel="stylesheet" href="academic-recovery-missed-week.css">
+  <link rel="stylesheet" href="academic-recovery-missed-month.css">
+  <link rel="stylesheet" href="academic-recovery-prerequisite-help.css">
+  <link rel="stylesheet" href="academic-recovery-overwhelmed.css">
+  <link rel="stylesheet" href="academic-recovery-teacher-message.css">
+  <link rel="stylesheet" href="academic-recovery-parent-summary.css">
+  <link rel="stylesheet" href="academic-recovery-daily-check-in.css">
+  <link rel="stylesheet" href="academic-recovery-recalculation.css">
+  <link rel="stylesheet" href="academic-recovery-blocked.css">
+  <link rel="stylesheet" href="academic-recovery-human-support.css">
+  <link rel="stylesheet" href="academic-recovery-progress-recognition.css">
+  <link rel="stylesheet" href="academic-recovery-metrics.css">
+  <link rel="stylesheet" href="academic-recovery-notifications.css">
+  <link rel="stylesheet" href="academic-recovery-accessibility-language.css">
+  <link rel="stylesheet" href="academic-recovery-integrity.css">
+  <link rel="stylesheet" href="academic-recovery-privacy-control.css">
+  <link rel="stylesheet" href="academic-recovery-dashboard.css">
+  <link rel="stylesheet" href="academic-recovery-teacher-support.css">
+  <link rel="stylesheet" href="academic-recovery-output.css">
+  <script src="accessibility-toolbar-boot.js"></script>
+  <link rel="stylesheet" href="community-ai-project.css?v=project-pathway-header-20260830">
+  <link rel="stylesheet" href="problem-scoping-studio.css?v=problem-scope-complete-20260829">
+  <link rel="stylesheet" href="problem-scope-experience.css?v=problem-scope-complete-20260829">
+  <link rel="stylesheet" href="ai-system-card-studio.css?v=system-card-complete-20260829">
+  <link rel="stylesheet" href="system-card-experience.css?v=system-card-complete-20260829">
+  <link rel="stylesheet" href="ai-architecture-design-studio.css?v=project-architecture-complete-20260829">
+  <link rel="stylesheet" href="project-architecture-experience.css?v=project-architecture-complete-20260829">
+  <link rel="stylesheet" href="data-responsibility-studio.css">
+  <link rel="stylesheet" href="data-responsibility-experience.css?v=data-responsibility-complete-20260829">
+  <link rel="stylesheet" href="project-feature-hero.css?v=project-feature-hero-emergency-20260830">
+  <link rel="stylesheet" href="fairness-evaluation-lab.css">
+  <link rel="stylesheet" href="iteration-feedback-studio.css">
+  <link rel="stylesheet" href="ethical-social-reflection-studio.css">
+  <link rel="stylesheet" href="learning-mode-selector.css">
+  <link rel="stylesheet" href="progressive-hints.css">
+  <link rel="stylesheet" href="guiding-question-mode.css">
+  <link rel="stylesheet" href="similar-example-mode.css">
+  <link rel="stylesheet" href="reasoning-check-mode.css">
+  <link rel="stylesheet" href="challenge-my-answer-mode.css">
+  <link rel="stylesheet" href="adaptive-quiz-mode.css">
+  <link rel="stylesheet" href="academic-integrity-context-runtime.css">
+  <link rel="stylesheet" href="assignment-ai-policy-runtime.css">
+  <link rel="stylesheet" href="assistance-ladder-runtime.css">
+  <link rel="stylesheet" href="integrity-intervention-runtime.css">
+</head>
+<body>
+  <a class="skip-link" href="#viewContainer">Skip to main content</a>
+  <div id="connectionStatus" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <!-- Public navigation and landing page -->
+  <header class="public-nav" id="publicNav">
+    <a class="brand" href="#home" data-route="landing" aria-label="StudySpark home">
+      <span class="logo-mark">S</span><span>StudySpark</span>
+    </a>
+    <nav aria-label="Main navigation">
+      <a href="#features">Features</a><a href="#pricing">Pricing</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="btn btn-ghost" data-auth="login">Log in</button>
+      <button class="btn btn-secondary" data-guest>Continue as Guest</button>
+      <button class="btn btn-primary" data-auth="signup">Get started</button>
+    </div>
+  </header>
+
+  <main id="landing" class="page active">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="spark-dot"></span> Your smarter study companion</div>
+        <h1>Turn study time into <span>real progress.</span></h1>
+        <p>Transform your class notes into focused quizzes, memorable flashcards, and a study plan built around your next test.</p>
+        <div class="hero-actions">
+          <button class="btn btn-primary btn-large" data-auth="signup">Start studying free <span>&rarr;</span></button>
+          <button class="btn btn-secondary btn-large" data-auth="login">I have an account</button>
+          <button class="btn btn-secondary btn-large" data-guest>Continue as Guest</button>
+        </div>
+        <div class="trust-row"><span>&#10003; No credit card</span><span>&#10003; Saves automatically</span><span>&#10003; Made for students</span></div>
+      </div>
+      <div class="hero-visual" aria-label="StudySpark dashboard preview">
+        <div class="preview-card">
+          <div class="preview-top"><span class="mini-logo">S</span><span>Today's focus</span><span class="mini-pill">12 day streak</span></div>
+          <div class="preview-goal"><div><small>BIOLOGY &middot; TEST IN 5 DAYS</small><strong>Cell biology review</strong></div><div class="ring">72%</div></div>
+          <div class="preview-progress"><i style="width:72%"></i></div>
+          <div class="preview-grid"><div><b>18</b><small>Cards mastered</small></div><div><b>84%</b><small>Latest quiz</small></div><div><b>35m</b><small>Studied today</small></div></div>
+          <button class="preview-button">Continue study session <span>&rarr;</span></button>
+        </div>
+        <div class="float-card float-one"><span class="icon-box lavender">Aa</span><div><b>Flashcards ready</b><small>12 cards from Biology</small></div></div>
+        <div class="float-card float-two"><span class="icon-box blue">&#10003;</span><div><b>Quiz complete</b><small>Great work - 4/5</small></div></div>
+      </div>
+    </section>
+
+    <section class="features section" id="features">
+      <div class="section-heading"><span class="kicker">HOW IT WORKS</span><h2>Everything you need to study with purpose</h2><p>One simple workspace, from the first page of notes to test day.</p></div>
+      <div class="feature-grid">
+        <article class="feature-card"><span class="feature-icon">Q</span><span class="number">01</span><h3>AI Quizzes</h3><p>Turn any set of notes into a quick practice quiz with helpful answer explanations.</p><a href="#" data-auth="signup">Try a quiz &rarr;</a></article>
+        <article class="feature-card featured"><span class="feature-icon">F</span><span class="number">02</span><h3>Smart Flashcards</h3><p>Build focused question-and-answer cards and track what you know or need to revisit.</p><a href="#" data-auth="signup">Make cards &rarr;</a></article>
+        <article class="feature-card"><span class="feature-icon">P</span><span class="number">03</span><h3>Personal Study Plan</h3><p>Get a practical day-by-day schedule based on your topics, time, and test date.</p><a href="#" data-auth="signup">Build a plan &rarr;</a></article>
+      </div>
+    </section>
+
+    <section class="safe-learning-section section" aria-labelledby="safe-learning-title">
+      <div class="safe-learning-copy">
+        <span class="kicker">SAFE, STUDENT-LED LEARNING</span>
+        <h2 id="safe-learning-title">Helpful support, with you in control</h2>
+        <p>StudySpark protects your privacy, respects your teacher’s expectations, and encourages you to think through your own work. When information needs checking, it helps you find a reliable next step.</p>
+      </div>
+      <div class="safe-learning-points" aria-label="How StudySpark supports safe learning">
+        <span><b aria-hidden="true">✓</b> Your work stays private by default</span>
+        <span><b aria-hidden="true">✓</b> Help adapts to your learning task</span>
+        <span><b aria-hidden="true">✓</b> Sources and uncertainty are made clear</span>
+      </div>
+    </section>
+
+    <section class="public-ai-guidance-section" aria-label="Responsible AI learning tools">
+      <div class="public-ai-guidance-container">
+        <div id="publicAIUseMapHost" class="public-ai-guidance-host"></div>
+        <div id="publicAIUseReceiptHost" class="public-ai-guidance-host"></div>
+      </div>
+    </section>
+
+    <section class="pricing section" id="pricing">
+      <div class="section-heading"><span class="kicker">SIMPLE PRICING</span><h2>Start free. Grow when you need to.</h2></div>
+      <div class="pricing-grid">
+        <article class="price-card"><h3>Free</h3><p>For building better study habits.</p><div class="price"><b>$0</b><span>/ forever</span></div><ul><li>Unlimited notes</li><li>5 quizzes per month</li><li>Basic study planner</li></ul><button class="btn btn-secondary" data-auth="signup">Get started</button></article>
+        <article class="price-card pro"><div class="popular">MOST POPULAR</div><h3>Student Pro</h3><p>For students ready to go further.</p><div class="price"><b>$9.99</b><span>/ month</span></div><ul><li>Unlimited quizzes & cards</li><li>Advanced progress insights</li><li>Priority AI coaching</li></ul><button class="btn btn-primary" data-premium>Choose Pro</button></article>
+        <article class="price-card"><h3>School</h3><p>For classrooms and study groups.</p><div class="price"><b>Custom</b></div><ul><li>Teacher dashboards</li><li>Class-wide analytics</li><li>Dedicated support</li></ul><button class="btn btn-secondary" data-premium>Contact us</button></article>
+      </div>
+    </section>
+    <footer><a class="brand" href="#home"><span class="logo-mark">S</span><span>StudySpark</span></a><p>Study smarter, not harder.</p><small>&copy; 2026 StudySpark. Built for curious minds.</small></footer>
+  </main>
+
+  <!-- Authentication dialog -->
+  <div class="modal" id="authModal" aria-hidden="true">
+    <div class="modal-card auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+      <button class="modal-close" data-close aria-label="Close">&times;</button>
+      <div class="auth-brand"><span class="logo-mark">S</span></div>
+      <h2 id="authTitle">Create your account</h2><p id="authSubtitle">Start studying smarter today. It's free.</p>
+      <div class="auth-tabs"><button class="active" data-tab="signup">Sign up</button><button data-tab="login">Log in</button></div>
+      <form id="signupForm" class="auth-form">
+        <label>Full name<input name="name" required placeholder="Alex Morgan"></label>
+        <label>Email address<input type="email" name="email" required placeholder="alex@example.com"></label>
+        <label>Password<input type="password" name="password" required minlength="4" placeholder="At least 4 characters"></label>
+        <label>Grade<select name="grade"><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option><option>College / University</option></select></label>
+        <fieldset class="course-picker"><legend>Choose your courses <small>Select as many as you like</small></legend><div id="signupCourses" class="course-options"></div></fieldset>
+        <button class="btn btn-primary btn-full">Create account</button>
+      </form>
+      <form id="loginForm" class="auth-form hidden">
+        <label>Email address<input type="email" name="email" required placeholder="alex@example.com"></label>
+        <label>Password<input type="password" name="password" required placeholder="Your password"></label>
+        <button class="btn btn-primary btn-full">Log in</button>
+        <button class="btn btn-secondary btn-full" type="button" data-guest>Continue as Guest</button>
+        <p class="demo-hint">New here? Create an account first - your data stays on this device.</p>
+      </form>
+    </div>
+  </div>
+
+  <!-- Signed-in application shell -->
+  <div id="app" class="app-shell hidden" data-sidebar-state="expanded">
+    <aside id="studyspark-sidebar" class="sidebar app-sidebar">
+      <div class="sidebar-header">
+        <a class="brand app-brand" href="#" aria-label="StudySpark Home"><span class="logo-mark">S</span><span class="brand-text">StudySpark</span></a>
+        <button id="sidebarToggle" class="sidebar-toggle" type="button" aria-label="Collapse sidebar" aria-expanded="true" aria-controls="studyspark-sidebar" title="Collapse sidebar">
+          <svg class="sidebar-toggle-icon sidebar-toggle-icon-collapse" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M9 4v16"></path><path d="m16 10-2 2 2 2"></path></svg>
+          <svg class="sidebar-toggle-icon sidebar-toggle-icon-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M9 4v16"></path><path d="m14 10 2 2-2 2"></path></svg>
+        </button>
+      </div>
+      <nav id="appNav" class="sidebar-nav" aria-label="Primary navigation" tabindex="0"></nav>
+      <div class="sidebar-footer"><div class="upgrade-box"><span class="lock">Pro</span><b>Unlock StudySpark Pro</b><p>Unlimited quizzes and deeper insights.</p><button data-premium>View plans</button></div>
+      <div class="user-mini"><button class="user-mini-main" id="profileShortcut" data-view="settings" title="Open Account Settings"><div class="avatar" id="sideAvatar">A</div><div><b id="sideName">Student</b><small id="sideGrade">Grade 11</small></div></button><button id="logoutBtn" title="Log out">Log out</button></div></div>
+    </aside>
+    <div class="app-content">
+      <header class="app-topbar"><button id="menuBtn" class="menu-btn" aria-label="Open menu" aria-expanded="false"><svg class="hamburger-menu-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true" focusable="false"><path d="M4 6h16"></path><path d="M4 12h16"></path><path d="M4 18h16"></path></svg></button><div class="app-page-info"><p id="breadcrumb">HOME</p><h2 id="viewTitle">Home</h2></div><form class="global-search-trigger" id="globalSearchTrigger" role="search" autocomplete="off"><label class="sr-only" for="globalSearchHeaderInput">Search StudySpark</label><span class="global-search-trigger-icon" id="globalSearchTriggerIcon" aria-hidden="true"></span><span class="global-search-mobile-label" aria-hidden="true">Search</span><input id="globalSearchHeaderInput" name="globalSearch" type="search" placeholder="Search tools, assignments, notes, projects, and more…" autocomplete="off" enterkeyhint="search"><button id="globalSearchHeaderClear" class="global-search-clear hidden" type="button" aria-label="Clear search">×</button><span id="globalSearchHeaderSpinner" class="global-search-spinner hidden" aria-hidden="true"></span><kbd id="globalSearchShortcutHint" class="global-search-shortcut">Ctrl K</kbd></form><div class="top-actions"><button class="icon-button notification-top-button" data-view="notifications" aria-label="Notifications" title="Open notifications"><svg class="notification-bell-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9"></path><path d="M13.7 21a2 2 0 0 1-3.4 0"></path></svg><b id="topNotificationBadge" class="notification-badge hidden">0</b></button><div class="top-account"><button class="avatar avatar-button" id="topAvatar" type="button" aria-label="Open account menu" aria-haspopup="menu" aria-controls="accountMenu" aria-expanded="false" title="Open account menu">A</button><div class="guest-account-menu hidden" id="accountMenu" role="menu" aria-labelledby="topAvatar" aria-hidden="true"></div></div></div></header>
+      <main id="viewContainer" tabindex="-1">
+        <!-- Dashboard -->
+        <section class="app-view active home-page" id="dashboardView" data-first-screen-ready="true">
+          <header class="home-welcome" aria-labelledby="homeTitle">
+            <div>
+              <span class="kicker">HOME</span>
+              <h1 id="homeTitle">Welcome back, <span id="welcomeName">Student</span>.</h1>
+              <p>Here is the most useful next step for today.</p>
+              <div class="account-mode-badge-row" id="accountModeBadges" aria-label="Account mode"></div>
+            </div>
+            <div class="home-header-actions">
+              <div class="date-card"><small>TODAY</small><b id="todayDate"></b></div>
+              <button class="btn btn-primary" id="homePrimaryAction" type="button">Continue Learning</button>
+            </div>
+          </header>
+          <section class="card home-continue-card" aria-labelledby="homeContinueTitle">
+            <div class="home-section-heading">
+              <div><span class="pill blue-pill">NEXT STEP</span><h2 id="homeContinueTitle">Continue Where You Left Off</h2></div>
+              <a href="#/progress/activity" data-home-view="activity">View All Recent Work</a>
+            </div>
+            <div id="homeContinueContent" class="home-continue-content" aria-live="polite"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading your next action</h3><p>StudySpark is checking your latest saved work.</p></div></div></div>
+          </section>
+          <section class="home-section" aria-labelledby="homeFeatureGridTitle">
+            <div class="home-section-heading">
+              <div><span class="pill purple-pill">QUICK ACCESS</span><h2 id="homeFeatureGridTitle">Quick Access</h2><p>Open the StudySpark tools you use most.</p></div>
+              <div class="home-section-heading-actions">
+                <button class="home-text-link" id="customizeQuickAccessBtn" type="button" data-customize-quick-access aria-expanded="false" aria-controls="homeQuickAccessCustomize">Customize</button>
+                <a href="#/tools" data-home-view="tools">Browse All Tools</a>
+              </div>
+            </div>
+            <div id="homeFeatureGrid" class="home-feature-grid"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading feature shortcuts</h3><p>Your main StudySpark workspaces will appear here.</p></div></div></div>
+            <div id="homeQuickAccessCustomize" class="home-customize-panel hidden" aria-live="polite"></div>
+          </section>
+          <div class="home-summary-grid">
+            <div class="home-main-column">
+              <section class="home-section" aria-labelledby="homeTodayGlanceTitle">
+                <div class="home-section-heading">
+                  <div><span class="pill blue-pill">TODAY</span><h2 id="homeTodayGlanceTitle">Today at a Glance</h2></div>
+                  <a href="#/today" data-home-view="today">Open Today’s Plan</a>
+                </div>
+                <div id="homeTodayGrid" class="home-glance-grid"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading today’s summary</h3><p>Checking due work, study time, and notifications.</p></div></div></div>
+              </section>
+              <section class="home-section" aria-labelledby="homeRecentActivityTitle">
+                <div class="home-section-heading">
+                  <div><span class="pill purple-pill">RECENT</span><h2 id="homeRecentActivityTitle">Recent Activity</h2></div>
+                  <a href="#/progress/activity" data-home-view="activity">View All Activity</a>
+                </div>
+                <div id="homeRecentActivityList" class="home-activity-list" aria-live="polite"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading recent activity</h3><p>Your latest StudySpark work will appear here.</p></div></div></div>
+              </section>
+            </div>
+            <aside class="home-side-column" aria-label="Project and notification summaries">
+              <section class="card home-side-card" aria-labelledby="homeProjectTitle">
+                <span class="pill blue-pill">PROJECTS</span>
+                <div id="homeProjectSummary"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading projects</h3><p>Checking for active project work.</p></div></div></div>
+              </section>
+              <section class="card home-side-card" aria-labelledby="homeNotificationsTitle">
+                <span class="pill purple-pill">UPDATES</span>
+                <div id="homeNotificationSummary"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading notifications</h3><p>Checking for important updates.</p></div></div></div>
+              </section>
+            </aside>
+          </div>
+        </section>
+
+        <section class="app-view home-child-page" id="todayView" data-first-screen-ready="true">
+          <header class="home-child-header" aria-labelledby="todayPageTitle">
+            <button class="study-page-back" type="button" data-study-page-back aria-label="Go back to previous StudySpark page" title="Back"><span aria-hidden="true">←</span></button>
+            <div>
+              <span class="kicker">TODAY</span>
+              <h1 id="todayPageTitle" tabindex="-1">Today’s Plan</h1>
+              <p>Review the work that matters today without opening a long dashboard.</p>
+            </div>
+          </header>
+          <div id="todayPageContent" class="home-focused-grid" aria-live="polite"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading Today’s Plan</h3><p>StudySpark is checking your current goal and due work.</p></div></div></div>
+        </section>
+
+        <section class="app-view home-child-page" id="activityView" data-first-screen-ready="true">
+          <header class="home-child-header" aria-labelledby="activityPageTitle">
+            <button class="study-page-back" type="button" data-study-page-back aria-label="Go back to previous StudySpark page" title="Back"><span aria-hidden="true">←</span></button>
+            <div>
+              <span class="kicker">RECENT WORK</span>
+              <h1 id="activityPageTitle" tabindex="-1">Recent Activity</h1>
+              <p>Search and reopen your latest StudySpark work from one focused page.</p>
+            </div>
+          </header>
+          <section class="card home-activity-tools" aria-labelledby="activitySearchTitle">
+            <h2 id="activitySearchTitle">Find Recent Work</h2>
+            <div class="home-activity-filter-row">
+              <label for="homeActivitySearch">Search Activity<input id="homeActivitySearch" type="search" placeholder="Search by activity, subject, or feature"></label>
+              <label for="homeActivityType">Feature Filter<select id="homeActivityType"><option value="">All features</option><option value="assignment">Assignments</option><option value="learning">Learning</option><option value="project">Projects</option><option value="progress">Progress</option><option value="coach">AI Coach</option></select></label>
+            </div>
+          </section>
+          <div id="activityPageList" class="home-activity-page-list" aria-live="polite"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading recent work</h3><p>StudySpark is checking your saved activity.</p></div></div></div>
+        </section>
+
+        <section class="app-view home-child-page" id="toolsView" data-first-screen-ready="true">
+          <header class="home-child-header" aria-labelledby="toolsPageTitle">
+            <button class="study-page-back" type="button" data-study-page-back aria-label="Go back to previous StudySpark page" title="Back"><span aria-hidden="true">←</span></button>
+            <div>
+              <span class="kicker">FEATURE DIRECTORY</span>
+              <h1 id="toolsPageTitle" tabindex="-1">All StudySpark Tools</h1>
+              <p>Find every available StudySpark workspace without scrolling through a long Home page.</p>
+            </div>
+          </header>
+          <section class="card home-activity-tools" aria-labelledby="toolsSearchTitle">
+            <h2 id="toolsSearchTitle">Find a Tool</h2>
+            <div class="home-activity-filter-row">
+              <label for="toolsSearchInput">Search StudySpark Tools<input id="toolsSearchInput" type="search" placeholder="Search by goal, feature, or task"></label>
+              <label for="toolsCategoryFilter">Category<select id="toolsCategoryFilter"><option value="">All categories</option></select></label>
+            </div>
+          </section>
+          <div id="toolsDirectoryContent" class="tools-directory-content" aria-live="polite"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading tools</h3><p>Your available StudySpark features will appear here.</p></div></div></div>
+        </section>
+
+        <section class="app-view home-child-page global-search-page" id="searchView" data-first-screen-ready="true">
+          <header class="home-child-header" aria-labelledby="searchPageTitle">
+            <button class="study-page-back" type="button" data-study-page-back aria-label="Go back to previous StudySpark page" title="Back"><span aria-hidden="true">←</span></button>
+            <div>
+              <span class="kicker">GLOBAL SEARCH</span>
+              <h1 id="searchPageTitle" tabindex="-1">Search StudySpark</h1>
+              <p>Find pages, tools, and your permitted saved work from one place.</p>
+            </div>
+          </header>
+          <section class="card global-search-page-card" aria-labelledby="searchPageFieldLabel">
+            <div class="global-search-page-head">
+              <div>
+                <label id="searchPageFieldLabel" for="globalSearchPageInput">Search StudySpark</label>
+                <p>Search the StudySpark feature directory first, then your own saved work when available.</p>
+              </div>
+              <button class="btn btn-secondary" id="globalSearchPageClear" type="button">Clear query</button>
+            </div>
+            <div class="global-search-page-input-row">
+              <span class="global-search-page-input-icon" id="globalSearchPageInputIcon" aria-hidden="true"></span>
+              <input id="globalSearchPageInput" type="search" placeholder="Search tools, assignments, notes, projects, and more…" autocomplete="off">
+            </div>
+            <div class="global-search-page-controls">
+              <label for="globalSearchCategoryFilter">Filter<select id="globalSearchCategoryFilter"><option value="all">All</option><option value="tools">Tools</option><option value="assignments">Assignments</option><option value="notes">Notes</option><option value="flashcards">Flashcards</option><option value="projects">Projects</option><option value="study-together">Study Together</option><option value="progress">Progress</option><option value="help">Help</option></select></label>
+              <label for="globalSearchSort">Sort<select id="globalSearchSort"><option value="best">Best Match</option><option value="recent">Recently Updated</option><option value="alpha">Alphabetical</option><option value="due">Due Soon</option></select></label>
+            </div>
+          </section>
+          <div id="globalSearchPageStatus" class="global-search-page-status" role="status" aria-live="polite"></div>
+          <div id="globalSearchPageRecent" class="global-search-page-recent"></div>
+          <div id="globalSearchPageResults" class="global-search-page-results" aria-live="polite"><div class="home-empty-state" role="status"><span aria-hidden="true">…</span><div><h3>Loading search</h3><p>StudySpark search will be ready in a moment.</p></div></div></div>
+        </section>
+
+        <!-- Notes -->
+        <section class="app-view" id="notesView"><div class="view-intro"><div><span class="kicker">YOUR KNOWLEDGE BASE</span><h1>My Notes</h1><p>Add your class notes by typing, pasting, or uploading a study file.</p></div><button class="btn btn-primary" id="newNoteBtn">+ Add new notes</button></div><div class="view-tabs" data-tab-group="notes"><button class="active" data-notes-tab="write" type="button">Write Notes</button><button data-notes-tab="upload" type="button">Upload File</button><button data-notes-tab="saved" type="button">Saved Notes</button><button data-notes-tab="files" type="button">Uploaded Files</button></div><div class="note-composer card notes-panel" id="noteComposer" data-notes-panel="write"><div class="composer-head"><h3>Type or Paste Notes</h3><button class="modal-close inline-close" id="closeComposer">&times;</button></div><div class="form-row"><label>Course / Subject<select id="noteSubject"></select></label><label>Folder<select id="noteFolder"></select></label></div><label>Note title<input id="noteTitle" placeholder="e.g. Cell structure review"></label><label>Notes<textarea id="noteText" rows="9" placeholder="Type or paste your class notes here..."></textarea></label><div class="composer-actions"><span id="wordCount">0 words</span><div><button class="btn btn-secondary" id="saveNoteBtn">Save note</button><button class="btn btn-primary" id="analyzeNoteBtn">Analyze notes</button></div></div></div><form class="card upload-panel notes-panel hidden" id="noteUploadForm" data-notes-panel="upload"><div class="card-head"><div><h3>Upload a File</h3><p>PDF, DOCX, TXT, PPTX, PNG, JPG, or JPEG. Maximum file size: 10 MB.</p></div></div><div class="upload-drop" id="noteDropZone"><input id="noteFileInput" type="file" accept=".pdf,.docx,.txt,.pptx,.png,.jpg,.jpeg,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,application/vnd.openxmlformats-officedocument.presentationml.presentation,image/png,image/jpeg"><span class="empty-icon">U</span><b>Drag and drop a study file here</b><p>or click Browse Files to choose one from this device.</p><button class="btn btn-secondary" id="noteBrowseBtn" type="button">Browse Files</button><small id="noteSelectedFile">No file selected</small></div><div class="form-row"><label>Course / Subject<select id="uploadSubject"></select></label><label>Folder<select id="uploadFolder"></select></label></div><label>Optional title<input id="uploadTitle" placeholder="e.g. Unit 2 slideshow"></label><button class="btn btn-primary btn-full" id="saveUploadedFileBtn" type="submit">Save uploaded file</button></form><div id="analysisResult" class="analysis-card hidden"></div><div class="notes-panel" data-notes-panel="saved"><div class="section-title-row"><div><h2>Saved notes</h2><p id="noteCountLabel"></p></div><div class="dashboard-filters"><select id="noteFolderFilter"><option value="">All folders</option></select><select id="noteFilter"><option>All subjects</option></select></div></div><div id="notesGrid" class="notes-grid"></div></div><div class="notes-panel hidden" data-notes-panel="files"><div class="section-title-row"><div><h2>Uploaded files</h2><p id="fileCountLabel"></p></div></div><div id="uploadedFilesGrid" class="notes-grid file-grid"></div></div><div id="pdf-note-viewer" class="pdf-note-viewer hidden" role="dialog" aria-modal="true" aria-labelledby="pdf-viewer-title"><div class="pdf-viewer-shell"><div class="pdf-viewer-header"><div><span class="kicker">PDF NOTE VIEWER</span><h2 id="pdf-viewer-title">PDF Note Viewer</h2><p id="pdf-viewer-filename"></p><small id="pdf-viewer-upload-date"></small></div><button class="btn btn-secondary" id="close-pdf-viewer" type="button" aria-label="Close PDF viewer">Close</button></div><div class="pdf-viewer-toolbar" role="toolbar" aria-label="PDF controls"><button class="btn btn-secondary" id="download-pdf-note" type="button">Download</button><button class="btn btn-secondary" id="fullscreen-pdf-note" type="button">Full Screen</button><button class="btn btn-secondary" id="pdf-prev-page" type="button">Previous Page</button><span id="pdf-page-status" aria-live="polite">Page 1 of 1</span><button class="btn btn-secondary" id="pdf-next-page" type="button">Next Page</button><button class="btn btn-secondary" id="pdf-zoom-out" type="button">Zoom Out</button><button class="btn btn-secondary" id="pdf-zoom-in" type="button">Zoom In</button><button class="btn btn-secondary" id="pdf-zoom-reset" type="button">Reset Zoom</button></div><div id="pdf-viewer-status" class="pdf-viewer-status" aria-live="polite">Loading PDF...</div><div class="pdf-viewer-content"><iframe id="pdf-note-frame" title="Uploaded PDF note"></iframe><object id="pdf-note-object" class="hidden" type="application/pdf"><p>This browser cannot display the PDF inside the page.</p></object></div><div id="pdf-viewer-error" class="pdf-viewer-error hidden" aria-live="polite"><p>The PDF could not be displayed.</p><div class="pdf-viewer-error-actions"><button class="btn btn-secondary" id="retry-pdf-note" type="button">Try Again</button><button class="btn btn-secondary" id="download-pdf-note-error" type="button">Download PDF</button><button class="btn btn-primary" id="close-pdf-viewer-error" type="button">Close</button></div></div></div></div></section>
+
+        <!-- Folders -->
+        <section class="app-view" id="foldersView"><div class="view-intro"><div><span class="kicker">ORGANIZE</span><h1>Folders</h1><p>Organize your notes, files, flashcards, quizzes, and study plans.</p></div><button class="btn btn-primary" id="createFolderPageBtn" type="button">+ Create Folder</button></div><div class="folder-page-tools"><label>Search Folders<input id="folderSearchInput" placeholder="Search by folder name"></label><label>Sort by<select id="folderSortSelect"><option value="updated">Recently updated</option><option value="name">Name</option><option value="items">Most items</option><option value="newest">Newest</option></select></label></div><div id="foldersPageGrid" class="folders-page-grid"></div></section>
+
+        <!-- Folder Detail -->
+        <section class="app-view" id="folderDetailView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="backToFoldersBtn" type="button">Back to Folders</button><div><p>FOLDER</p><h1 id="folderDetailTitle">Folder</h1></div></div><div id="folderDetailMissing" class="empty-state card hidden"><h2>This folder could not be found.</h2><p>It may have been deleted from this browser.</p><button class="btn btn-primary" id="missingBackToFolders" type="button">Back to Folders</button></div><div id="folderDetailPanel" class="folder-detail-page"><article class="card folder-detail-hero" id="folderDetailHero"></article><div class="view-tabs folder-filter-tabs" id="folderDetailFilters"><button class="active" data-folder-detail-filter="all" type="button">All Items</button><button data-folder-detail-filter="notes" type="button">Notes</button><button data-folder-detail-filter="files" type="button">Files</button><button data-folder-detail-filter="flashcards" type="button">Flashcards</button><button data-folder-detail-filter="quizzes" type="button">Quizzes</button><button data-folder-detail-filter="plans" type="button">Study Plans</button></div><div id="folderDetailSections" class="folder-detail-sections"></div></div></section>
+
+
+        <!-- Note Detail -->
+        <section class="app-view" id="noteDetailView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="backToNotesBtn" type="button">Back to My Notes</button><div><p id="noteDetailCrumb">NOTE EDITOR</p><h1>Note Editor</h1></div></div><div id="noteDetailMissing" class="empty-state card hidden"><h2>This note could not be found.</h2><p>The note may have been deleted or moved from this browser.</p><button class="btn btn-primary" id="missingBackToNotes" type="button">Back to My Notes</button></div><form id="noteEditorForm" class="card note-editor-page"><input id="editNoteId" type="hidden"><div class="note-editor-toolbar"><div><span class="kicker">SAVED NOTE</span><h2 id="noteDetailTitle">Untitled note</h2><p id="noteDetailMeta"></p></div><div class="note-toolbar-actions"><button class="btn btn-primary" id="saveNoteChangesBtn" type="submit">Save Changes</button><button class="btn btn-secondary" id="analyzeNoteAgainBtn" type="button">Analyze Again</button><button class="btn btn-secondary" id="noteFlashcardsBtn" type="button">Generate Flashcards</button><button class="btn btn-secondary" id="noteQuizBtn" type="button">Generate Quiz</button><button class="btn btn-danger" id="deleteNoteBtn" type="button">Delete Note</button></div></div><div class="note-editor-grid"><label>Note title<input id="editNoteTitle" required></label><label>Course / Subject<select id="editNoteSubject"></select></label><label>Folder<select id="editNoteFolder"></select></label></div><label class="note-body-field">Full note text<textarea id="editNoteText" rows="18" required></textarea></label></form></div></section>        <!-- AI Coach -->
+        <section class="app-view" id="completeJourneysView"><div class="view-intro"><div><span class="kicker">END-TO-END EVIDENCE</span><h1>Complete User Journeys</h1><p>Keep automated, assistive-technology, and representative-user evidence distinct.</p></div></div><div id="completeJourneysContent"></div></section>
+
+        <section class="app-view" id="resourceStudioView"><div class="view-intro"><div><span class="kicker">AUTHORIZED AUTHORING</span><h1>Accessible Resource Studio</h1><p>Batch-check resources, review draft fixes, and prepare human-approved versions.</p></div></div><div id="resourceStudioContent"></div></section>
+
+        <section class="app-view" id="privacyDataView"><div class="view-intro"><div><span class="kicker">PRIVATE BY DEFAULT</span><h1>My Privacy and Data</h1><p>Review privacy choices, stored-data categories, and device controls.</p></div></div><div id="privacyDataContent"></div></section>
+
+<section class="app-view" id="coachView"><div class="view-intro ai-coach-header"><div><span class="kicker">ASK, LEARN, IMPROVE</span><h1>AI Study Coach</h1><p>Get practical study guidance tailored to what you're working on.</p></div><div class="ai-coach-header-actions"><span class="simulated-badge">SIMULATED AI</span><span class="sr-only" id="coachFullScreenStatus" role="status" aria-live="polite"></span></div></div><div class="coach-layout"><section class="card chat-card" aria-labelledby="coachConversationTitle"><div class="coach-conversation-heading"><div><span class="kicker">CONVERSATION</span><h2 id="coachConversationTitle">StudySpark Coach</h2></div><button class="btn btn-secondary ai-coach-fullscreen-button" id="coachFullScreenToggle" type="button" aria-label="Open AI Coach chat in full screen" aria-pressed="false" data-coach-fullscreen-toggle data-icon="Maximize2"><span aria-hidden="true" class="ai-coach-fullscreen-icon">⛶</span><span data-coach-fullscreen-label>Full Screen Chat</span></button></div><div id="chatMessages" class="chat-messages" role="log" aria-live="polite" aria-relevant="additions"><div class="message ai"><div><b>StudySpark Coach</b><p>Hi! I can help you decide what to study, explain a strategy, or build a review routine. What are you working on?</p></div></div></div><div class="suggestions" aria-labelledby="coachSuggestionsLabel"><span id="coachSuggestionsLabel">Optional quick starts</span><button type="button" data-coach-suggestion>How should I study biology?</button><button type="button" data-coach-suggestion>What should I review before a test?</button><button type="button" data-coach-suggestion>Help me stop procrastinating</button></div><form id="coachForm" class="chat-input" novalidate><div class="coach-composer-field"><label for="coachInput">Ask StudySpark Coach</label><textarea id="coachInput" name="coachMessage" rows="3" maxlength="2000" placeholder="Type your learning question here…" aria-describedby="coachInputHelp coachComposerCount coachComposerStatus" required></textarea><div class="coach-composer-meta"><small id="coachInputHelp">Suggestions above are optional. You can edit any suggestion or write your own question.</small><small id="coachComposerCount" aria-live="polite">0 of 2000 characters</small></div><p id="coachComposerStatus" class="coach-composer-status" role="status" aria-live="polite"></p></div><button class="btn btn-primary coach-send-button" type="submit" disabled>Send</button></form></section><aside class="coach-side-panel" aria-label="AI Coach preferences and study tools"><section class="card coach-tool-panel" aria-labelledby="coachLanguageTitle"><span class="coach-panel-icon" aria-hidden="true">Aa</span><div><span class="kicker">PREFERENCES</span><h2 id="coachLanguageTitle">Language and Presentation</h2><p id="coachPresentationSummary" class="coach-presentation-summary">Presentation: Standard Academic · English academic terms · English</p></div><div id="coachLanguageActions" class="coach-panel-actions"></div><a class="coach-settings-link" href="#/settings/accessibility-language" data-view="accessibilityLanguage">Open full accessibility and language settings <span aria-hidden="true">→</span></a></section><section class="card coach-tool-panel" aria-labelledby="coachStudyToolsTitle"><span class="coach-panel-icon coach-panel-icon--study" aria-hidden="true">↓</span><div><span class="kicker">CONVERSATION TOOLS</span><h2 id="coachStudyToolsTitle">Study and Export</h2><p>Create a review format from the latest Coach response.</p></div><div id="coachStudyTools" class="coach-panel-actions"><button class="btn btn-secondary" type="button" data-ai-access-command="CREATE_AUDIO_SUMMARY">Create Audio Summary</button><button class="btn btn-secondary" type="button" data-ai-access-command="DOWNLOAD_FOR_OFFLINE_USE">Download for Offline Use</button><button class="btn btn-secondary" type="button" data-ai-access-command="PRINT_REVIEW_PLAN">Print Review Plan</button></div></section><section class="card coach-tip-card"><h2>Ask a better question</h2><p>Include your subject, test date, and what feels hardest.</p><div class="example-prompt">“I have a biology test Friday. How should I review cell division in 30 minutes?”</div></section></aside></div></section>
+
+        <!-- Flashcards -->
+        <section class="app-view" id="flashcardsView"><div class="view-intro"><div><span class="kicker">ACTIVE RECALL</span><h1>Flashcards</h1><p>Generate cards from saved notes and sort concepts by confidence.</p></div><div><select id="flashSubject"></select><button class="btn btn-primary" id="generateCardsBtn">Generate cards</button></div></div><div id="flashEmpty" class="empty-state card"><span class="empty-icon">F</span><h2>Ready to make ideas stick?</h2><p>Choose a subject and generate flashcards from your saved notes.</p></div><div id="flashStudy" class="flash-study hidden"><div class="flash-meta"><span id="cardCounter">Card 1 of 5</span><div class="progress-line"><i id="cardProgress"></i></div><span><b id="knownCount">0</b> known</span></div><div class="flashcard" id="flashcard" tabindex="0"><div class="flash-inner"><div class="flash-face front"><span>QUESTION</span><h2 id="flashQuestion"></h2><small>Click to reveal answer</small></div><div class="flash-face back"><span>ANSWER</span><p id="flashAnswer"></p><small>Click to see question</small></div></div></div><div class="flash-actions"><button class="btn review-btn" id="reviewCardBtn">Need review</button><button class="btn know-btn" id="knowCardBtn">Know it</button></div></div></section>
+
+        <!-- Quiz -->
+        <section class="app-view" id="quizView"><div class="view-intro"><div><span class="kicker">CHECK YOUR UNDERSTANDING</span><h1>Quiz Generator</h1><p>Create a quiz from saved notes or an uploaded study file.</p></div></div><div class="view-tabs" data-tab-group="quiz"><button class="active" data-quiz-tab="notes" type="button">From Notes</button><button data-quiz-tab="file" type="button">From Uploaded File</button><button data-quiz-tab="previous" type="button">Previous Quizzes</button></div><div class="quiz-panel" data-quiz-panel="notes"><div class="card quiz-source-card"><div class="card-head"><div><h3>Create Quiz from Saved Notes</h3><p>Select a course and folder, then generate a practice quiz from saved notes.</p></div></div><div class="form-row"><label>Course / Subject<select id="quizSubject"></select></label><label>Folder<select id="quizFolder"></select></label></div><button class="btn btn-primary" id="generateQuizBtn">Generate quiz</button></div></div><form class="card upload-panel quiz-panel hidden" id="quizFileForm" data-quiz-panel="file"><div class="card-head"><div><h3>Upload a File to Create a Quiz</h3><p>PDF notes, Word documents, PowerPoint slides, text files, or images of notes. Maximum file size: 10 MB.</p></div></div><div class="upload-drop" id="quizDropZone"><input id="quizFileInput" type="file" accept=".pdf,.docx,.txt,.pptx,.png,.jpg,.jpeg,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain,application/vnd.openxmlformats-officedocument.presentationml.presentation,image/png,image/jpeg"><span class="empty-icon">U</span><b>Drag and drop a quiz source file here</b><p>or click Browse Files to choose one from this device.</p><button class="btn btn-secondary" id="quizBrowseBtn" type="button">Browse Files</button><small id="quizSelectedFile">No file selected</small></div><div class="form-row"><label>Course / Subject<select id="fileQuizSubject"></select></label><label>Folder<select id="fileQuizFolder"></select></label></div><div class="form-row"><label>Number of questions<input id="fileQuizCount" type="number" min="3" max="20" value="5"></label><label>Question type<select id="fileQuizType"><option>Multiple Choice</option><option>True or False</option><option>Short Answer</option><option>Mixed</option></select></label></div><label>Difficulty<select id="fileQuizDifficulty"><option>Easy</option><option selected>Medium</option><option>Hard</option></select></label><button class="btn btn-primary btn-full" type="submit">Generate Quiz from File</button></form><div class="quiz-panel hidden" data-quiz-panel="previous"><div id="previousQuizzes" class="quiz-history-grid"></div></div><div id="quizEmpty" class="empty-state card"><span class="empty-icon">Q</span><h2>Put your knowledge to the test</h2><p>Select a subject or upload a file to create a new quiz.</p></div><form id="quizForm" class="quiz-form hidden"></form><div id="quizResult" class="quiz-result hidden"></div></section>
+
+        <!-- Planner -->
+        <section class="app-view" id="plannerView"><div class="view-intro"><div><span class="kicker">PLAN WITH CONFIDENCE</span><h1>Study Planner</h1><p>Turn your available time into a realistic path to test day.</p></div><button class="btn btn-secondary saved-plans-shortcut" id="savedPlansShortcut" type="button">Saved Study Plans</button></div><div class="planner-layout"><form id="plannerForm" class="card planner-form"><h3>Plan your next test</h3><label>Course<small>Choose one course for this study plan.</small><select id="planCourse" required></select></label><label>Folder<select id="planFolder"></select></label><label>Plan title<input id="planTitle" placeholder="e.g. Polynomial Functions Test Plan"></label><label>Test date<input id="testDate" type="date" required></label><label>Unit / Test Topics<textarea id="planTopics" required rows="4" placeholder="Polynomial functions, factoring, end behavior, transformations, zeros, graphing, word problems"></textarea></label><label>Minutes available per day<input id="planMinutes" type="number" min="10" max="240" value="45" required></label><button class="btn btn-primary btn-full" id="generatePlanBtn">Generate Study Plan</button></form><div class="card schedule-card"><div class="card-head"><div><span class="pill blue-pill">PLAN PREVIEW</span><h3 id="scheduleTitle">Generate a plan to preview it</h3></div></div><div id="scheduleList" class="schedule-list"><div class="schedule-placeholder"><span>P</span><p>Your generated plan preview will appear here.</p></div></div></div></div></section>
+        <section class="app-view" id="savedPlansView"><div class="view-intro"><div><span class="kicker">YOUR STUDY PLANS</span><h1>Saved Study Plans</h1><p>Open, edit, rename, or delete plans that are saved in this browser.</p></div><button class="btn btn-secondary" id="backToPlannerBtn" type="button">Back to Study Planner</button></div><section class="saved-plans-section" id="savedPlansSection" aria-labelledby="savedPlansPageHeading"><h2 class="sr-only" id="savedPlansPageHeading">Your saved plans</h2><div id="savedPlansGrid" class="saved-plans-grid"></div></section></section>
+
+        <!-- Study Plan Detail -->
+        <section class="app-view" id="planDetailView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="backToPlansBtn" type="button">Back to Saved Plans</button><div><p>STUDY PLAN</p><h1>Study Plan Detail</h1></div></div><div id="planDetailMissing" class="empty-state card hidden"><h2>This study plan could not be found.</h2><p>It may have been deleted from this browser.</p><button class="btn btn-primary" id="missingBackToPlans" type="button">Back to Saved Plans</button></div><form id="planDetailForm" class="card plan-detail-page"><div class="note-editor-toolbar"><div><span class="kicker">SAVED PLAN</span><input id="detailPlanTitle" class="detail-title-input" required><p id="detailPlanMeta"></p></div><div class="note-toolbar-actions"><button class="btn btn-primary" id="savePlanChangesBtn" type="submit">Save Changes</button><button class="btn btn-danger" id="deletePlanBtn" type="button">Delete Plan</button></div></div><div class="note-editor-grid"><label>Course<select id="detailPlanCourse" required></select></label><label>Test date<input id="detailTestDate" type="date" required></label><label>Minutes per day<input id="detailPlanMinutes" type="number" min="10" max="240" required></label></div><label class="note-body-field">Unit / Test Topics<textarea id="detailPlanTopics" rows="4" required></textarea></label><div id="planDetailSummary" class="planner-progress"></div><div id="planDetailDays" class="schedule-list"></div></form></div></section>
+
+        <!-- Progress -->
+        <section class="app-view" id="progressView"><div class="view-intro"><div><span class="kicker">YOUR LEARNING, VISIBLE</span><h1>Progress Tracker</h1><p>See your momentum, results, and next best areas to review.</p></div></div><div class="stat-grid"><article class="stat-card"><span class="q-icon blue">N</span><div><small>NOTES SAVED</small><b id="statNotes">0</b><p>Across your subjects</p></div></article><article class="stat-card"><span class="q-icon lavender">F</span><div><small>CARDS COMPLETED</small><b id="statCards">0</b><p id="statKnown">0 marked known</p></div></article><article class="stat-card"><span class="q-icon mint">Q</span><div><small>AVERAGE QUIZ</small><b id="statQuiz">-</b><p>From completed quizzes</p></div></article><article class="stat-card"><span class="q-icon peach">S</span><div><small>STUDY STREAK</small><b id="statStreak">1 day</b><p>Keep showing up</p></div></article></div><div class="progress-layout"><article class="card"><div class="card-head"><div><h3>Quiz performance</h3><p>Your most recent scores</p></div></div><div id="quizChart" class="bar-chart"></div></article><article class="card"><div class="card-head"><div><h3>Topics to review</h3><p>Built from cards marked "Need review"</p></div></div><div id="weakTopics" class="weak-topics"></div></article></div><article class="card subject-progress-card"><div class="card-head"><div><h3>Subject progress</h3><p>Activity across your study library</p></div></div><div id="subjectProgress"></div></article><article class="card topic-performance-card"><div class="card-head"><div><h3>Performance by Topic</h3><p>Every quiz question updates topic accuracy, trend, and next practice focus.</p></div></div><div class="topic-performance-controls"><label>Course<select id="topicPerfCourse"></select></label><label>Unit<select id="topicPerfUnit"></select></label><label>Sort<select id="topicPerfSort"><option value="weakest">Weakest</option><option value="strongest">Strongest</option><option value="recent">Recently practised</option></select></label><label>Search<input id="topicPerfSearch" placeholder="Search topics"></label></div><div id="coursePerformanceSummary" class="course-summary-grid"></div><div id="topicPerformanceList" class="topic-performance-list"></div></article></section>
+
+        <!-- Study Well-Being -->
+        <section class="app-view" id="wellBeingView"><div class="view-intro"><div><span class="kicker">STUDY PATTERNS</span><h1>Study Well-Being</h1><p>Privately review study-load patterns from your saved quizzes, sessions, tasks, breaks, and planner activity.</p></div><div class="header-actions"><button class="btn btn-secondary" id="openWellBeingDashboardBtn" type="button">Well-Being Dashboard</button><button class="btn btn-secondary" id="wellBeingHistoryBtn" type="button">Well-Being History</button><button class="btn btn-primary" id="reviewWellBeingBtn" type="button">Review My Study Patterns</button></div></div><p class="well-being-disclaimer">This feature looks at study patterns only. It does not provide a medical or mental-health diagnosis.</p><div class="card well-being-controls"><div class="form-row"><label>Analysis Period<select id="wellBeingRange"><option value="7">Last 7 days</option><option value="14">Last 14 days</option><option value="30">Last 30 days</option><option value="week">Current week</option><option value="custom">Custom range</option></select></label><label>Course Filter<select id="wellBeingCourse"><option value="">All selected courses</option></select></label></div><div class="form-row well-being-custom-range hidden" id="wellBeingCustomRange"><label>Start date<input id="wellBeingStartDate" type="date"></label><label>End date<input id="wellBeingEndDate" type="date"></label></div><label class="privacy-toggle"><span>Automatic updates</span><select id="wellBeingAutoUpdate"><option value="off">Off</option><option value="on">On</option></select></label></div><div id="wellBeingContent" class="well-being-content" aria-live="polite"></div></section>
+
+        <!-- Exam Readiness -->
+        <section class="app-view" id="examReadinessView"><div class="view-intro"><div><span class="kicker">TEST PREP ESTIMATE</span><h1>Exam Readiness</h1><p>Estimate preparation using quiz performance, study-plan progress, memory reviews, and topic coverage.</p></div><button class="btn btn-primary" data-view="planner" type="button">Create Study Plan</button></div><div id="examReadinessContent" class="exam-readiness-content"></div></section>
+
+        <!-- Learning Profile -->
+        <section class="app-view" id="learningProfileView"><div class="view-intro"><div><span class="kicker">PERSONALIZATION</span><h1>Personal Learning Profile</h1><p>See how you study, where you are improving, and what needs more practice.</p></div><div class="header-actions"><button class="btn btn-secondary" id="mergeTopicsBtn" type="button">Merge Duplicate Topics</button><button class="btn btn-primary" id="editLearningProfileBtn" type="button">Edit Learning Preferences</button></div></div><div class="profile-summary-grid"><article class="card learning-profile-summary"><div class="card-head"><div><h3>Profile Summary</h3><p>Your profile starts blank and improves as you use StudySpark.</p></div></div><div id="learningProfileSummary" class="profile-fact-grid"></div></article><article class="card learning-performance-card"><div class="card-head"><div><h3>Performance</h3><p>Calculated automatically from completed quizzes.</p></div></div><div id="learningPerformance" class="profile-fact-grid"></div></article></div><article class="card"><div class="card-head"><div><h3>Learning Preferences</h3><p>You can have several strong study preferences.</p></div></div><div id="learningPreferenceCards" class="learning-style-grid"></div></article><article class="card learning-insights-card"><div class="card-head"><div><h3>Learning Insights</h3><p>Transparent estimates based on repeated behavior, not single actions.</p></div></div><div id="pendingProfileUpdates" class="pending-profile-updates"></div><div id="learningInsights" class="learning-insight-list"></div></article><article class="card effective-methods-card"><div class="card-head"><div><h3>Effective Study Methods</h3><p>Compares completed study methods with later topic quiz results.</p></div></div><div id="methodSummary" class="method-summary"></div><div id="effectiveMethodsGrid" class="effective-methods-grid"></div></article><article class="card learning-speed-card"><div class="card-head"><div><h3>Learning Speed</h3><p>Tracks how many attempts and how much active study time each topic takes.</p></div></div><div id="learningSpeedTrend" class="learning-speed-trend"></div><div id="learningSpeedGrid" class="learning-speed-grid"></div></article><article class="card memory-review-card"><div class="card-head"><div><h3>Memory and Review</h3><p>Tracks completed topic reviews and estimates when a short refresher may help.</p></div></div><div id="memorySummary" class="memory-summary-grid"></div><div id="memoryReviewGrid" class="memory-review-grid"></div></article><article class="card subject-progress-card"><div class="card-head"><div><h3>Subject Progress</h3><p>Each selected course gets its own learning profile. Removed courses stay inactive so past progress is preserved.</p></div></div><div id="learningSubjectGrid" class="learning-subject-grid"></div></article><div class="progress-layout"><article class="card"><div class="card-head"><div><h3>Study Habits</h3><p>Set these manually now. StudySpark can estimate them later.</p></div></div><div id="learningHabits" class="profile-fact-grid"></div></article><article class="card"><div class="card-head"><div><h3>Personalized Suggestions</h3><p>Used by study plans and AI Coach advice.</p></div></div><div id="learningSuggestions" class="learning-suggestions"></div></article></div><article class="card profile-timeline-card"><div class="card-head"><div><h3>How Your Profile Has Changed</h3><p>Older conclusions stay here while the main profile shows current estimates.</p></div><label class="privacy-toggle"><span>Filter</span><select id="profileTimelineFilter"><option value="all">All updates</option><option>Study habits</option><option>Effective methods</option><option>Topic performance</option><option>Memory</option><option>Learning speed</option><option>Exam readiness</option></select></label></div><div id="profileTimelineList" class="profile-timeline-list"></div></article><article class="card learning-privacy-card"><div class="card-head"><div><h3>Personalized Learning Insights</h3><p>StudySpark updates your profile using your activity and performance inside this app.</p></div></div><div class="learning-privacy-actions"><label class="privacy-toggle"><span>Personalization</span><select id="behaviorTrackingToggle"><option value="on">On</option><option value="off">Off</option></select></label><label class="privacy-toggle"><span>Automatically Update My Learning Profile</span><select id="autoProfileUpdateToggle"><option value="on">On</option><option value="off">Off</option></select></label><label class="privacy-toggle"><span>Compare study methods using my quiz results</span><select id="methodTrackingToggle"><option value="on">On</option><option value="off">Off</option></select></label><button class="btn btn-danger" id="clearBehaviorHistoryBtn" type="button">Clear behavior history</button></div></article></section>
+
+        <!-- Future Success Predictor -->
+        <section class="app-view" id="futureSuccessView"><div class="view-intro"><div><span class="kicker">AI STUDY COACH</span><h1>Future Success Predictor</h1><p>Estimate your progress toward your target grade and identify which chapters deserve the most attention.</p></div></div><form id="predictionProfileForm" class="card prediction-profile-card" novalidate><div class="card-head"><div><h3>Prediction Profile</h3><p>Create one profile per course, exam, or major assessment.</p></div></div><input id="predictionProfileId" type="hidden"><div class="form-row"><label>Course <span class="required-marker">*</span><select id="predictionCourse" required></select><small data-error-for="predictionCourse"></small></label><label>Exam Name <span class="required-marker">*</span><input id="predictionExamName" maxlength="80" required placeholder="Final Exam"><small data-error-for="predictionExamName"></small></label></div><div class="form-row"><label>Exam Date <span class="required-marker">*</span><input id="predictionExamDate" type="date" required><small data-error-for="predictionExamDate"></small></label><label>Current Grade <span class="required-marker">*</span><input id="predictionCurrentGrade" type="number" min="0" max="100" step="0.1" required placeholder="82"><small data-error-for="predictionCurrentGrade"></small></label></div><div class="form-row"><label>Target Grade <span class="required-marker">*</span><input id="predictionTargetGrade" type="number" min="0" max="100" step="0.1" required placeholder="90"><small data-error-for="predictionTargetGrade"></small></label><div class="prediction-grade-preview" id="predictionGradePreview">Current: - Target: -</div></div><section class="prediction-chapters-section"><div class="section-mini-head"><h4>Chapters on the Exam <span class="required-marker">*</span></h4><p>Add every chapter included on the exam and estimate how important it is.</p></div><div id="predictionChapterList" class="prediction-chapter-list"></div><small data-error-for="predictionChapters"></small><button class="btn btn-secondary" id="addPredictionChapterBtn" type="button">+ Add Chapter</button></section><div class="prediction-actions"><button class="btn btn-primary" id="savePredictionProfileBtn" type="submit">Save Prediction Profile</button><button class="btn btn-secondary" id="clearPredictionFormBtn" type="button">Clear Form</button></div></form><section class="prediction-performance-section card" id="predictionPerformancePanel"><div class="card-head"><div><h3>Performance Data</h3><p>Add your study results so the predictor can measure your progress over time.</p></div><div class="prediction-actions"><button class="btn btn-primary" id="addPerformanceEntryBtn" type="button">Add Performance Entry</button><button class="btn btn-secondary" id="viewPredictionProgressBtn" type="button">View Progress</button><button class="btn btn-secondary" id="viewDataReadinessBtn" type="button">Data Readiness</button></div></div><div id="predictionPerformanceContent"></div><form id="performanceEntryForm" class="performance-entry-form hidden" novalidate><input id="performanceEntryId" type="hidden"><div class="form-row"><label>Activity Type <span class="required-marker">*</span><select id="performanceActivityType" required><option value="quiz">Quiz</option><option value="practice-questions">Practice Questions</option><option value="assignment">Assignment</option><option value="study-session">Study Session</option><option value="study-task">Study Task</option></select><small data-error-for="performanceActivityType"></small></label><label>Chapter <span class="required-marker">*</span><select id="performanceChapter" required></select><small data-error-for="performanceChapter"></small></label></div><div class="form-row performance-score-row"><label>Score<input id="performanceScore" type="number" min="0" max="100" step="0.1" placeholder="84"><small data-error-for="performanceScore"></small></label><label>Questions Correct<input id="performanceQuestionsCorrect" type="number" min="0" step="1" placeholder="17"></label><label>Total Questions<input id="performanceTotalQuestions" type="number" min="1" step="1" placeholder="25"></label></div><p class="calculated-score" id="performanceCalculatedScore"></p><div class="form-row"><label>Time Spent <span class="required-marker">*</span><input id="performanceTimeSpent" type="number" min="1" max="600" step="1" required placeholder="40"><small data-error-for="performanceTimeSpent"></small></label><label>Number of Attempts <span class="required-marker">*</span><input id="performanceAttempts" type="number" min="1" max="50" step="1" value="1" required><small data-error-for="performanceAttempts"></small></label><label>Activity Date <span class="required-marker">*</span><input id="performanceDate" type="date" required><small data-error-for="performanceDate"></small></label></div><label class="performance-complete"><input id="performanceCompleted" type="checkbox"> Completed Study Task</label><label>Optional Notes<textarea id="performanceNotes" maxlength="300" rows="3" placeholder="Made mistakes with sine law. Do not include private personal information."></textarea><small id="performanceNotesCount">0 of 300 characters</small></label><small data-error-for="performanceProfile"></small><div class="prediction-actions"><button class="btn btn-primary" id="savePerformanceEntryBtn" type="submit">Save Performance Entry</button><button class="btn btn-secondary" id="cancelPerformanceEntryBtn" type="button">Cancel</button></div></form></section><section class="prediction-profiles-section"><div class="section-title-row"><div><h2>My Prediction Profiles</h2><p>Open a saved profile for future prediction features.</p></div></div><div id="predictionProfilesGrid" class="prediction-profile-grid"></div></section></section>
+
+        <!-- Study Together -->
+        <section class="app-view study-together-page" id="studyTogetherView" aria-label="Study Together">
+          <div id="studyTogetherGuestNotice"></div>
+          <section class="study-together-content study-together-features" aria-labelledby="studyTogetherFeatureTitle">
+            <div class="home-section-heading">
+              <div>
+                <span class="pill peach-pill">FEATURES</span>
+                <h2 id="studyTogetherFeatureTitle">Collaboration Tools</h2>
+                <p>Open one focused page for each collaboration task.</p>
+              </div>
+            </div>
+            <div id="studyTogetherCards" class="study-together-card-grid"></div>
+          </section>
+          <section class="study-together-next card" aria-labelledby="studyTogetherNextTitle">
+            <div class="home-section-heading">
+              <div>
+                <span class="pill green-pill">NEXT</span>
+                <h2 id="studyTogetherNextTitle">Upcoming Collaboration</h2>
+                <p>Scheduled and active rooms stay separate from requests and groups.</p>
+              </div>
+              <button class="btn btn-secondary home-action-button" type="button" data-study-together-create-room>Create Study Room</button>
+            </div>
+            <div id="studyTogetherUpcoming"></div>
+          </section>
+          <div id="studyTogetherSafety"></div>
+        </section>
+
+        <!-- Study Match -->
+        <section class="app-view" id="studyMatchView"><div class="view-intro"><div><span class="kicker">AI COLLABORATIVE LEARNING</span><h1>Study Match Profile</h1><p>Create one focused profile for matching with students studying the same course, exam, and topics.</p></div><div class="header-actions"><button class="btn btn-secondary" data-view="studyRooms" type="button">Study Rooms</button><button class="btn btn-primary" data-open-study-room type="button">Create Study Room</button><span class="simulated-badge" id="studyMatchStatusBadge">Not created</span></div></div><div id="studyMatchEmptyCourses" class="course-empty-message hidden">Choose at least one course in Account Settings before creating a Study Match Profile. <button class="btn btn-secondary open-settings-btn" data-view="settings" type="button">Open Account Settings</button></div><div id="studyMatchPresencePanel" class="presence-inline-panel"></div><div class="study-match-layout"><form id="studyMatchForm" class="card study-match-form"><div class="card-head"><div><h3>Course and Exam</h3><p>This profile is separate from your account profile, course settings, learning profile, and exam readiness.</p></div></div><section class="match-form-section"><h4>Course and Exam</h4><div class="form-row"><label>Subject<select id="studyMatchSubject" required></select><small>Choose one saved course for this match profile.</small></label><label>Course<input id="studyMatchCourse" required placeholder="Full course name, e.g. Grade 11 Functions"></label></div><div class="form-row"><label>Exam Name<input id="studyMatchExamName" required placeholder="e.g. Polynomial Functions Test"></label><label>Exam Date<input id="studyMatchExamDate" type="date" required></label></div></section><section class="match-form-section"><h4>Strengths and Needs</h4><label>Strong Topics<input id="strongTopicInput" maxlength="50" placeholder="Type a topic and press Enter"></label><div class="study-topic-chip-list" id="strongTopicChips"></div><label>Topics Needing Help<input id="helpTopicInput" maxlength="50" placeholder="Type a topic and press Enter"></label><div class="study-topic-chip-list" id="helpTopicChips"></div></section><section class="match-form-section"><h4>Availability</h4><div class="quick-day-actions"><button class="btn btn-secondary" id="matchWeekdaysBtn" type="button">Weekdays</button><button class="btn btn-secondary" id="matchWeekendsBtn" type="button">Weekends</button></div><div class="day-choice-grid"><label><input type="checkbox" name="studyMatchDays" value="Monday"> Monday</label><label><input type="checkbox" name="studyMatchDays" value="Tuesday"> Tuesday</label><label><input type="checkbox" name="studyMatchDays" value="Wednesday"> Wednesday</label><label><input type="checkbox" name="studyMatchDays" value="Thursday"> Thursday</label><label><input type="checkbox" name="studyMatchDays" value="Friday"> Friday</label><label><input type="checkbox" name="studyMatchDays" value="Saturday"> Saturday</label><label><input type="checkbox" name="studyMatchDays" value="Sunday"> Sunday</label></div><div class="form-row"><label>Start Time<input id="studyMatchStartTime" type="time" required></label><label>End Time<input id="studyMatchEndTime" type="time" required></label></div></section><section class="match-form-section"><h4>Study Preferences</h4><div class="method-choice-grid"><label><input type="checkbox" name="studyMatchMethods" value="Practice questions"> Practice questions</label><label><input type="checkbox" name="studyMatchMethods" value="Flashcards"> Flashcards</label><label><input type="checkbox" name="studyMatchMethods" value="Reading notes"> Reading notes</label><label><input type="checkbox" name="studyMatchMethods" value="Explaining concepts"> Explaining concepts</label><label><input type="checkbox" name="studyMatchMethods" value="Videos"> Videos</label><label><input type="checkbox" name="studyMatchMethods" value="Group discussion"> Group discussion</label><label><input type="checkbox" name="studyMatchMethods" value="Mixed"> Mixed</label></div></section><section class="match-form-section"><h4>Group Preferences</h4><div class="form-row"><label>Study Group Size<select id="studyMatchGroupSize"><option>2 students</option><option>2-4 students</option><option>4-6 students</option><option selected>No preference</option></select></label><label>Meeting Preference<select id="studyMatchMeetingPreference"><option>Online</option><option>In person</option><option>Either</option></select></label></div><label id="studyMatchLocationWrap" class="hidden">General area only<input id="studyMatchLocation" maxlength="80" placeholder="e.g. North York library area"></label><p class="privacy-notice">Privacy: only add general study preferences. Do not enter phone numbers, private contact details, full addresses, or sensitive personal information.</p></section><button class="btn btn-primary btn-full study-match-save" id="saveStudyMatchBtn" type="submit">Save Study Match Profile</button><div id="studyMatchActions" class="study-match-actions hidden"><button class="btn btn-primary" id="editStudyMatchBtn" type="button">Edit Profile</button><button class="btn btn-secondary" id="pauseStudyMatchBtn" type="button">Pause Matching</button><button class="btn btn-danger" id="deleteStudyMatchBtn" type="button">Delete Profile</button></div></form><aside class="card study-match-preview-card"><div class="card-head"><div><h3>Saved Profile Preview</h3><p>Review exactly what will be used for future study matching.</p></div></div><div id="studyMatchPreview" class="study-match-preview"></div></aside></div><section class="card sample-classmate-section"><div class="card-head"><div><h3>Find Study Partners</h3><p>Open the results page to review fictional classmates sorted by match score.</p></div><button class="btn btn-primary" data-view="studyPartnerResults" type="button">Find Study Partners</button></div><div id="studyPartnerList" class="empty-mini">Study partner results now live on the Find Study Partners page.</div></section></section>
+
+        <!-- Study Partner Results -->
+        <section class="app-view" id="friendsView"><div class="view-intro"><div><span class="kicker">USER CONNECTIONS</span><h1>Friends and Study Partners</h1><p>Search for classmates using their Student ID. Your email address remains private.</p></div><div class="header-actions"><button class="btn btn-secondary registered-only-nav" data-view="friendsList" type="button">My Friends</button><button class="btn btn-secondary registered-only-nav" data-view="friendRequests" type="button">Friend Requests <b class="notification-badge hidden" data-friend-request-badge aria-label="0 pending friend requests">0</b></button><button class="btn btn-primary" data-open-study-room type="button">Create Study Room</button></div></div><div id="friendsPageContent"></div></section>
+        <section class="app-view" id="friendsListView"><main id="friends-list-page" aria-labelledby="friends-list-title"><header class="view-intro friends-list-header"><div><span class="kicker">USER CONNECTIONS</span><h1 id="friends-list-title">My Friends</h1><p>Open accepted friends, check who is studying, and start safe prototype study sessions.</p></div><div class="header-actions"><button class="btn btn-primary" data-open-study-room type="button">Create Study Room</button><button class="btn btn-secondary" data-view="studyRooms" type="button">Study Rooms</button><button class="btn btn-secondary" data-view="friends" type="button">Find Study Partners</button><button class="btn btn-secondary" data-view="friendRequests" type="button">Friend Requests</button></div></header><div id="friendsListPresencePanel" class="presence-inline-panel"></div><div id="friends-list-summary" class="friend-request-summary friends-list-summary" aria-live="polite"></div><section class="card friend-list-tools"><label>Search Friends<input id="friendsListSearch" autocomplete="off" placeholder="Search name or Student ID"></label><label>Filter<select id="friendsListFilter"><option>All</option><option>Online</option><option>Studying</option><option>Busy</option><option>Offline</option></select></label></section><div id="friends-list-grid" class="friends-list-grid" aria-live="polite"></div></main></section>
+        <section class="app-view" id="friendProfileView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="returnToFriendsBtn" type="button">Return to Friends</button><div><p>LIMITED FRIEND PROFILE</p><h1 id="friendProfileTitle">Friend Profile</h1></div></div><div id="friendProfileContent"></div></div></section>
+        <section class="app-view" id="friendRequestsView"><main id="friend-requests-page" aria-labelledby="friend-requests-title"><header class="view-intro friend-request-page-header"><div><span class="kicker">USER CONNECTIONS</span><h1 id="friend-requests-title">Friend Requests</h1><p>Review requests you received and requests you sent.</p></div><div class="header-actions"><button class="btn btn-secondary" data-view="friendsList" type="button">My Friends</button><button class="btn btn-secondary" data-view="friends" type="button">Find Study Partners</button></div></header><div id="friend-request-summary" class="friend-request-summary" aria-live="polite"></div><div class="friend-request-page-grid"><section class="card friend-request-panel" aria-labelledby="incoming-requests-title"><div class="card-head"><div><h2 id="incoming-requests-title">Incoming Requests</h2><p>Accept or decline pending requests from other students.</p></div></div><div id="incoming-request-list" class="friend-request-list" aria-live="polite"></div></section><section class="card friend-request-panel" aria-labelledby="sent-requests-title"><div class="card-head"><div><h2 id="sent-requests-title">Sent Requests</h2><p>Review request history and cancel pending sent requests.</p></div></div><div id="sent-request-list" class="friend-request-list" aria-live="polite"></div></section></div><section class="card friend-request-history-panel"><div class="card-head"><div><h2>Request History</h2><p>Accepted, declined, and cancelled requests stay visible for clarity.</p></div></div><div id="friend-request-history-list" class="friend-request-list" aria-live="polite"></div></section></main></section>
+        <section class="app-view" id="studyPartnerResultsView"><div class="view-intro"><div><span class="kicker">AI COLLABORATIVE LEARNING</span><h1>Find Study Partners</h1><p>Discover classmates preparing for similar courses and exams.</p><p class="view-explain">Matches are based on course, exam, complementary topics, study times, and study preferences.</p></div><button class="btn btn-secondary" id="refreshStudyPartnersBtn" type="button">Refresh Matches</button></div><div class="prototype-notice"><b>Demo Data</b><br>All study partners shown here are fictional profiles created for testing.</div><div id="studyPartnerResultsContent"></div></section>
+
+        <!-- Study Partner Profile -->
+        <section class="app-view" id="studyPartnerProfileView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="backToStudyPartnersBtn" type="button">Back to Study Partners</button><div><p>STUDY PARTNER PROFILE</p><h1>Study Partner Profile</h1></div></div><div id="studyPartnerProfileContent"></div></div></section>
+
+        <!-- Study Requests -->
+        <section class="app-view" id="studyRequestsView"><div class="view-intro"><div><span class="kicker">AI COLLABORATIVE LEARNING</span><h1>My Study Requests</h1><p>Review prototype study requests saved on this device.</p></div><button class="btn btn-primary" data-view="studyPartnerResults" type="button">Find Study Partners</button></div><div id="studyRequestsContent"></div></section>
+
+        <section class="app-view" id="studyRoomsView">
+          <main id="study-rooms-page" aria-labelledby="study-rooms-title">
+            <header class="view-intro study-rooms-header">
+              <div>
+                <span class="kicker">ONLINE STUDY CALLS</span>
+                <h1 id="study-rooms-title">Study Rooms</h1>
+                <p>Create scheduled rooms and study with your accepted friends.</p>
+              </div>
+              <div class="header-actions">
+                <button class="btn btn-primary" id="open-create-study-room" data-open-study-room type="button">Create Study Room</button>
+              </div>
+            </header>
+            <div id="studyRoomsContent"></div>
+          </main>
+        </section>
+
+        <!-- Verified Peer Tutoring role foundation -->
+        <section class="app-view" id="peerTutoringView">
+          <main id="peer-tutoring-page" aria-labelledby="peer-tutoring-title">
+            <header class="view-intro">
+              <div><span class="kicker">SAFE STUDENT SUPPORT</span><h1 id="peer-tutoring-title">Verified Peer Tutoring</h1><p>Set up your role, verification profile, consent, and role-specific dashboard.</p></div><div class="header-actions"><button class="btn btn-primary" data-view="tutoringRequests" type="button">Tutoring requests</button><button class="btn btn-secondary" data-view="studentOnboarding" type="button">Student onboarding</button><button class="btn btn-secondary" data-view="tutorApplication" type="button">Tutor application</button></div>
+            </header>
+            <div id="peerTutoringContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Tutor application and verification -->
+        <section class="app-view" id="tutorApplicationView">
+          <main id="tutor-application-page" aria-labelledby="tutor-application-title">
+            <header class="view-intro"><div><span class="kicker">TUTOR VERIFICATION</span><h1 id="tutor-application-title">Tutor Application</h1><p>Save a private application, submit it for review, and track verification.</p></div><div class="header-actions"><button class="btn btn-secondary" data-view="peerTutoring" type="button">Tutor dashboard</button><button class="btn btn-secondary" data-view="tutoringRequests" type="button">Learner requests</button><button class="btn btn-secondary" id="openTutorReviewQueue" type="button">Review queue</button><button class="btn btn-primary" data-view="tutorVerification" type="button">Subject verification</button></div></header>
+            <div id="tutorApplicationContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Subject-level tutor verification -->
+        <section class="app-view" id="tutorVerificationView">
+          <main id="tutor-verification-page" aria-labelledby="tutor-verification-title">
+            <header class="view-intro"><div><span class="kicker">SUBJECT CAPABILITY REVIEW</span><h1 id="tutor-verification-title">Tutor Verification</h1><p>Review each submitted subject separately and approve only its supported scope.</p></div><button class="btn btn-secondary" data-view="tutorApplication" type="button">Back to application</button></header>
+            <div id="tutorVerificationContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Learner tutoring requests -->
+        <section class="app-view" id="tutoringRequestsView">
+          <main id="tutoring-requests-page" aria-labelledby="tutoring-requests-title">
+            <header class="view-intro"><div><span class="kicker">VERIFIED PEER TUTORING</span><h1 id="tutoring-requests-title">Tutoring Requests</h1><p>Create a private request for concept-focused academic support.</p></div><div class="header-actions"><button class="btn btn-primary" data-view="tutorRecommendations" type="button">Tutor recommendations</button><button class="btn btn-secondary" data-view="peerTutoring" type="button">Tutor dashboard</button></div></header>
+            <div id="tutoringRequestsContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- AI-assisted tutor recommendations -->
+        <section class="app-view" id="tutorRecommendationsView">
+          <main aria-labelledby="tutor-recommendations-title">
+            <header class="view-intro"><div><span class="kicker">TRANSPARENT MATCHING</span><h1 id="tutor-recommendations-title">Tutor Recommendations</h1><p>Verified eligibility first, then transparent fit ranking. You remain in control.</p></div><button class="btn btn-secondary" data-view="tutoringRequests" type="button">Back to requests</button></header>
+            <div id="tutorRecommendationsContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Safe booking and session communication -->
+        <section class="app-view" id="bookingSessionsView">
+          <main aria-labelledby="booking-sessions-title">
+            <header class="view-intro"><div><span class="kicker">SAFE BOOKING</span><h1 id="booking-sessions-title">Bookings &amp; Sessions</h1><p>Respond to invitations, review confirmed sessions, and keep communication inside the platform.</p></div><div class="header-actions"><button class="btn btn-primary" data-view="helpCredits" type="button">Help Credits</button><button class="btn btn-secondary" data-view="communityService" type="button">Verified service records</button><button class="btn btn-secondary" data-view="postSessionLearning" type="button">Post-session record</button><button class="btn btn-secondary" data-view="sessionAttendance" type="button">Session attendance</button><button class="btn btn-secondary" data-view="preSessionCoach" type="button">Pre-session coach</button><button class="btn btn-secondary" data-view="tutorRecommendations" type="button">Recommendations</button><button class="btn btn-secondary" data-view="tutoringRequests" type="button">Requests</button></div></header>
+            <div id="bookingSessionsContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- AI pre-session preparation -->
+        <section class="app-view" id="preSessionCoachView">
+          <main aria-labelledby="pre-session-coach-title">
+            <header class="view-intro"><div><span class="kicker">FORMATIVE PREPARATION</span><h1 id="pre-session-coach-title">AI Pre-Session Coach</h1><p>Optional learner preparation and an editable suggested tutor plan grounded in the confirmed session.</p></div><button class="btn btn-secondary" data-view="bookingSessions" type="button">Back to bookings</button></header>
+            <div id="preSessionCoachContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Secure dual-participant session attendance -->
+        <section class="app-view" id="sessionAttendanceView">
+          <main aria-labelledby="session-attendance-title">
+            <header class="view-intro"><div><span class="kicker">SECURE ATTENDANCE</span><h1 id="session-attendance-title">Session Attendance</h1><p>Independent check-in, check-out, and confirmation for both session participants.</p></div><button class="btn btn-secondary" data-view="bookingSessions" type="button">Back to bookings</button></header>
+            <div id="sessionAttendanceContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Participant-controlled post-session learning record -->
+        <section class="app-view" id="postSessionLearningView">
+          <main aria-labelledby="post-session-learning-title">
+            <header class="view-intro"><div><span class="kicker">POST-SESSION REFLECTION</span><h1 id="post-session-learning-title">Post-Session Learning Record</h1><p>Separate learner and tutor reflections, followed by a shared draft summary that both participants review.</p></div><button class="btn btn-secondary" data-view="bookingSessions" type="button">Back to bookings</button></header>
+            <div id="postSessionLearningContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Candidate community-service records and organization verification -->
+        <section class="app-view" id="communityServiceView">
+          <main aria-labelledby="community-service-title">
+            <header class="view-intro"><div><span class="kicker">AUTHORIZED REVIEW REQUIRED</span><h1 id="community-service-title">Community-Service Verification</h1><p>Review candidate tutoring-service records and follow their organization-verification status.</p></div><button class="btn btn-secondary" data-view="bookingSessions" type="button">Back to bookings</button></header>
+            <div id="communityServiceContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Internal Help Credits, separate from verified service records -->
+        <section class="app-view" id="helpCreditsView">
+          <main aria-labelledby="help-credits-title">
+            <header class="view-intro"><div><span class="kicker">INTERNAL PLATFORM POINTS</span><h1 id="help-credits-title">Help Credits</h1><p>Private internal points for eligible tutoring support, kept separate from verified service records.</p></div><button class="btn btn-secondary" data-view="bookingSessions" type="button">Back to bookings</button></header>
+            <div id="helpCreditsContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Tutor-owned certificates and detailed service reports -->
+        <section class="app-view" id="serviceDocumentsView">
+          <main aria-labelledby="service-documents-title">
+            <header class="view-intro"><div><span class="kicker">CURRENT APPROVED SERVICE ONLY</span><h1 id="service-documents-title">Certificates &amp; Service Reports</h1><p>Preview and issue a platform record from your current approved tutoring activity.</p></div><button class="btn btn-secondary" data-view="communityService" type="button">Service records</button></header>
+            <div id="serviceDocumentsContent"></div>
+          </main>
+        </section>
+
+        <!-- Privacy-safe community impact, groups, partnerships, and contribution recognition -->
+        <section class="app-view" id="communityImpactView">
+          <main aria-labelledby="community-impact-title">
+            <header class="view-intro"><div><span class="kicker">ACCESS AND VERIFIED CONTRIBUTION</span><h1 id="community-impact-title">Community Impact</h1><p>Explore community-funded support, inclusive tutoring, group sessions, partnerships, workshops, challenges, and recognition badges.</p></div><button class="btn btn-secondary" data-view="helpCredits" type="button">Help Credits</button></header>
+            <div id="communityImpactContent"></div>
+          </main>
+        </section>
+
+        <!-- Learning-first academic-integrity protection and review -->
+        <section class="app-view" id="academicIntegrityView">
+          <main aria-labelledby="academic-integrity-title">
+            <header class="view-intro"><div><span class="kicker">TEACH RATHER THAN COMPLETE</span><h1 id="academic-integrity-title">Academic Integrity Protection</h1><p>Get explanations, hints, guiding questions, analogous examples, and feedback while remaining the author of assessed work.</p></div><button class="btn btn-secondary" data-view="coach" type="button">AI Coach</button></header>
+            <div id="academicIntegrityContent"></div>
+          </main>
+        </section>
+
+        <section class="app-view" id="journeyTestingView">
+          <main aria-labelledby="journey-testing-title">
+            <header class="view-intro"><div><span class="kicker">STEP 20</span><h1 id="journey-testing-title">Complete User-Journey Testing</h1><p>Trace the fifteen required workflows to their automated evidence and known environment limits.</p></div></header>
+            <div id="journeyTestingContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Platform safety, safeguarding, conduct, emergency, and venue guidance -->
+        <section class="app-view" id="safeguardingView">
+          <main aria-labelledby="safeguarding-title">
+            <header class="view-intro"><div><span class="kicker">SAFETY BEFORE CONVENIENCE</span><h1 id="safeguarding-title">Platform Safety &amp; Safeguarding</h1><p>Report concerns, block users separately, review conduct expectations, and find jurisdiction-configured emergency support.</p></div><button class="btn btn-secondary" data-view="safetyPrivacy" type="button">Safety &amp; privacy</button></header>
+            <div id="safeguardingContent"></div>
+          </main>
+        </section>
+
+        <!-- Human integrity-review queue and neutral participant guidance -->
+        <section class="app-view" id="integrityReviewView">
+          <main aria-labelledby="integrity-review-title">
+            <header class="view-intro"><div><span class="kicker">EXPLAINABLE CONSISTENCY CHECKS</span><h1 id="integrity-review-title">Human Integrity Review</h1><p>Review factual warning indicators without treating an automated warning as proof of misconduct.</p></div><button class="btn btn-secondary" data-view="roleDashboards" type="button">Role dashboard</button></header>
+            <div id="integrityReviewContent"></div>
+          </main>
+        </section>
+
+        <!-- Dedicated assignment AI-policy workflow -->
+        <section class="app-view" id="assignmentPolicyBuilderView">
+          <main aria-labelledby="assignmentPolicyBuilderPageHeading">
+            <header class="view-intro"><div><span class="kicker">TEACHER WORKSPACE</span><h1 id="assignmentPolicyBuilderPageHeading">AI Policy Builder</h1><p>Create, review, test, and publish the AI-use policy for an assignment.</p></div></header>
+            <section id="assignmentPolicyBuilder" class="assignment-policy-builder" aria-labelledby="assignmentPolicyBuilderHeading">
+              <h2 id="assignmentPolicyBuilderHeading">Assignment Policy Builder</h2>
+              <fieldset><legend>Starting Policy</legend><label><input type="radio" name="policy-preset" value="AI_PROHIBITED"> AI prohibited</label><label><input type="radio" name="policy-preset" value="ACCESSIBILITY_FUNCTIONS_ONLY"> Accessibility functions only</label><label><input type="radio" name="policy-preset" value="CONCEPT_SUPPORT_ONLY"> Concept support only</label><label><input type="radio" name="policy-preset" value="HINTS_AND_GUIDING_QUESTIONS"> Hints and guiding questions</label><label><input type="radio" name="policy-preset" value="PRACTICE_EXAMPLES"> Practice examples</label><label><input type="radio" name="policy-preset" value="BRAINSTORMING"> Brainstorming</label><label><input type="radio" name="policy-preset" value="SOURCE_VERIFICATION"> Source verification</label><label><input type="radio" name="policy-preset" value="DRAFT_FEEDBACK"> Draft feedback</label><label><input type="radio" name="policy-preset" value="TRANSLATION"> Translation</label><label><input type="radio" name="policy-preset" value="CODE_DEBUGGING"> Code debugging</label><label><input type="radio" name="policy-preset" value="FULL_AI_USE_WITH_DISCLOSURE"> Full AI use with disclosure</label><label><input type="radio" name="policy-preset" value="CUSTOM_POLICY"> Custom policy</label></fieldset>
+              <h3>Allowed AI Support</h3><h3>Not Allowed</h3><h3>Conditions</h3><h3>Student Contribution</h3><h3>Disclosure and AI Use Receipt</h3><h3>Accessibility Functions</h3><p>Accessibility functions remain available.</p>
+              <label>Plain-language explanation for students<textarea maxlength="1500"></textarea></label>
+              <div class="policy-actions"><button type="button">Student Preview</button><button type="button">Test This Policy</button><button type="button">Save Draft</button><button type="button">Review and Publish</button><button type="button">Publish Policy</button><button type="button">Schedule Policy</button><button type="button">Version History</button></div>
+            </section>
+          </main>
+        </section>
+
+        <!-- Authorized role-specific dashboard read models -->
+        <section class="app-view" id="roleDashboardsView">
+          <main aria-labelledby="role-dashboards-title">
+            <header class="view-intro"><div><span class="kicker">CURRENT AUTHORIZED DATA</span><h1 id="role-dashboards-title">Role Dashboard</h1><p>Role-specific sessions, learning, service, funding, verification, safety, and program information from current source records.</p></div></header>
+            <div id="roleDashboardsContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Shared learner and peer-tutor onboarding -->
+        <section class="app-view" id="studentOnboardingView">
+          <main id="student-onboarding-page" aria-labelledby="student-onboarding-title">
+            <header class="view-intro"><div><span class="kicker">STUDENT ONBOARDING</span><h1 id="student-onboarding-title">Set up your student profile</h1><p>One private profile supports learning, peer tutoring, or both.</p></div><button class="btn btn-secondary" data-view="peerTutoring" type="button">Back to Peer Tutoring</button></header>
+            <div id="studentOnboardingContent" aria-live="polite"></div>
+          </main>
+        </section>
+
+        <!-- Study Groups -->
+        <section class="app-view" id="studyGroupsView"><div class="view-intro"><div><span class="kicker">AI COLLABORATIVE LEARNING</span><h1>Study Groups</h1><p>Plan and organize study sessions with accepted study partners.</p></div><button class="btn btn-primary" id="newStudyGroupBtn" type="button">Create Study Group</button></div><div id="studyGroupsContent"></div></section>
+
+        <!-- Create Study Group -->
+        <section class="app-view" id="studyGroupCreateView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="cancelStudyGroupCreateTop" type="button">Back to Study Groups</button><div><p>AI COLLABORATIVE LEARNING</p><h1 id="studyGroupFormTitle">Create Study Group</h1></div></div><div id="studyGroupCreateContent"></div></div></section>
+
+        <!-- Study Group Details -->
+        <section class="app-view" id="studyGroupDetailView"><div class="note-detail-shell"><div class="note-detail-top"><button class="btn btn-secondary" id="backToStudyGroupsBtn" type="button">Back to Study Groups</button><div><p>STUDY GROUP</p><h1>Study Group Details</h1></div></div><div id="studyGroupDetailContent"></div></div></section>
+
+        <!-- Safety and Privacy -->
+        <section class="app-view" id="safetyPrivacyView"><div class="view-intro"><div><span class="kicker">AI COLLABORATIVE LEARNING</span><h1>Safety & Privacy</h1><p>Control matching consent, blocked students, reports, and privacy defaults for collaborative study tools.</p></div></div><div id="safetyPrivacyContent"></div></section>
+
+        <!-- Notifications -->
+        <section class="app-view" id="notificationsView"><div class="view-intro"><div><span class="kicker">UPDATES</span><h1>Notifications</h1><p>Review important success, information, warning, and error messages.</p></div></div><div id="notificationsContent"></div></section>
+
+        <!-- Optional Accessibility and Language Preferences -->
+        <section class="app-view" id="accessibilityLanguageView"><main aria-labelledby="accessibility-language-title"><header class="view-intro"><div><span class="kicker">OPTIONAL PREFERENCES</span><h1 id="accessibility-language-title">Accessibility and Language</h1><p>Choose interface language, home language, reading comfort, and support preferences without disclosing a diagnosis.</p></div></header><div id="accessibilityLanguageContent"></div></main></section>
+
+        <!-- Account Settings -->
+        <section class="app-view" id="settingsView"><div class="view-intro"><div><span class="kicker">PROFILE</span><h1>Account Settings</h1><p>Update your profile and choose the courses that appear across StudySpark.</p></div></div><div class="settings-layout"><form id="profileForm" class="card settings-card"><div class="card-head"><div><h3>Profile Information</h3><p id="profileHelp">Your account details are saved in this browser.</p></div></div><div class="form-row"><label>Full name<input id="settingsName" required></label><label>Email<input id="settingsEmail" type="email" required></label></div><label>Grade<select id="settingsGrade"><option>Grade 9</option><option>Grade 10</option><option>Grade 11</option><option>Grade 12</option><option>College / University</option><option>Guest Mode</option></select></label><button class="btn btn-primary" id="saveProfileBtn">Save changes</button><button class="btn btn-danger btn-full hidden" id="clearGuestDataBtn" type="button">Clear Guest Data</button></form><form id="coursesForm" class="card settings-card"><div class="card-head"><div><h3>Course Management</h3><p>Choose your current courses or create your own custom courses.</p></div></div><div class="course-management-section"><div class="section-mini-head"><h4>Available Courses</h4><p>Default course list from data/courses.json. These can be selected or deselected, but cannot be renamed or deleted.</p></div><div id="settingsCourses" class="course-options settings-course-options"></div></div><div class="course-management-section custom-course-panel"><div class="section-mini-head"><h4>My Custom Courses</h4><p>Courses you create yourself. Custom courses can be selected, renamed, or deleted.</p></div><div id="customCourseList" class="custom-course-list"></div></div><div class="course-management-section add-course-section"><div class="section-mini-head"><h4>+ Add Custom Course</h4><p>Create a personal course name up to 30 characters.</p></div><button class="btn btn-secondary" id="showCustomCourseBtn" type="button">+ Add Custom Course</button><div class="custom-course-form hidden" id="customCourseForm"><input id="customCourseName" maxlength="30" placeholder="Course name, max 30 characters"><button class="btn btn-primary" id="addCustomCourseBtn" type="button">Add</button></div></div><div class="course-management-section save-course-section"><div class="section-mini-head"><h4>Save Courses</h4><p>Save your selected courses and update every StudySpark course dropdown.</p></div><button class="btn btn-primary">Save courses</button></div></form><article class="card settings-card demo-data-controls"><div class="card-head"><div><h3>Collaborative Demo Data</h3><p>Reset or seed fictional study requests, groups, recommendations, blocks, reports, and collaborative notifications for testing.</p></div></div><div class="request-card-actions"><button class="btn btn-secondary" id="settingsCreateDemoScenarioBtn" type="button">Create Demo Scenario</button><button class="btn btn-danger" id="settingsResetDemoDataBtn" type="button">Reset Collaborative Demo Data</button></div></article></div></section>
+
+        <!-- Reminder and Well-Being Settings -->
+        <section class="app-view" id="wellBeingReminderSettingsView"><div class="view-intro"><div><span class="kicker">REMINDERS</span><h1>Reminder & Well-Being Settings</h1><p>Customize study reminders without changing your recorded study data or Well-Being analysis.</p></div><button class="btn btn-secondary" data-view="settings" type="button">Back to Account Settings</button></div><div id="wellBeingReminderSettingsContent"></div></section>
+
+        <!-- Well-Being Dashboard -->
+        <section class="app-view" id="wellBeingDashboardView"><div class="view-intro"><div><span class="kicker">INSIGHTS</span><h1>Well-Being Dashboard</h1><p>Review your recent study load, recorded patterns, and private dashboard history.</p></div><div class="header-actions"><button class="btn btn-secondary" id="dashboardBackToWellBeingBtn" type="button">View Full Analysis</button><button class="btn btn-primary" id="dashboardRefreshTopBtn" type="button">Refresh Dashboard</button></div></div><p class="well-being-disclaimer">This dashboard summarizes recorded study patterns. It is not a medical or mental-health diagnosis.</p><div class="card well-being-dashboard-controls"><div class="form-row"><label>Date Range<select id="wellBeingDashboardRange"><option value="7">Last 7 days</option><option value="14">Last 14 days</option><option value="30">Last 30 days</option><option value="week">Current week</option><option value="custom">Custom range</option></select></label><label>Course Filter<select id="wellBeingDashboardCourse"><option value="">All selected courses</option></select></label></div><div class="form-row well-being-custom-range hidden" id="wellBeingDashboardCustomRange"><label>Start date<input id="wellBeingDashboardStartDate" type="date"></label><label>End date<input id="wellBeingDashboardEndDate" type="date"></label></div><div class="study-session-actions"><button class="btn btn-primary" id="wellBeingDashboardRefreshBtn" type="button">Refresh Dashboard</button><button class="btn btn-secondary" id="wellBeingDashboardAnalysisBtn" type="button">View Full Analysis</button><button class="btn btn-secondary" id="wellBeingDashboardSettingsBtn" type="button">Dashboard Settings</button><button class="btn btn-secondary" id="wellBeingDashboardSnapshotBtn" type="button">Save Snapshot</button><button class="btn btn-secondary" id="wellBeingDashboardExportBtn" type="button">Export Summary</button></div></div><div id="wellBeingDashboardContent" class="well-being-dashboard-content" aria-live="polite"></div></section>
+
+        <!-- Instructions -->
+        <section class="app-view" id="instructionsView"><div class="view-intro"><div><span class="kicker">QUICK START GUIDE</span><h1>How StudySpark works</h1><p>Everything you need to go from notes to a confident test day.</p></div></div><div class="instruction-grid"><article><span>01</span><div><h3>Create your account</h3><p>Enter your name, email, grade, and main subjects. Your information is stored only in this browser.</p></div></article><article><span>02</span><div><h3>Add your notes</h3><p>Open My Notes, choose a subject, and paste or type your class material. Save or analyze it for key ideas.</p></div></article><article><span>03</span><div><h3>Generate flashcards</h3><p>Choose a subject and generate cards. Flip each card, then mark it "Know it" or "Need review."</p></div></article><article><span>04</span><div><h3>Take a quiz</h3><p>Create a five-question quiz from a subject. Submit your answers to see a score and clear explanations.</p></div></article><article><span>05</span><div><h3>Build a study plan</h3><p>Add your test date, topics, and available minutes. StudySpark creates a daily sequence of focused tasks.</p></div></article><article><span>06</span><div><h3>Track your progress</h3><p>Every saved note, reviewed card, and quiz score updates your progress dashboard automatically.</p></div></article><article class="folder-instructions"><span>07</span><div><h3>How to Use Folders</h3><p>Open the Folders page from the sidebar, then click Create Folder. Name the folder, choose a color, and optionally choose a parent folder. Open a folder to view everything inside it. Use the three-dot menu to rename, move, recolor, or delete it. You can also create folders using the + button in the sidebar.</p></div></article><article class="folder-instructions"><span>08</span><div><h3>How to Update Your Courses</h3><p>Open Account Settings, select or remove courses, then click Save courses. To create your own class, click "+ Add Custom Course," enter a unique name up to 30 characters, and click Add. Custom courses appear immediately across notes, files, flashcards, quizzes, plans, and the dashboard. You can rename or delete custom courses later.</p></div></article><article class="folder-instructions"><span>09</span><div><h3>How to Use Guest Mode</h3><p>Click Continue as Guest to start without an account. No account is required, and your work saves only on this browser and device. Guest data may be lost if browser data is cleared. Create an account later if you want more permanent saving, and you can move guest work into that account later.</p></div></article><article class="folder-instructions"><span>10</span><div><h3>How to Upload Study Files</h3><p>Open Notes or Quizzes, choose Upload File, then select or drag in a PDF, Word document, PowerPoint, text file, or image. Choose a course and folder before saving or generating a quiz. Uploaded files can be renamed, moved, opened, deleted, analyzed, or used to generate flashcards and quizzes. File contents are stored in this browser on this device.</p></div></article><article class="folder-instructions"><span>11</span><div><h3>How Your Learning Profile Works</h3><p>Your profile starts blank and improves as you take quizzes and use study tools. You can add study preferences manually, while strong and weak topics are calculated from performance after enough questions. StudySpark uses the profile to personalize study plans and AI Coach advice.</p></div></article><article class="folder-instructions"><span>12</span><div><h3>How StudySpark Learns From Your Study Habits</h3><p>The profile begins as Unknown. StudySpark observes repeated actions inside the app, such as notes, flashcards, quizzes, files, and study plans. It does not decide based on one action. You can review why each insight appears, correct it, reset it, or turn personalization off.</p></div></article><article class="folder-instructions"><span>13</span><div><h3>How Learning Speed Is Measured</h3><p>StudySpark tracks completed topic activities. A topic needs repeated strong results before it is mastered. It records quizzes, questions, active study time, and days since first practice. Topics that take longer receive more support, and learning speed helps personalize future study plans.</p></div></article><article class="folder-instructions"><span>14</span><div><h3>How Topic Performance Works</h3><p>Every quiz question is connected to a topic. StudySpark tracks correct and incorrect answers by topic, and a status appears after enough questions are completed. Weak topics receive more practice recommendations, while strong topics still receive short review sessions. Scores improve as you complete more quizzes.</p></div></article><article class="folder-instructions"><span>15</span><div><h3>How Memory Tracking Works</h3><p>StudySpark tracks completed topic reviews. Strong results increase the time before the next review, while lower scores shorten the review interval. Review recommendations are estimates, not guarantees. Regular spaced reviews help students remember information longer.</p></div></article><article class="folder-instructions"><span>16</span><div><h3>How StudySpark Discovers Effective Study Methods</h3><p>StudySpark records which study tool was used before a quiz, then compares later performance by method. It waits for enough linked results before making a recommendation. Recommendations may differ by course or topic, and they are estimates that can change over time.</p></div></article><article class="folder-instructions"><span>17</span><div><h3>How Exam Readiness Works</h3><p>StudySpark combines quiz performance, study progress, topic strength, and review history to estimate readiness for saved study plans. Readiness is an estimate, not a guaranteed result. Missing topic data lowers confidence, and the system highlights topics likely to have the greatest impact. Readiness updates as you study.</p></div></article><article class="folder-instructions"><span>18</span><div><h3>How Your Learning Profile Changes</h3><p>The profile starts with limited information and updates as StudySpark gathers more evidence. Recent study behavior matters more than old behavior, and insights may change as habits and performance change. You can review, correct, manually set, or turn off automatic updates. Old profile changes remain available in the profile timeline.</p></div></article><article class="folder-instructions"><span>19</span><div><h3>How to Create a Study Match Profile</h3><p>Open Study Match from the Collaborate section in the sidebar. Choose one saved subject, enter the full course name, exam name, exam date, strong topics, topics where you need help, availability, study methods, group size, meeting preference, and a general location only when meeting in person. Click Save Study Match Profile to store it in this browser for the current user or Guest Mode.</p></div></article><article class="folder-instructions"><span>20</span><div><h3>About Sample Classmate Profiles</h3><p>The Study Match prototype uses fictional classmates to demonstrate how matching could work. These profiles are not real students, and no real contact information is stored. A future version would require authenticated accounts, a secure shared database, privacy controls, and clear user consent.</p></div></article><article class="folder-instructions"><span>21</span><div><h3>How Basic Study Matching Works</h3><p>StudySpark first checks whether students are studying the same subject. It then compares their course and exam, and exam dates must be close enough for studying together to be useful. Students studying unrelated subjects are not matched. More detailed preferences, such as topics, study times, methods, group size, and meeting style, are considered after basic eligibility.</p></div></article><article class="folder-instructions"><span>22</span><div><h3>How Topic Strength Matching Works</h3><p>StudySpark compares topics each student understands well with topics the other student wants to practise. Matches are stronger when both students can help each other, and each complementary topic increases the match score. Students are not judged as good or bad at a subject, and topic information can be changed at any time.</p></div></article><article class="folder-instructions"><span>23</span><div><h3>Why StudySpark Requires Multiple Patterns</h3><p>Workload warnings require multiple supported study patterns. One unusual activity does not create a warning. One low quiz, one late-night session, one skipped task, or one long session is treated as an individual fact, not proof of overload. At least two separate supported categories are required for Mild Overload, and at least three separate supported categories are required for High Workload. Strong Overload Pattern also requires enough points and moderate indicators. Indicators using the same exact evidence do not count as separate patterns, and outdated or incomplete evidence does not count. Point totals may be capped when too few separate patterns exist, and the point breakdown explains any safety cap. Lower scores, skipped tasks and long sessions together may support a workload warning when each pattern has enough valid evidence. Workload warnings are not medical or mental-health diagnoses.</p></div></article></div><div class="ai-notice"><span class="logo-mark">S</span><div><h3>About AI in this version</h3><p>This is a mock AI experience. Note summaries, questions, and coaching responses are created in your browser with JavaScript. A real AI API can be connected later without changing the overall workflow.</p></div></div></section>
+        <!-- AI Coach response workspace child pages -->
+        <section class="app-view coach-response-page" id="coachResponsePageView" data-coach-response-page="response"></section>
+        <section class="app-view coach-response-page" id="coachEvidencePageView" data-coach-response-page="evidence"></section>
+        <section class="app-view coach-response-page" id="coachVerificationPageView" data-coach-response-page="verification"></section>
+        <section class="app-view coach-response-page" id="coachReflectionPageView" data-coach-response-page="reflection"></section>
+        <section class="app-view coach-response-page" id="coachRetryPageView" data-coach-response-page="retry"></section>
+        <section class="app-view coach-response-page" id="coachContributionPageView" data-coach-response-page="contribution"></section>
+        <section class="app-view coach-response-page" id="coachAIUsePageView" data-coach-response-page="ai-use"></section>
+      </main>
+      <div class="global-search-overlay hidden" id="globalSearchOverlay" role="presentation">
+        <section class="global-search-panel" id="globalSearchDialog" role="dialog" aria-modal="true" aria-labelledby="globalSearchDialogTitle">
+          <div class="global-search-panel-header">
+            <div>
+              <span class="kicker">SEARCH</span>
+              <h2 id="globalSearchDialogTitle">Search StudySpark</h2>
+            </div>
+            <button class="global-search-close" id="globalSearchClose" type="button" aria-label="Close search">Close</button>
+          </div>
+          <div class="global-search-input-wrap">
+            <label class="sr-only" for="globalSearchPanelInput">Search StudySpark</label>
+            <span class="global-search-panel-icon" id="globalSearchPanelIcon" aria-hidden="true"></span>
+            <input id="globalSearchPanelInput" type="search" placeholder="Search tools, assignments, notes, projects, and more…" autocomplete="off" aria-describedby="globalSearchStatus">
+            <button id="globalSearchPanelClear" class="global-search-clear hidden" type="button" aria-label="Clear search">×</button>
+            <span id="globalSearchPanelSpinner" class="global-search-spinner hidden" aria-hidden="true"></span>
+          </div>
+          <p id="globalSearchStatus" class="global-search-status" role="status" aria-live="polite">Start typing to search StudySpark.</p>
+          <div id="globalSearchResults" class="global-search-results" role="listbox" aria-label="Search results"></div>
+          <div class="global-search-footer">
+            <button class="global-search-view-all" id="globalSearchViewAll" type="button">View All Results</button>
+            <span>Use ↑ ↓ and Enter. Press Esc to close.</span>
+          </div>
+        </section>
+      </div>
+      <hr class="responsible-ai-section-divider">
+      <div id="ai-literacy-integrated-coach-summary" class="app-shared-learning-summary"></div>
+      <div id="responsible-ai-learning-success-measures" class="app-shared-learning-summary"></div>
+    </div>
+  </div>
+
+  <div class="modal" id="premiumModal" aria-hidden="true"><div class="modal-card premium-modal"><button class="modal-close" data-premium-close>&times;</button><span class="feature-icon">Pro</span><h2>Premium preview</h2><p>Payments aren't enabled in this demo, but this is where Student Pro and School upgrades will live.</p><button class="btn btn-primary btn-full" data-premium-close>Got it</button></div></div>
+  <div class="modal" id="folderModal" aria-hidden="true"><div class="modal-card folder-modal"><button class="modal-close" id="folderModalClose">&times;</button><span class="feature-icon">F</span><h2 id="folderModalTitle">Create a folder</h2><p>Group notes, files, cards, quizzes, and plans in one place.</p><form id="folderForm" class="folder-create-form"><label>Folder name<input id="folderName" maxlength="40" required placeholder="e.g. Exam review notes"></label><label>Folder color<input id="folderColor" type="color" value="#5867e8"></label><label>Parent folder<select id="folderParent"><option value="">Top level</option></select></label><input id="folderEditId" type="hidden"><button class="btn btn-primary btn-full">Save folder</button></form></div></div>
+  <div class="modal" id="deleteFolderModal" aria-hidden="true"><div class="modal-card delete-folder-modal" role="dialog" aria-modal="true" aria-labelledby="deleteFolderTitle"><span class="danger-icon">!</span><h2 id="deleteFolderTitle">Are you sure you want to delete this folder?</h2><p>This action cannot be undone.</p><input id="deleteFolderId" type="hidden"><div class="delete-options"><label><input type="radio" name="deleteMode" value="folder" checked><span><b>Delete folder and move contents to Uncategorized</b><small>Keep every item, but move it into the hidden system folder.</small></span></label><label><input type="radio" name="deleteMode" value="all"><span><b>Delete folder and permanently delete all contents</b><small>Permanently delete every note, flashcard, quiz, study plan, and file inside.</small></span></label></div><div class="delete-actions"><button class="btn btn-secondary" id="cancelDeleteFolder">Cancel</button><button class="btn btn-danger" id="confirmDeleteFolder">Delete Folder</button></div></div></div>
+  <div class="modal" id="studyRequestModal" aria-hidden="true"><div class="modal-card study-request-modal" role="dialog" aria-modal="true" aria-labelledby="studyRequestTitle"><button class="modal-close" id="studyRequestClose" type="button">&times;</button><span class="feature-icon">R</span><h2 id="studyRequestTitle">Send Study Request</h2><p id="studyRequestMessage">Send a study request?</p><input id="studyRequestPartnerId" type="hidden"><label>Add a short message<textarea id="studyRequestText" maxlength="250" rows="4" placeholder="Hi, would you like to review together?"></textarea></label><div class="request-helper"><small>Do not include phone numbers, addresses, passwords, or other private information.</small><span id="studyRequestCounter">0 / 250</span></div><div class="delete-actions"><button class="btn btn-secondary" id="studyRequestCancel" type="button">Cancel</button><button class="btn btn-primary" id="studyRequestSend" type="button">Send Request</button></div></div></div>
+  <div class="modal" id="reportStudentModal" aria-hidden="true"><div class="modal-card study-request-modal" role="dialog" aria-modal="true" aria-labelledby="reportStudentName"><button class="modal-close" id="reportStudentClose" type="button">&times;</button><span class="feature-icon">S</span><h2 id="reportStudentName">Report Student</h2><p>Reports are stored locally in this prototype. A production version would send reports to school staff or moderators for review.</p><input id="reportStudentId" type="hidden"><label>Reason<select id="reportReason"><option>Safety concern</option><option>Inappropriate message</option><option>Privacy concern</option><option>Bullying or harassment</option><option>Other</option></select></label><label>Optional details<textarea id="reportDetails" maxlength="300" rows="4" placeholder="Describe the concern without adding private contact information."></textarea></label><div class="delete-actions"><button class="btn btn-secondary" id="reportStudentCancel" type="button">Cancel</button><button class="btn btn-danger" id="reportStudentSubmit" type="button">Submit Report</button></div></div></div>
+  <div class="modal" id="confirmModal" aria-hidden="true"><div class="modal-card confirm-modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle"><h2 id="confirmTitle">Confirm action</h2><p id="confirmMessage"></p><div class="delete-actions"><button class="btn btn-secondary" id="confirmCancel" type="button">Cancel</button><button class="btn btn-primary" id="confirmOk" type="button">Continue</button></div></div></div>
+  <div class="modal" id="studentIdModal" aria-hidden="true"><div class="modal-card student-id-created-modal" role="dialog" aria-modal="true" aria-labelledby="studentIdCreatedTitle"><h2 id="studentIdCreatedTitle">Account Created</h2><div class="student-created-summary"><span>Name</span><p id="createdStudentName">Student</p><span>Student ID</span><p id="createdStudentId" class="student-id-value">STU-000000</p></div><p>Your Student ID is permanent. Share it only with people you want to connect with.</p><div class="delete-actions"><button class="btn btn-secondary" id="copyCreatedStudentId" type="button">Copy ID</button><button class="btn btn-primary" id="continueAfterStudentId" type="button">Continue to Dashboard</button></div></div></div>
+  <div class="modal" id="learningProfileModal" aria-hidden="true"><div class="modal-card learning-profile-modal" role="dialog" aria-modal="true" aria-labelledby="learningProfileModalTitle"><button class="modal-close" id="learningProfileModalClose" type="button">&times;</button><span class="feature-icon">L</span><h2 id="learningProfileModalTitle">Edit Learning Preferences</h2><p>Optional preferences help StudySpark personalize advice without choosing one fixed learning style.</p><form id="learningProfileForm" class="learning-profile-form"><div class="learning-survey-grid"><label>Diagrams and charts help me understand concepts.<select id="prefVisual"><option value="">Unknown</option><option>Low</option><option>Medium</option><option>High</option></select></label><label>Reading and rewriting notes helps me learn.<select id="prefReading"><option value="">Unknown</option><option>Low</option><option>Medium</option><option>High</option></select></label><label>Practice questions help me learn.<select id="prefPractice"><option value="">Unknown</option><option>Low</option><option>Medium</option><option>High</option></select></label><label>Listening to explanations helps me remember.<select id="prefAudio"><option value="">Unknown</option><option>Low</option><option>Medium</option><option>High</option></select></label></div><div class="form-row"><label>Preferred study time<select id="habitPreferredTime"><option value="">Unknown</option><option>Morning</option><option>Afternoon</option><option>Evening</option><option>No preference</option></select></label><label>Average session<select id="habitAverageSession"><option value="">Unknown</option><option value="15">15 minutes</option><option value="25">25 minutes</option><option value="45">45 minutes</option><option value="60">60 minutes</option><option value="custom">Custom</option></select></label></div><div class="form-row"><label>Custom average session minutes<input id="habitAverageCustom" type="number" min="5" max="240" placeholder="Optional"></label><label>Break frequency<select id="habitBreakFrequency"><option value="">Unknown</option><option value="20">Every 20 minutes</option><option value="25">Every 25 minutes</option><option value="45">Every 45 minutes</option><option value="60">Every 60 minutes</option><option value="custom">Custom</option></select></label></div><label>Custom break frequency minutes<input id="habitBreakCustom" type="number" min="5" max="180" placeholder="Optional"></label><button class="btn btn-primary btn-full" type="submit">Save Learning Preferences</button></form></div></div>
+  <div id="toast-notification-region" class="toast-notification-region notification-container" aria-live="polite" aria-relevant="additions" aria-label="Notifications"></div>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mammoth@1.8.0/mammoth.browser.min.js"></script>
+  <script src="notification-constants.js?v=two-second-toasts-20260828"></script>
+  <script src="academic-knowledge-library.js?v=academic-coach-20260831"></script>
+  <script src="academic-coach-support.js?v=academic-coach-20260831"></script>
+  <script src="script.js?v=study-together-account-gate-v2-20260831"></script>
+  <script src="study-rooms.js?v=study-together-account-gate-v2-20260831"></script>
+  <script src="peer-tutoring.js"></script>
+  <script src="student-onboarding.js"></script>
+  <script src="tutor-application.js"></script>
+  <script src="tutor-verification.js"></script>
+  <script src="tutoring-requests.js"></script>
+  <script src="tutor-matching.js"></script>
+  <script src="safe-booking.js"></script>
+  <script src="pre-session-coach.js"></script>
+  <script src="session-attendance.js"></script>
+  <script src="post-session-learning.js"></script>
+  <script src="community-service.js"></script>
+  <script src="help-credits.js"></script>
+  <script src="service-documents.js"></script>
+  <script src="integrity-review.js"></script>
+  <script src="safety-safeguarding.js"></script>
+  <script src="academic-integrity.js"></script>
+  <script src="community-impact.js"></script>
+  <script src="journey-testing.js"></script>
+  <script src="role-dashboards.js"></script>
+  <script src="accessibility-baseline.js"></script>
+  <script src="keyboard-accessibility.js"></script>
+  <script src="accessibility-language.js?v=accessibility-language-redesign-20260831"></script>
+  <script src="visual-display.js"></script>
+  <script src="dyslexia-display.js"></script>
+  <script src="text-to-speech.js?v=help-language-tools-redesign-20260830"></script>
+  <script src="speech-to-text.js"></script>
+  <script src="live-captions.js"></script>
+  <script src="ai-coach-language-tools.js?v=help-guide-step-support-placement-20260831"></script>
+  <script src="plain-language.js?v=help-step-support-row-20260831"></script>
+  <script src="explanation-levels.js?v=help-step-support-row-20260831"></script>
+  <script src="language-bridge.js?v=help-step-support-row-20260831"></script>
+  <script src="academic-vocabulary.js?v=help-step-support-row-20260831"></script>
+  <script src="multilingual-ai.js?v=help-step-support-row-20260831"></script>
+  <script src="low-bandwidth.js"></script>
+  <script src="text-only-study-rooms.js"></script>
+  <script src="offline-study-packages.js"></script>
+  <script src="printable-review-plans.js"></script>
+  <script src="audio-lesson-summaries.js"></script>
+  <script src="digital-skills-support.js"></script>
+  <script src="ai-accessibility-commands.js?v=response-actions-20260826-4"></script>
+  <script src="student-privacy.js"></script>
+  <script src="accessible-resource-studio.js"></script>
+  <script src="accessibility-quality-checks.js"></script>
+  <script src="complete-user-journeys.js"></script>
+  <script src="accessibility-preferences-model.js"></script>
+  <script src="accessibility-toolbar.js?v=header-accessibility"></script>
+  <script src="academic-recovery.js?v=recovery-plan-route-20260824"></script>
+  <script src="academic-recovery-situations.js"></script>
+  <script src="academic-recovery-calm.js"></script>
+  <script src="academic-recovery-work.js"></script>
+  <script src="academic-recovery-entry-methods.js"></script>
+  <script src="academic-recovery-capacity.js"></script>
+  <script src="academic-recovery-feasibility.js"></script>
+  <script src="academic-recovery-verification.js"></script>
+  <script src="academic-recovery-prioritization.js"></script>
+  <script src="academic-recovery-priority-explanations.js"></script>
+  <script src="academic-recovery-prerequisites.js"></script>
+  <script src="academic-recovery-repair.js"></script>
+  <script src="academic-recovery-plan.js"></script>
+  <script src="academic-recovery-seven-day.js"></script>
+  <script src="academic-recovery-decomposition.js"></script>
+  <script src="academic-recovery-test-tomorrow.js"></script>
+  <script src="academic-recovery-missed-week.js"></script>
+  <script src="academic-recovery-missed-month.js"></script>
+  <script src="academic-recovery-prerequisite-help.js"></script>
+  <script src="academic-recovery-overwhelmed.js"></script>
+  <script src="academic-recovery-teacher-message.js"></script>
+  <script src="academic-recovery-parent-summary.js"></script>
+  <script src="academic-recovery-daily-check-in.js"></script>
+  <script src="academic-recovery-recalculation.js"></script>
+  <script src="academic-recovery-blocked.js"></script>
+  <script src="academic-recovery-human-support.js"></script>
+  <script src="academic-recovery-progress-recognition.js"></script>
+  <script src="academic-recovery-metrics.js"></script>
+  <script src="academic-recovery-notifications.js"></script>
+  <script src="academic-recovery-accessibility-language.js"></script>
+  <script src="academic-recovery-integrity.js"></script>
+  <script src="academic-recovery-privacy-control.js"></script>
+  <script src="academic-recovery-dashboard.js"></script>
+  <script src="academic-recovery-teacher-support.js"></script>
+  <script src="academic-recovery-output.js"></script>
+  <script src="academic-recovery-mvp.js"></script>
+  <script src="ai-literacy-lab.js?v=home-hub-20260831"></script>
+  <script src="learning-pathway-module-flow.js?v=module-flow-20260823-4"></script>
+  <script src="ai-literacy-diagnostic.js?v=home-hub-20260831"></script>
+  <script src="learning-check-pathway-route.js?v=pathway-route-20260823-2"></script>
+  <script src="learning-check-data.js?v=real-data-step-20260823-2"></script>
+  <script src="learning-check-setup.js?v=setup-step-20260823-2"></script>
+  <script src="learning-check-attempt.js?v=question-step-20260823-2"></script>
+  <script src="learning-check-results.js?v=results-step-20260823"></script>
+  <script src="learning-check-history.js?v=history-step-20260823-2"></script>
+  <script src="learning-check-privacy.js?v=privacy-panel-20260823"></script>
+  <script src="ai-literacy-competency-progress.js"></script>
+  <script src="competency-progress-experience.js?v=competency-progress-complete-20260828"></script>
+  <script src="ai-literacy-lessons.js"></script>
+  <script src="what-ai-is.js"></script>
+  <script src="human-agency-lesson.js"></script>
+  <script src="unsupported-ai-output.js"></script>
+  <script src="training-data-bias.js"></script>
+  <script src="privacy-before-prompting.js"></script>
+  <link rel="stylesheet" href="privacy-check-before-sending-runtime.css">
+  <script src="privacy-check-before-sending-runtime.js"></script>
+  <link rel="stylesheet" href="age-appropriate-safeguards-runtime.css">
+  <script src="age-appropriate-safeguards-runtime.js"></script>
+  <link rel="stylesheet" href="accessibility-language-bridge-runtime.css">
+  <script src="accessibility-language-bridge-runtime.js"></script>
+  <link rel="stylesheet" href="low-bandwidth-offline-runtime.css">
+  <script src="low-bandwidth-offline-runtime.js"></script>
+  <script src="ai-literacy-main-data-models.js"></script>
+  <link rel="stylesheet" href="ai-literacy-academic-integrity-coach.css">
+  <script src="ai-literacy-academic-integrity-coach.js"></script>
+  <link rel="stylesheet" href="responsible-ai-learning-success-measures.css?v=correction-workflow-20260826-3">
+  <script src="responsible-ai-learning-success-measures.js?v=correction-workflow-20260826-5"></script>
+  <link rel="stylesheet" href="ai-coach-decision-flow-runtime.css">
+  <script src="ai-coach-decision-flow-runtime.js?v=public-landing-cleanup-20260828"></script>
+  <link rel="stylesheet" href="core-decision-rules-runtime.css">
+  <script src="core-decision-rules-runtime.js?v=public-landing-cleanup-20260828"></script>
+  <script src="ai-assistance-original-work.js"></script>
+  <script src="assignment-policy-awareness.js"></script>
+  <script src="prompt-writing-coach.js"></script>
+  <script src="prompt-iteration.js"></script>
+  <script src="answer-verification.js?v=verify-answer-20260827"></script>
+  <script src="verify-answer-experience.js?v=verify-answer-complete-20260827"></script>
+  <script src="source-comparison.js"></script>
+  <script src="source-comparison-experience.js?v=source-comparison-complete-20260827"></script>
+  <script src="claim-evidence-map.js"></script>
+  <script src="claim-evidence-map-experience.js?v=goal-buttons-builder-layout-20260828"></script>
+  <script src="ai-use-receipt.js"></script>
+  <script src="ai-use-receipts-experience.js?v=ai-use-receipts-complete-20260827"></script>
+  <script src="brainstorming-studio.js"></script>
+  <script src="feedback-revision-studio.js"></script>
+  <script src="revision-decision-studio.js"></script>
+  <script src="community-ai-project.js?v=project-pathway-header-20260830"></script>
+  <script src="project-tool-header.js?v=project-tool-header-emergency-20260830"></script>
+  <script src="problem-scoping-studio.js?v=problem-scope-complete-20260829"></script>
+  <script src="problem-scope-experience.js?v=problem-scope-complete-20260829-2"></script>
+  <script src="ai-system-card-studio.js?v=system-card-complete-20260829"></script>
+  <script src="system-card-experience.js?v=system-card-complete-20260829"></script>
+  <script src="ai-architecture-design-studio.js?v=project-architecture-complete-20260829"></script>
+  <script src="project-architecture-experience.js?v=project-architecture-complete-20260829"></script>
+  <script src="data-responsibility-studio.js"></script>
+  <script src="data-responsibility-experience.js?v=data-responsibility-complete-20260829"></script>
+  <script src="fairness-evaluation-lab.js"></script>
+  <script src="iteration-feedback-studio.js"></script>
+  <script src="ethical-social-reflection-studio.js"></script>
+  <script src="learning-mode-selector.js?v=coach-composer-20260827"></script>
+  <script src="learning-mode-runtime.js"></script>
+  <script src="progressive-hints.js"></script>
+  <script src="guiding-question-mode.js"></script>
+  <script src="similar-example-mode.js"></script>
+  <script src="reasoning-check-mode.js"></script>
+  <script src="challenge-my-answer-mode.js"></script>
+  <script src="adaptive-quiz-mode.js"></script>
+  <script src="academic-integrity-context-runtime.js"></script>
+  <script src="assignment-ai-policy-runtime.js"></script>
+  <link rel="stylesheet" href="assignment-policy-builder-runtime.css">
+  <script src="assignment-policy-builder-runtime.js"></script>
+  <link rel="stylesheet" href="teacher-ai-literacy-dashboard-runtime.css">
+  <script src="teacher-ai-literacy-dashboard-runtime.js"></script>
+  <link rel="stylesheet" href="teacher-lesson-tools-runtime.css">
+  <script src="teacher-lesson-tools-runtime.js"></script>
+  <link rel="stylesheet" href="scenario-based-assessment-runtime.css">
+  <script src="scenario-based-assessment-runtime.js"></script>
+  <link rel="stylesheet" href="performance-assessment-runtime.css">
+  <script src="performance-assessment-runtime.js"></script>
+  <link rel="stylesheet" href="competency-portfolio-runtime.css?v=portfolio-complete-20260825">
+  <script src="competency-portfolio-runtime.js?v=portfolio-complete-20260825"></script>
+  <link rel="stylesheet" href="meaningful-badges-runtime.css">
+  <script src="meaningful-badges-runtime.js"></script>
+  <script src="assistance-ladder-runtime.js"></script>
+  <script src="integrity-intervention-runtime.js"></script>
+  <link rel="stylesheet" href="policy-conflict-human-review-runtime.css">
+  <script src="policy-conflict-human-review-runtime.js"></script>
+  <link rel="stylesheet" href="student-contribution-checkpoint-runtime.css">
+  <script src="student-contribution-checkpoint-runtime.js"></script>
+  <link rel="stylesheet" href="standard-ai-response-card-runtime.css">
+  <script src="standard-ai-response-card-runtime.js"></script>
+  <link rel="stylesheet" href="source-applicability-runtime.css">
+  <script src="source-applicability-runtime.js"></script>
+  <link rel="stylesheet" href="evidence-based-confidence-runtime.css">
+  <script src="evidence-based-confidence-runtime.js"></script>
+  <link rel="stylesheet" href="explicit-assumptions-runtime.css">
+  <script src="explicit-assumptions-runtime.js"></script>
+  <link rel="stylesheet" href="what-to-verify-runtime.css">
+  <script src="what-to-verify-runtime.js"></script>
+  <link rel="stylesheet" href="thinking-question-runtime.css">
+  <script src="thinking-question-runtime.js"></script>
+  <link rel="stylesheet" href="structured-response-runtime.css">
+  <script src="structured-response-runtime.js"></script>
+  <link rel="stylesheet" href="ai-use-map-runtime.css?v=public-landing-ai-use-20260829">
+  <script src="ai-use-map-runtime.js?v=public-landing-ai-use-20260829"></script>
+  <link rel="stylesheet" href="ai-use-receipt-runtime.css?v=public-landing-ai-use-20260829">
+  <script src="ai-use-receipt-runtime.js?v=public-landing-ai-use-20260829"></script>
+  <link rel="stylesheet" href="teach-back-runtime.css">
+  <script src="teach-back-runtime.js"></script>
+  <link rel="stylesheet" href="independent-retry-runtime.css">
+  <script src="independent-retry-runtime.js"></script>
+  <script src="sidebar-navigation.js?v=accessibility-language-redesign-20260831"></script>
+  <script src="first-screen-navigation.js?v=study-together-routefix-20260831"></script>
+  <link rel="stylesheet" href="coach-composer.css?v=visible-composer-20260827">
+  <link rel="stylesheet" href="coach-response-tools.css?v=separated-tools-20260827">
+  <link rel="stylesheet" href="ai-coach-alignment.css?v=coach-fullscreen-focus-20260831">
+  <link rel="stylesheet" href="coach-response-workspace.css?v=coach-pages-20260829">
+  <script src="coach-composer.js?v=visible-composer-20260827"></script>
+  <script src="coach-response-workspace.js?v=coach-pages-20260829"></script>
+  <script src="help-centre.js?v=home-hub-title-safe-20260831"></script>
+  <script src="global-search.js?v=global-search-close-20260831"></script>
+</body>
+</html>

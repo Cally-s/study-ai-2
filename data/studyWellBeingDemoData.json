@@ -1,0 +1,220 @@
+{
+  "version": "1.0.0",
+  "notice": "Demo Well-Being Data is fictional and is provided only to demonstrate how StudySpark analyzes recorded study patterns.",
+  "scenarios": [
+    {
+      "id": "well-being-full-demo",
+      "name": "Four-Week Study Well-Being Demo",
+      "description": "A fictional four-week timeline showing balanced habits, increasing workload and improvement after rest.",
+      "prototypeOnly": true,
+      "defaultActiveWeekIndex": 3,
+      "demoContact": {
+        "id": "demo-counsellor",
+        "type": "school-counsellor",
+        "name": "Example School Counsellor",
+        "email": "",
+        "phone": "",
+        "source": "demo",
+        "prototypeOnly": true
+      },
+      "weeks": [
+        {
+          "weekIndex": 1,
+          "name": "Normal Study Week",
+          "summary": "A balanced week with steady study sessions, useful breaks, and stable quiz scores.",
+          "studyLoadLevel": "Balanced",
+          "sessions": [
+            {"id":"demo-session-w1-01","subject":"Math","topic":"Linear Functions Review","dayOffset":-27,"startLocalTime":"16:10","totalElapsedMinutes":45,"activeStudyMinutes":45,"breaks":[],"longestUninterruptedMinutes":45,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w1-02","subject":"Science","topic":"Cell Structure Vocabulary","dayOffset":-26,"startLocalTime":"17:05","totalElapsedMinutes":55,"activeStudyMinutes":50,"breaks":[{"id":"demo-break-w1-02-a","startMinute":25,"durationMinutes":5,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w1-03","subject":"English","topic":"Theme Evidence Paragraphs","dayOffset":-25,"startLocalTime":"18:20","totalElapsedMinutes":35,"activeStudyMinutes":35,"breaks":[],"longestUninterruptedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w1-04","subject":"Math","topic":"Graphing Practice","dayOffset":-23,"startLocalTime":"19:00","totalElapsedMinutes":70,"activeStudyMinutes":60,"breaks":[{"id":"demo-break-w1-04-a","startMinute":35,"durationMinutes":10,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w1-05","subject":"History","topic":"Timeline Review","dayOffset":-21,"startLocalTime":"20:05","totalElapsedMinutes":40,"activeStudyMinutes":40,"breaks":[],"longestUninterruptedMinutes":40,"source":"demo","prototypeOnly":true}
+          ],
+          "quizzes": [
+            {"id":"demo-quiz-w1-01","subject":"Math","title":"Linear Functions Check","dayOffset":-27,"completedLocalTime":"17:00","score":84,"maximumScore":100,"percentage":84,"averageResponseSeconds":42,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w1-02","subject":"Science","title":"Cells Vocabulary Quiz","dayOffset":-24,"completedLocalTime":"18:15","score":86,"maximumScore":100,"percentage":86,"averageResponseSeconds":39,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w1-03","subject":"Math","title":"Graphing Skills Quiz","dayOffset":-21,"completedLocalTime":"20:55","score":85,"maximumScore":100,"percentage":85,"averageResponseSeconds":41,"source":"demo","prototypeOnly":true}
+          ],
+          "tasks": [
+            {"id":"demo-task-w1-01","subject":"Math","topic":"Complete linear functions notes","dayOffset":-27,"status":"completed","estimatedMinutes":25,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-02","subject":"Science","topic":"Review cell diagram labels","dayOffset":-26,"status":"completed","estimatedMinutes":20,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-03","subject":"English","topic":"Draft evidence paragraph","dayOffset":-25,"status":"completed","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-04","subject":"Math","topic":"Finish graphing practice set","dayOffset":-23,"status":"completed","estimatedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-05","subject":"History","topic":"Update timeline review sheet","dayOffset":-21,"status":"completed","estimatedMinutes":20,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-06","subject":"Science","topic":"Make five vocabulary flashcards","dayOffset":-24,"status":"completed","estimatedMinutes":15,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-07","subject":"Math","topic":"Correct graphing errors","dayOffset":-22,"status":"completed","estimatedMinutes":20,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-08","subject":"English","topic":"Revise topic sentence","dayOffset":-24,"status":"completed","estimatedMinutes":15,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w1-09","subject":"History","topic":"Read one source analysis example","dayOffset":-22,"status":"overdue","estimatedMinutes":20,"source":"demo","prototypeOnly":true}
+          ],
+          "checkIns": [
+            {"id":"demo-checkin-w1","dayOffset":-24,"feeling":"Okay","source":"demo","prototypeOnly":true}
+          ],
+          "dashboardSnapshot": {
+            "id": "demo-dashboard-w1",
+            "reviewPeriod": "Week 1 - Normal Study Week",
+            "studyLoadLevel": "Balanced",
+            "indicators": ["Steady quiz scores", "Sessions ended before 9:30 PM", "Breaks were recorded during longer sessions"],
+            "evidence": ["Five fictional study sessions were completed.", "Quiz scores stayed between 84% and 86%.", "Eight of nine planned tasks were completed."],
+            "recommendations": ["Keep using short study blocks with breaks.", "Continue correcting small mistakes after practice."],
+            "positives": ["Study sessions were consistent and manageable.", "Breaks were used during longer work blocks."],
+            "checkInSummary": "The fictional check-in for this week was Okay.",
+            "createdAtDayOffset": -21,
+            "source": "demo",
+            "prototypeOnly": true
+          },
+          "notifications": [
+            {"id":"demo-notification-w1-success","type":"success","title":"Balanced Week Recorded","message":"The fictional demo shows steady study habits this week.","status":"shown","dayOffset":-21,"source":"demo","prototypeOnly":true}
+          ]
+        },
+        {
+          "weekIndex": 2,
+          "name": "Increasing Study Load",
+          "summary": "A busier week with two late study sessions, one long session, fewer breaks, and lower quiz scores.",
+          "studyLoadLevel": "Mild Overload",
+          "sessions": [
+            {"id":"demo-session-w2-01","subject":"Math","topic":"Factoring Polynomials","dayOffset":-20,"startLocalTime":"17:10","totalElapsedMinutes":65,"activeStudyMinutes":60,"breaks":[{"id":"demo-break-w2-01-a","startMinute":35,"durationMinutes":5,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w2-02","subject":"Science","topic":"Photosynthesis Process","dayOffset":-19,"startLocalTime":"21:45","totalElapsedMinutes":80,"activeStudyMinutes":80,"breaks":[],"longestUninterruptedMinutes":80,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w2-03","subject":"Math","topic":"Polynomial Zeros","dayOffset":-18,"startLocalTime":"18:15","totalElapsedMinutes":105,"activeStudyMinutes":95,"breaks":[{"id":"demo-break-w2-03-a","startMinute":50,"durationMinutes":10,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":50,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w2-04","subject":"English","topic":"Quote Integration","dayOffset":-17,"startLocalTime":"20:00","totalElapsedMinutes":50,"activeStudyMinutes":50,"breaks":[],"longestUninterruptedMinutes":50,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w2-05","subject":"Math","topic":"Transformations Review","dayOffset":-16,"startLocalTime":"22:20","totalElapsedMinutes":75,"activeStudyMinutes":75,"breaks":[],"longestUninterruptedMinutes":75,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w2-06","subject":"History","topic":"Cause and Effect Notes","dayOffset":-14,"startLocalTime":"19:35","totalElapsedMinutes":45,"activeStudyMinutes":45,"breaks":[],"longestUninterruptedMinutes":45,"source":"demo","prototypeOnly":true}
+          ],
+          "quizzes": [
+            {"id":"demo-quiz-w2-01","subject":"Math","title":"Factoring Quiz","dayOffset":-20,"completedLocalTime":"18:30","score":83,"maximumScore":100,"percentage":83,"averageResponseSeconds":48,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w2-02","subject":"Math","title":"Polynomial Zeros Quiz","dayOffset":-18,"completedLocalTime":"20:10","score":81,"maximumScore":100,"percentage":81,"averageResponseSeconds":53,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w2-03","subject":"Science","title":"Photosynthesis Quiz","dayOffset":-15,"completedLocalTime":"22:05","score":79,"maximumScore":100,"percentage":79,"averageResponseSeconds":58,"source":"demo","prototypeOnly":true}
+          ],
+          "tasks": [
+            {"id":"demo-task-w2-01","subject":"Math","topic":"Complete factoring examples","dayOffset":-20,"status":"completed","estimatedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-02","subject":"Science","topic":"Label photosynthesis diagram","dayOffset":-19,"status":"completed","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-03","subject":"Math","topic":"Practice polynomial zeros","dayOffset":-18,"status":"completed","estimatedMinutes":40,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-04","subject":"English","topic":"Revise quote evidence","dayOffset":-17,"status":"completed","estimatedMinutes":25,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-05","subject":"Math","topic":"Review transformations","dayOffset":-16,"status":"completed","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-06","subject":"History","topic":"Finish cause and effect chart","dayOffset":-14,"status":"completed","estimatedMinutes":20,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-07","subject":"Science","topic":"Complete lab application questions","dayOffset":-16,"status":"overdue","estimatedMinutes":25,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w2-08","subject":"Math","topic":"Correct polynomial mistakes","dayOffset":-15,"status":"overdue","estimatedMinutes":25,"source":"demo","prototypeOnly":true}
+          ],
+          "checkIns": [
+            {"id":"demo-checkin-w2","dayOffset":-16,"feeling":"Tired","source":"demo","prototypeOnly":true}
+          ],
+          "dashboardSnapshot": {
+            "id": "demo-dashboard-w2",
+            "reviewPeriod": "Week 2 - Increasing Study Load",
+            "studyLoadLevel": "Mild Overload",
+            "indicators": ["Two fictional sessions started late at night", "One session lasted more than 100 minutes", "Two tasks became overdue", "Quiz scores moved from 83% to 79%"],
+            "evidence": ["Six fictional study sessions were recorded.", "Breaks were less consistent than Week 1.", "The fictional check-in was Tired."],
+            "recommendations": ["Move one review task earlier in the day.", "Add a short break after each long practice block."],
+            "positives": ["Most planned tasks were still completed.", "The student continued reviewing across courses."],
+            "checkInSummary": "The fictional check-in for this week was Tired.",
+            "createdAtDayOffset": -14,
+            "source": "demo",
+            "prototypeOnly": true
+          },
+          "notifications": [
+            {"id":"demo-notification-w2-info","type":"information","title":"Study Load Increased","message":"The fictional demo shows more late study and fewer breaks this week.","status":"shown","dayOffset":-14,"source":"demo","prototypeOnly":true}
+          ]
+        },
+        {
+          "weekIndex": 3,
+          "name": "Higher Workload Patterns",
+          "summary": "A demanding week with late-night studying, very long sessions, fewer meaningful breaks, falling quiz results, and overdue tasks.",
+          "studyLoadLevel": "High Workload",
+          "sessions": [
+            {"id":"demo-session-w3-01","subject":"Math","topic":"Rational Functions","dayOffset":-13,"startLocalTime":"21:55","totalElapsedMinutes":125,"activeStudyMinutes":120,"breaks":[{"id":"demo-break-w3-01-a","startMinute":70,"durationMinutes":5,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":70,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w3-02","subject":"Science","topic":"Energy Transfer","dayOffset":-12,"startLocalTime":"22:40","totalElapsedMinutes":145,"activeStudyMinutes":145,"breaks":[],"longestUninterruptedMinutes":145,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w3-03","subject":"English","topic":"Essay Planning","dayOffset":-11,"startLocalTime":"20:30","totalElapsedMinutes":90,"activeStudyMinutes":90,"breaks":[],"longestUninterruptedMinutes":90,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w3-04","subject":"Math","topic":"Rational Function Applications","dayOffset":-10,"startLocalTime":"23:05","totalElapsedMinutes":132,"activeStudyMinutes":132,"breaks":[],"longestUninterruptedMinutes":132,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w3-05","subject":"History","topic":"Source Analysis Practice","dayOffset":-9,"startLocalTime":"19:10","totalElapsedMinutes":75,"activeStudyMinutes":65,"breaks":[{"id":"demo-break-w3-05-a","startMinute":40,"durationMinutes":10,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":40,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w3-06","subject":"Science","topic":"Lab Application Questions","dayOffset":-8,"startLocalTime":"22:15","totalElapsedMinutes":115,"activeStudyMinutes":115,"breaks":[],"longestUninterruptedMinutes":115,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w3-07","subject":"Math","topic":"Mixed Unit Review","dayOffset":-7,"startLocalTime":"18:45","totalElapsedMinutes":85,"activeStudyMinutes":85,"breaks":[],"longestUninterruptedMinutes":85,"source":"demo","prototypeOnly":true}
+          ],
+          "quizzes": [
+            {"id":"demo-quiz-w3-01","subject":"Math","title":"Rational Functions Quiz","dayOffset":-13,"completedLocalTime":"23:55","score":72,"maximumScore":100,"percentage":72,"averageResponseSeconds":72,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w3-02","subject":"Science","title":"Energy Transfer Quiz","dayOffset":-10,"completedLocalTime":"23:40","score":69,"maximumScore":100,"percentage":69,"averageResponseSeconds":80,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w3-03","subject":"Math","title":"Rational Applications Quiz","dayOffset":-7,"completedLocalTime":"20:20","score":63,"maximumScore":100,"percentage":63,"averageResponseSeconds":84,"source":"demo","prototypeOnly":true}
+          ],
+          "tasks": [
+            {"id":"demo-task-w3-01","subject":"Math","topic":"Review asymptote rules","dayOffset":-13,"status":"completed","estimatedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w3-02","subject":"Science","topic":"Complete energy transfer diagram","dayOffset":-12,"status":"completed","estimatedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w3-03","subject":"English","topic":"Outline essay body paragraphs","dayOffset":-11,"status":"moved","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w3-04","subject":"Math","topic":"Complete rational function word problems","dayOffset":-10,"status":"overdue","estimatedMinutes":45,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w3-05","subject":"History","topic":"Annotate two source documents","dayOffset":-9,"status":"overdue","estimatedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w3-06","subject":"Science","topic":"Correct lab application mistakes","dayOffset":-8,"status":"overdue","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w3-07","subject":"Math","topic":"Finish mixed unit review","dayOffset":-7,"status":"overdue","estimatedMinutes":45,"source":"demo","prototypeOnly":true}
+          ],
+          "checkIns": [
+            {"id":"demo-checkin-w3","dayOffset":-9,"feeling":"Overwhelmed","source":"demo","prototypeOnly":true}
+          ],
+          "dashboardSnapshot": {
+            "id": "demo-dashboard-w3",
+            "reviewPeriod": "Week 3 - Higher Workload Patterns",
+            "studyLoadLevel": "High Workload",
+            "indicators": ["Three late-night sessions were recorded", "Two sessions lasted longer than two hours", "Four eligible tasks became overdue", "Recent quiz scores were lower than earlier scores", "Question response times were slower in recent quizzes"],
+            "evidence": ["Seven fictional study days were recorded.", "Several long sessions had no meaningful break.", "Recent fictional quiz scores were 72%, 69%, and 63%."],
+            "recommendations": ["Reduce one lower-priority task today.", "Use one shorter review block before attempting more practice.", "Take a meaningful break after long study periods."],
+            "positives": ["The student kept studying across multiple courses.", "The demo includes evidence that can improve after rest."],
+            "checkInSummary": "The fictional check-in for this week was Overwhelmed. This changes wording only and does not change scoring.",
+            "createdAtDayOffset": -7,
+            "source": "demo",
+            "prototypeOnly": true
+          },
+          "notifications": [
+            {"id":"demo-notification-w3-warning","type":"warning","title":"Higher Workload Pattern","message":"The fictional demo shows several recorded study patterns that may deserve a lighter plan today.","status":"shown","dayOffset":-7,"source":"demo","prototypeOnly":true},
+            {"id":"demo-notification-w3-suppressed","type":"warning","title":"Duplicate Reminder Suppressed","message":"A duplicate fictional reminder was suppressed by the demo cooldown rules.","status":"suppressed-cooldown","dayOffset":-7,"source":"demo","prototypeOnly":true},
+            {"id":"demo-notification-w3-support","type":"supportive-alert","title":"Support Options Available","message":"The fictional demo shows support options after an Overwhelmed check-in.","status":"shown","dayOffset":-9,"source":"demo","prototypeOnly":true}
+          ]
+        },
+        {
+          "weekIndex": 4,
+          "name": "Improved Patterns After Rest",
+          "summary": "A lighter review week with earlier study sessions, shorter blocks, meaningful breaks, fewer overdue tasks, and improving quiz scores.",
+          "studyLoadLevel": "Balanced",
+          "sessions": [
+            {"id":"demo-session-w4-01","subject":"Math","topic":"Rational Functions Corrections","dayOffset":-6,"startLocalTime":"16:30","totalElapsedMinutes":60,"activeStudyMinutes":50,"breaks":[{"id":"demo-break-w4-01-a","startMinute":30,"durationMinutes":10,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w4-02","subject":"Science","topic":"Energy Transfer Review","dayOffset":-5,"startLocalTime":"17:20","totalElapsedMinutes":45,"activeStudyMinutes":45,"breaks":[],"longestUninterruptedMinutes":45,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w4-03","subject":"English","topic":"Final Essay Outline","dayOffset":-4,"startLocalTime":"18:10","totalElapsedMinutes":50,"activeStudyMinutes":45,"breaks":[{"id":"demo-break-w4-03-a","startMinute":25,"durationMinutes":5,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":25,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w4-04","subject":"Math","topic":"Mixed Review Quiz Corrections","dayOffset":-3,"startLocalTime":"19:00","totalElapsedMinutes":65,"activeStudyMinutes":55,"breaks":[{"id":"demo-break-w4-04-a","startMinute":35,"durationMinutes":10,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w4-05","subject":"History","topic":"Source Analysis Summary","dayOffset":-2,"startLocalTime":"17:45","totalElapsedMinutes":40,"activeStudyMinutes":40,"breaks":[],"longestUninterruptedMinutes":40,"source":"demo","prototypeOnly":true},
+            {"id":"demo-session-w4-06","subject":"Math","topic":"Final Short Review","dayOffset":0,"startLocalTime":"18:20","totalElapsedMinutes":55,"activeStudyMinutes":50,"breaks":[{"id":"demo-break-w4-06-a","startMinute":30,"durationMinutes":5,"source":"demo","prototypeOnly":true}],"longestUninterruptedMinutes":30,"source":"demo","prototypeOnly":true}
+          ],
+          "quizzes": [
+            {"id":"demo-quiz-w4-01","subject":"Math","title":"Corrections Check","dayOffset":-6,"completedLocalTime":"17:35","score":72,"maximumScore":100,"percentage":72,"averageResponseSeconds":65,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w4-02","subject":"Science","title":"Review Quiz","dayOffset":-3,"completedLocalTime":"19:45","score":78,"maximumScore":100,"percentage":78,"averageResponseSeconds":58,"source":"demo","prototypeOnly":true},
+            {"id":"demo-quiz-w4-03","subject":"Math","title":"Final Short Review Quiz","dayOffset":0,"completedLocalTime":"19:15","score":84,"maximumScore":100,"percentage":84,"averageResponseSeconds":50,"source":"demo","prototypeOnly":true}
+          ],
+          "tasks": [
+            {"id":"demo-task-w4-01","subject":"Math","topic":"Redo rational function mistakes","dayOffset":-6,"status":"completed","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-02","subject":"Science","topic":"Review energy transfer summary","dayOffset":-5,"status":"completed","estimatedMinutes":25,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-03","subject":"English","topic":"Finalize essay outline","dayOffset":-4,"status":"completed","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-04","subject":"Math","topic":"Complete mixed review corrections","dayOffset":-3,"status":"completed","estimatedMinutes":35,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-05","subject":"History","topic":"Summarize source analysis strategy","dayOffset":-2,"status":"completed","estimatedMinutes":25,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-06","subject":"Math","topic":"Prepare final short review sheet","dayOffset":0,"status":"completed","estimatedMinutes":30,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-07","subject":"Science","topic":"Check diagram labels","dayOffset":-4,"status":"completed","estimatedMinutes":15,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-08","subject":"English","topic":"Read thesis aloud","dayOffset":-3,"status":"completed","estimatedMinutes":15,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-09","subject":"Math","topic":"Practice one challenge problem","dayOffset":-2,"status":"completed","estimatedMinutes":20,"source":"demo","prototypeOnly":true},
+            {"id":"demo-task-w4-10","subject":"History","topic":"Review map/source vocabulary","dayOffset":-1,"status":"overdue","estimatedMinutes":20,"source":"demo","prototypeOnly":true}
+          ],
+          "checkIns": [
+            {"id":"demo-checkin-w4","dayOffset":0,"feeling":"Okay","source":"demo","prototypeOnly":true}
+          ],
+          "dashboardSnapshot": {
+            "id": "demo-dashboard-w4",
+            "reviewPeriod": "Week 4 - Improved Patterns After Rest",
+            "studyLoadLevel": "Balanced",
+            "indicators": ["Study sessions were shorter and earlier", "Meaningful breaks returned", "Quiz scores improved from 72% to 84%", "Only one task became overdue"],
+            "evidence": ["Six fictional study sessions were recorded.", "Breaks were recorded in several sessions.", "Nine of ten planned tasks were completed."],
+            "recommendations": ["Keep using shorter review blocks.", "Continue correcting mistakes soon after practice."],
+            "positives": ["The fictional pattern improved after rest and lighter planning.", "Quiz scores and response times improved in the final week."],
+            "checkInSummary": "The fictional check-in for this week was Okay.",
+            "createdAtDayOffset": 0,
+            "source": "demo",
+            "prototypeOnly": true
+          },
+          "notifications": [
+            {"id":"demo-notification-w4-success","type":"success","title":"Improved Pattern Recorded","message":"The fictional demo shows better scores after lighter review and breaks.","status":"shown","dayOffset":0,"source":"demo","prototypeOnly":true}
+          ]
+        }
+      ]
+    }
+  ]
+}
